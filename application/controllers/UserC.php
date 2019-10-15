@@ -244,7 +244,6 @@ class UserC extends CI_Controller{
                     $this->AddHomePage();      // $this->load->view('upload_form', $error);
                 }   
                 else{
-                    echo "<script>console.log('something')</script>";
                     $this->delImg('./assets/images/homepage/'.$tempImg);
                     $im = $this->upload->data('file_name');
                     $data['img']=$im; 
@@ -308,58 +307,54 @@ class UserC extends CI_Controller{
         $tempImg = $i[0]->img;
 
         $na = $this->input->post('Name');
-       
-        $config['upload_path']          = './assets/images/culturepage';
-        $config['allowed_types']        = 'gif|jpg|png|jpeg';
-        // $config['max_size']             = 10000;
-        // $config['max_width']            = 1024;
-        // $config['max_height']           = 768;
-        $this->load->library('upload', $config);
-        if ( ! $this->upload->do_upload('userfile'))
-        {
-            $this->session->set_flashdata('error', 'Inalid DATA');
-            $this->AddCulturePage();      // $this->load->view('upload_form', $error);
+        $img = $_FILES['userfile']['name'];
+
+
+        $data = array(  'name' => $na,
+                        'img'  => ''   );
+        
+        if($img == '' or $img == $tempImg){
+            $data['img']=$tempImg; 
         }
-        else
-        {
-              $im = $this->upload->data('file_name');
-                $data = array('img ' => $im,
-                                'name' => $na );
-                // $this->load->view('upload_success', $data);
-
-               
-                if($this->WorkM->UpdateCulturePage($data,$id)){
-                    return $this->ViewCulturePage();
-                }else{
-                    $this->session->set_flashdata('error', 'Inalid DATA');
-                    $this->AddCulturePage();
-                }
-
-                if( file_exists('./assets/images/culturepage/'.$tempImg) )
-                { 
-                    // Remove file 
-                    unlink('./assets/images/culturepage/'.$tempImg); 
-                } 
-
-    }}
-
+        else{                        
+            $config['upload_path']          = './assets/images/culturepage';
+            $config['allowed_types']        = 'gif|jpg|png|jpeg';
+            // $config['max_size']             = 10000;
+            // $config['max_width']            = 1024;
+            // $config['max_height']           = 768;
+            $this->load->library('upload', $config);
+            if ( ! $this->upload->do_upload('userfile'))
+            {
+                $this->session->set_flashdata('error', 'Inalid DATA');
+                $this->AddCulturePage();      // $this->load->view('upload_form', $error);
+            }
+            else
+            {
+                $this->delImg('./assets/images/homepage/'.$tempImg); 
+                $im = $this->upload->data('file_name');
+                $data['img']=$im; 
+            }
+        }
+        if($this->WorkM->UpdateCulturePage($data,$id)){
+            return $this->ViewCulturePage();
+        }else{
+            $this->session->set_flashdata('error', 'Inalid DATA');
+            $this->AddCulturePage();
+        }
+    }
     
     public function RemoveCulturePage($id)
     {
         
-
-            $this->load->model('WorkM');
-            $i = $this->WorkM->getRow($id,'culturepage');
-            $tempImg = $i[0]->img;
-           
-            if($this->WorkM->DeleteCulturePage($id)){
-                 // Delete image data 
-                 if( file_exists('./assets/images/culturepage/'.$tempImg) )
-                 { 
-                     // Remove file 
-                     unlink('./assets/images/culturepage/'.$tempImg); 
-                 } 
-                $this->ViewCulturePage();
+        
+        $this->load->model('WorkM');
+        $i = $this->WorkM->getRow($id,'culturepage');
+        $tempImg = $i[0]->img;
+        
+        if($this->WorkM->DeleteCulturePage($id)){
+            // Delete image data 
+            $this->delImg('./assets/images/culturepage/'.$tempImg); 
+            $this->ViewCulturePage();
             }else{
                 return false;
             }
@@ -450,41 +445,46 @@ class UserC extends CI_Controller{
 
         $na = $this->input->post('Name');
         $de = $this->input->post('Descripition');
+        $img = $_FILES['userfile']['name'];
+
+        $data = array('con_img ' => '',
+                    'con_name' => $na,
+                    'con_des'  => $de);
        
-        $config['upload_path']          = './assets/images/despage';
-        $config['allowed_types']        = 'gif|jpg|png';
-        // $config['max_size']             = 10000;
-        // $config['max_width']            = 1024;
-        // $config['max_height']           = 768;
-        $this->load->library('upload', $config);
-        if ( ! $this->upload->do_upload('userfile'))
-        {
-            $this->session->set_flashdata('error', 'Inalid DATA');
-            $this->AddDestpage();      // $this->load->view('upload_form', $error);
+        if($img == '' or $img == $tempImg){
+            $data['img']=$tempImg; 
         }
-        else
-        {
-              $im = $this->upload->data('file_name');
-                $data = array('con_img ' => $im,
-                                'con_name' => $na,
-                                'con_des'  => $de);
-                // $this->load->view('upload_success', $data);
-
-               
-                if($this->WorkM->UpdategetDestpage($data,$id)){
-                    return $this->ViewDestpage();
-                }else{
-                    $this->session->set_flashdata('error', 'Inalid DATA');
-                    $this->AddDestpage();
-                }
-
-                if( file_exists('./assets/images/despage/'.$tempImg) )
-                { 
-                    // Remove file 
-                    unlink('./assets/images/despage/'.$tempImg); 
-                } 
-
-    }}
+       else
+       {
+            
+            $config['upload_path']          = './assets/images/despage';
+            $config['allowed_types']        = 'gif|jpg|png';
+            // $config['max_size']             = 10000;
+            // $config['max_width']            = 1024;
+            // $config['max_height']           = 768;
+            $this->load->library('upload', $config);
+            if ( ! $this->upload->do_upload('userfile'))
+            {
+                $this->session->set_flashdata('error', 'Inalid DATA');
+                $this->AddDestpage();      // $this->load->view('upload_form', $error);
+            }
+            else
+            {
+                $this->delImg('./assets/images/despage/'.$tempImg);
+                $im = $this->upload->data('file_name');
+                $data['con_img '] = $im;
+                                    
+                    // $this->load->view('upload_success', $data);
+            }
+       }
+    
+        if($this->WorkM->UpdategetDestpage($data,$id)){
+            return $this->ViewDestpage();
+        }else{
+            $this->session->set_flashdata('error', 'Inalid DATA');
+            $this->AddDestpage();
+        }
+    }
 
     public function RemoveDestpage($id)
     {
