@@ -5,12 +5,8 @@ Requriment
     3. git-scm
 
 Installtion
-<<<<<<< HEAD
-    1. In c:\xampp\htdocs folder open git bash\n
-=======
 
     1. In c:\xampp\htdocs folder open git bash
->>>>>>> 9a6362152534e825240a0b33345bf2b6d2ff44c8
     2. git clone https://github.com/computer-teche/Project.git  -       this commnd
     3. start apche and mysql about_section
     4. create database in mysql name as "nmc".
