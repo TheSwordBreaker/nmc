@@ -646,6 +646,51 @@ a.callbacks_nav.callbacks1_nav.prev {
 .news{
 	padding-bottom:5em;
 }
+/*--gallery--*/
+.w3-agileits-gallery1-grids.agileits-gallery1-grids {
+    margin: 2em 0;
+}
+
+.w3-agileits-gallery1-grids a {
+    display: block;
+    overflow: hidden;
+  position:relative;
+}
+.agile-b-wrapper{
+    background: rgba(0, 0, 0, 0.58);
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    transition: .5s all;
+    opacity: 0;
+}
+.w3-agileits-gallery1-grids a:hover .agile-b-wrapper{
+  height: 100%;
+  opacity: 1;
+}
+.gallery1-grid-top .agile-b-wrapper i.fa.fa-search-plus {
+    font-size: 2em;
+    color: #fff;
+    margin: 5.5em 0 0 0;
+}
+.gallery1-grid-middle .agile-b-wrapper i.fa.fa-search-plus {
+    font-size: 2em;
+    color: #fff;
+    margin: 2.5em 0 0 0;
+}
+.gallery1-grid-bottom .agile-b-wrapper i.fa.fa-search-plus {
+    font-size: 2em;
+    color: #fff;
+    margin: 4em 0 0 0;
+}
+.gallery1 h3, .team h3, .contact h3{
+    text-align: center;
+}
+
+/*--//gallery--*/
 .about_section {
     position: relative;
     background: #b60965;
@@ -1643,10 +1688,7 @@ p.para-agileits:nth-child(2) {
 }
 /*-- //news --*/
 /*--team-starts--*/
-.gallery {
-    background: url(../images/bg.jpg) no-repeat 0px 0px fixed;
-    background-size: cover;
-}
+
 .agile_team_grids {
     margin-top: 3em;
 }
