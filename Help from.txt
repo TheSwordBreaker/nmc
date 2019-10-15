@@ -1,0 +1,7 @@
+1. Toutorial -> To upload file in codeigniter
+
+https://www.codexworld.com/how-to-upload-file-in-codeigniter/
+
+2. Toutorial -> multiple image upload view edit delete in codeigniter
+
+https://www.codexworld.com/multiple-image-upload-view-edit-delete-in-codeigniter/

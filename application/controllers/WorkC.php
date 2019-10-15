@@ -1,5 +1,5 @@
 <?php 
-
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class WorkC extends CI_Controller{
 
@@ -30,6 +30,7 @@ class WorkC extends CI_Controller{
             redirect('WorkC');
         }
     }
+
     
     
     

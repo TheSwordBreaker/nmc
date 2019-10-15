@@ -28,7 +28,7 @@
 	<!-- Necessary-JavaScript-File-For-Bootstrap -->
 	<!-- //js -->
 	<!--  light box js -->
-	<script src="<?= base_url('assets/js/lightbox-plus-jquery.min.js ') ?>">
+	<script type="text/javascript" src="<?= base_url('assets/js/lightbox-plus-jquery.min.js ') ?>">
 	</script>
 	<!-- //light box js-->
 

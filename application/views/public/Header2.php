@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Nashik Tourism &mdash; Destination</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
-    <link rel="stylesheet" href="<?= base_url('assets/fonts/icomoon/style.css') ?>">
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('/assets/images/apple-icon.png')?>">
+  <link rel="icon" type="image/png" href="<?= base_url('/assets/images/favicon.png') ?>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>
+    Nashik Tourism &mdash; Login
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'>
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="<?= base_url('/assets/css/login.css') ?> " rel="stylesheet" >
+</head>
 
-    <link rel="stylesheet" href="<?= base_url('assets/css1/bootstrap.min.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css1/magnific-popup.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css1/jquery-ui.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css1/owl.carousel.min.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css1/owl.theme.default.min.css') ?>">
-
-    <link rel="stylesheet" href="<?= base_url('assets/css1/bootstrap-datepicker.css') ?>">
-
-    <link rel="stylesheet" href="<?= base_url('assets/fonts/flaticon/font/flaticon.css') ?>">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
-
-
-    <link rel="stylesheet" href="<?= base_url('assets/css1/aos.css') ?>">
-
-    <link rel="stylesheet" href="<?= base_url('assets/css1/style.css') ?>">
-    
-  </head>

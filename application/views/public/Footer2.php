@@ -1,83 +1,23 @@
-<footer class="site-footer " >
+<footer class="footer">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="mb-5">
-              <h3 class="footer-heading mb-4">About Culture and Food...</h3>
-              <p>Public transport is well developed in the city. There are cabs
-                  available on call. For tourists, there are buses that take you around
-                important tourist attractions which can be booked in advance.</p>
-            </div>           
-          </div>
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <div class="row mb-5">
-              <div class="col-md-12">
-                <h3 class="footer-heading mb-4">Navigations</h3>
-              </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="<?= base_url('MainC/')?>">Home</a></li>
-                  <li><a href="<?= base_url('MainC/Dest')?>">Destinations</a></li>
-                  </ul>
-              </div>
-              <div class="col-md-6 col-lg-6">
-                <ul class="list-unstyled">
-                  <li><a href="<?= base_url('MainC/Cul')?>">Culture</a></li>
-                  <li><a href="<?= base_url('MainC/')?>">About</a></li>
-
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <div class="mb-5">
-              <h3 class="footer-heading mb-2">Sponsored By....</h3>
-              <p>Nashik Muncipal Corporation!!!</p>
-
-              <form action="#" method="post">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Send</button>
-                  </div>
-                </div>
-              </form>
-
-            </div>
-
-          </div>
-          
-        </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="mb-5">
-              <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-            </div>
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="icon-heart-o" aria-hidden="true"></i> by GPN Students!</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-
-
-          </div>          
-        </div>
+      <class>
+        
+        <div class="copyright float-right" style="font-family: verdana; font-size: 15px;">
+        © 2019 Nashik Tourism. All rights reserved | Design by GPN Students
+      </div>
       </div>
     </footer>
-  <script src="<?= base_url('assets/js1/jquery-3.3.1.min.js ') ?>"></script>
-  <script src="<?= base_url('assets/js1/jquery-migrate-3.0.1.min.js ') ?>"></script>
-  <script src="<?= base_url('assets/js1/jquery-ui.js ') ?>"></script>
-  <script src="<?= base_url('assets/js1/popper.min.js ') ?>"></script>
-  <script src="<?= base_url('assets/js1/bootstrap.min.js ') ?>"></script>
-  <script src="<?= base_url('assets/js1/owl.carousel.min.js ') ?>"></script>
-  <script src="<?= base_url('assets/js1/jquery.stellar.min.js ') ?>"></script>
-  <script src="<?= base_url('assets/js1/jquery.countdown.min.js ') ?>"></script>
-  <script src="<?= base_url('assets/js1/jquery.magnific-popup.min.js ') ?>"></script>
-  <script src="<?= base_url('assets/js1/bootstrap-datepicker.min.js ') ?>"></script>
-  <script src="<?= base_url('assets/js1/aos.js ') ?>"></script>
-  <script src="<?= base_url('assets/js1/main.js ') ?>"></script>    
-  </body>
+  <!--   Core JS Files   -->
+  <script src="<?= base_url('/assets/js/core/jquery.min.js') ?>" type="text/javascript"></script>
+  <script src="<?= base_url('/assets/js/core/popper.min.js') ?>" type="text/javascript"></script>
+  <script src="<?= base_url('/assets/js/core/bootstrap-material-design.min.js')?>" type="text/javascript"></script>
+  <!--  Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+  <script src="./assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+  <script src="<?= base_url('/assets/js/plugins/moment.min.js') ?>" type="text/javascript"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="<?= base_url('/assets/js/plugins/nouislider.min.js') ?>" type="text/javascript"></script>
+  <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+  <script src="<?= base_url('/assets/js/login.js') ?>" type="text/javascript"></script>
+</body>
+
 </html>

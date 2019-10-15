@@ -49,59 +49,28 @@
 		<div class="container">
 			<h3 class="wthree_title_agile">PILGRIMAGES</h3>
 			<div class="wthree-news-grids">
-				<div class="col-md-4 agile-news-left">
-					<img src="<?= base_url('assets/images/trambak1.jpg') ?>" alt="">
-					<div class="agile-news-right">
-						<div class="date-grid">
-							<div class="time">
-								<p><i class="fa fa-calendar" aria-hidden="true"></i> August 13,2019</p>
+			<?php  for($i=0; $i < 3; $i++ ):?>
+
+						<div class="col-md-4 agile-news-left">
+							<img src="<?= base_url('assets/images/homepage/').$data[$i]->img ?>" alt="">
+							<div class="agile-news-right">
+								<div class="date-grid">
+									<div class="time">
+										<p><i class="fa fa-calendar" aria-hidden="true"></i> August 13,2019</p>
+									</div>
+									<div class="clearfix"> </div>
+								</div>
+								<div class="w3-agile-news-info">
+									<a href="#" data-toggle="modal" data-target="#myModal1"><?= $data[$i]->name ?></a>
+									<p><?= $data[$i]->des ?></p>
+								</div>
+								<div class="button">
+									<a href="<?= base_url('MainC/Dest')?>">More</a>
+								</div>
 							</div>
-							<div class="clearfix"> </div>
 						</div>
-						<div class="w3-agile-news-info">
-							<a href="#" data-toggle="modal" data-target="#myModal1">TRAMBAKESHWAR</a>
-							<p>It is an ancient Hindu temple in the town of Trimbak, in the Trimbakeshwar tehsil in the Nashik District of Maharashtra, India, 28 km from the city of Nashik and 40 km from nashik road. It is dedicated to the god Shiv and is one of the twelve Jyotirlingas, where the Hindu genealogy registers at Trimbakeshwar, Maharashtra are kept. The origin of the sacred Godavari river is near Trimbak. Kusavarta, a kunda (sacred pond) in the temple premises is the source of the Godavari River. The current temple was built by Peshwa Balaji Baji Rao.</p>
-						</div>
-						<div class="button">
-							<a href="Destination.html">More</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 agile-news-left">
-					<img src="<?= base_url('assets/images/1.jpg') ?>" alt="">
-					<div class="agile-news-right">
-						<div class="date-grid">
-							<div class="time">
-								<p><i class="fa fa-calendar" aria-hidden="true"></i> August 13,2019</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="w3-agile-news-info">
-							<a href="#" data-toggle="modal" data-target="#myModal3">PANCHVATI, NASHIK</a>
-							<p>Holy land for the believers of Ramayana, Panchvati attracts a lot of pilgrims. A serene town located near Nasik, the site offers small sightings having a lot of significance in the epic of Ramayana. Given the legend of Panchvati, the place holds a lot oreligious significance even in the present day. Sites sucas the Kalaram Temple and the Sita Gufaa are on everpilgrims list. The Kumbh Mela takes place on the river banks of Godavari, and has a surplus of pilgrims from every corner of world during the occasion.</p>
-						</div>
-						<div class="button">
-							<a href="Destination.html">More</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 agile-news-left">
-					<img src="<?= base_url('assets/images/VANI1.jpg') ?>" alt="">
-					<div class="agile-news-right">
-						<div class="date-grid">
-							<div class="time">
-								<p><i class="fa fa-calendar" aria-hidden="true"></i> August 13,2019</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="w3-agile-news-info">
-							<a href="#" data-toggle="modal" data-target="#myModal3">SAPTASHRUNGI GADH, VANI, NASHIK</a>
-							<p>This hill range situated 60 km from Nashik and forms a part of the Sahyadri range. It is a blend of the Sanskrit words 'sapta' which means seven and 'shrung' which means peak.which greatly add to the beauty of the hills. Not only are the hills incredible to look at, but the forests on the hills are loaded with medicinal herbs. In fact, as per the Hindu tradition, when Laxman was lying unconscious and could only be awakened by the 'sanjeevani' herb, Lord Hanuman flew to these hills in search of the herb.</p>
-						</div>
-						<div class="button">
-							<a href="Destination.html">More</a>
-						</div>
-					</div>
+
+						<?php endfor ?>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -117,6 +86,104 @@
 		</div>
 	</div>
 	<!--//counter-->
+	<!-- gallery -->
+		<div class="gallery1"><br><br>
+		<div class="container">
+			<div class="agile-heading">
+				<h3 class="wthree_title_agile">Our Culture</h3>
+			</div>
+			<div class="agileinfo-gallery1">
+			<div class="gallery1-grid-top">
+				<div class="col-md-6 col-sm-6 w3-agileits-gallery1-grids">
+					<a href="<?= base_url('assets/images/PRIMG3.jpg')?>" data-lightbox="example-set" data-title="Dada Saheb Phalke Smarak in Nashik : Is situated right down of Pandav pandav leni.  
+					This is a memorial of great visionary, Dadasaheb Phalke who was always committed towards edifying, devout and rational development.">
+						<img src="<?= base_url('assets/images/PRIMG3.jpg')?>" class="img-responsive zoom-img" alt=" "/>
+						<div class="agile-b-wrapper">
+							<i class="fa fa-search-plus" aria-hidden="true"></i>
+						</div>
+					</a> 
+				</div>
+				<div class="col-md-6 col-sm-6 w3-agileits-gallery1-grids">
+					<a href="<?= base_url('assets/images/KumbhMela1.jpg')?>" data-lightbox="example-set" data-title="Kumbh Mela or Kumbha Mela : It is a major pilgrimage and festival in Hinduism. It is celebrated in a cycle of approximately 12 years at four river-bank the Prayag (Ganges-Yamuna-mythical Saraswati rivers confluence), Haridwar (Ganges), Nashik (Godavari), and Ujjain (Shipra).">
+						<img src="<?= base_url('assets/images/KumbhMela1.jpg')?>" class="img-responsive zoom-img" alt=" "/>
+						<div class="agile-b-wrapper">
+							<i class="fa fa-search-plus" aria-hidden="true"></i>
+						</div>
+					</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="gallery1-grid-middle">
+				<div class="col-md-3 w3-agileits-gallery1-grids agileits-gallery1-grids">
+					<a href="<?= base_url('assets/images/PRIMG5.jpg')?>" data-lightbox="example-set" data-title="Anjaneri Hills Nashik : Anjaneri Parvat is quite significant amongst the devotees as locals say that the cave on the top of the hill was the place where Goddess Anjana gave birth to Lord Hanuman. And that's how the mountain got its name.">
+						<img src="<?= base_url('assets/images/PRIMG5.jpg')?>" class="img-responsive zoom-img" alt=" "/>
+						<div class="agile-b-wrapper">
+							<i class="fa fa-search-plus" aria-hidden="true"></i>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 w3-agileits-gallery1-grids agileits-gallery1-grids">
+					<a href="<?= base_url('assets/images/PRIMG4.jpg')?>" data-lightbox="example-set" data-title="Anjaneri Hills Nashik : Anjaneri Parvat is quite significant amongst the devotees as locals say that the cave on the top of the hill was the place where Goddess Anjana gave birth to Lord Hanuman. And that's how the mountain got its name.">
+						<img src="<?= base_url('assets/images/PRIMG4.jpg')?>" class="img-responsive zoom-img" alt=" "/>
+						<div class="agile-b-wrapper">
+							<i class="fa fa-search-plus" aria-hidden="true"></i>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 w3-agileits-gallery1-grids agileits-gallery1-grids">
+					<a  href="<?= base_url('assets/images/saputara.jpg')?>" data-lightbox="example-set" data-title="Saputara Hill Station – A perfect Hill Station for Monsoon : Saputra has situated around  80 km from Nashik City, is a beautiful and densely wooded hill station, ‘ Saputara’  situated in the “Dang” district of southern tip of Gujarat, India.">
+						<img src="<?= base_url('assets/images/saputara.jpg')?>" class="img-responsive zoom-img" alt=" "/>
+						<div class="agile-b-wrapper">
+							<i class="fa fa-search-plus" aria-hidden="true"></i>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3 w3-agileits-gallery1-grids agileits-gallery1-grids gallery1-two">
+					<a href="<?= base_url('assets/images/PRIMG1.jpg')?>" data-lightbox="example-set" data-title="Sula Vineyards – The Vineyards Story & Resort Around : Sula has rapidly established itself as India’s leading premium wine company. 
+					Known for its white and red wine, Sula has been winning kudos in their field and showing growth since their commencement.">
+						<img src="<?= base_url('assets/images/PRIMG1.jpg')?>" class="img-responsive zoom-img" alt=" "/>
+						<div class="agile-b-wrapper">
+							<i class="fa fa-search-plus" aria-hidden="true"></i>
+						</div>
+					</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="gallery1-grid-bottom">
+				<div class="col-md-4 w3-agileits-gallery1-grids">
+					<a href="<?= base_url('assets/images/VANI1.jpg')?>" data-lightbox="example-set" data-title="Shree Saptshrungi Gad Vani : Shree Saptshrungi Gad is situated at a distance of 60 km from Nashik in Kalwan Tahsil.
+					The temple is situated at 4659 feet above sea level, on a hill surrounded by seven peaks. It is considered to be Ardha Shaktipeeth out of Sadetin Shakti Peeths in Maharashtra. ">
+						<img src="<?= base_url('assets/images/VANI1.jpg')?>" class="img-responsive zoom-img" alt=" "/>
+						<div class="agile-b-wrapper">
+							<i class="fa fa-search-plus" aria-hidden="true"></i>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 w3-agileits-gallery1-grids">
+					<a href="<?= base_url('assets/images/trambak1.jpg')?>" data-lightbox="example-set" data-title="Trimbakeshwar Nashik :It is one of the holy places of not only Maharashtra but the whole India is near Nashik. Trimbakeshwar is one of the twelve Jyotirlingaas of Lord Shiva.">
+						<img src="<?= base_url('assets/images/trambak1.jpg')?>" class="img-responsive zoom-img" alt=" "/>
+						<div class="agile-b-wrapper">
+							<i class="fa fa-search-plus" aria-hidden="true"></i>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4 w3-agileits-gallery1-grids">
+					<a href="<?= base_url('assets/images/RamRath.jpeg')?>" data-lightbox="example-set" data-title="Ramnavmi Rath Yatrac : Ramnavmi Ratha Yatra is held during the festival of Janmotsava at the Sansthan Shri Kalaram Mandir at Panchavati which is dedicated to Lord Rama. The festival is which lasts for 15days begin from the first day of Chaitra till Chaitra Purnima.">
+						<img src="<?= base_url('assets/images/RamRath.jpeg')?>" class="img-responsive zoom-img" alt=" "/>
+						<div class="agile-b-wrapper">
+							<i class="fa fa-search-plus" aria-hidden="true"></i>
+						</div>
+					</a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+				<div class="clearfix"> </div>
+				
+
+			</div>	
+		</div>	
+	</div>
+<!-- //gallery -->
 		<!-- /services -->
 
 	<!-- contact -->

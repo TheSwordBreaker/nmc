@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Exert Design Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design">
-	<link rel="icon" type="image/png" href="icons/plane1.png">
+	<link rel="icon" type="image/png" href="<?= base_url('/assets/icons/plane.png') ?>">
 	<script type="application/x-javascript">
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
