@@ -79,9 +79,10 @@
 
 	<!--/counter-->
  <div class="agileinfo_counter_section" id="about">
+ <!-- style="background: url(<?= base_url('assets/images/').$sec2[0]->pic ?>)" -->
 		<div class="container">
-			<h3>Nashik</h3>
-			<p class="sub_para two">Nashik has a personality of its own, due to its mythological, historical, social and cultural importance. The city is situated on the banks of the Godavari River, making it one of the holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it that Lord Rama, the King of Ayodhya, made Nashik his adobe during his 14 years in exile. At the same place Lord Laxman, by the wish of Lord Rama, cut the nose of “Shurpnakha” and thus this city was named as “Nashik”.In Kritayuga, Nashik was ‘Trikantak’, ‘Janasthana’ in Dwaparyuga and later in Kuliyuga it became ‘Navashikh’ or ‘Nashik’. Renowed poets like Valmiki, Kalidas and Bhavabhooti have paid rich tributes here. Nashik in 150 BC.was beleived to be the country’s largets market place. From 1487 A.D, this province came under the rule of Mughals and was known as ‘Gulchanabad’. It was also home of emperor Akbar and he has written at lenght about Nashik in ‘Ein-e-Akbari’. It was also known as the ‘Land of the brave’ during the regime of Chhatrapati Shivaji Maharaj.</p>
+			<h3><?= $sec2[0]->name ?></h3>
+			<p class="sub_para two"><?= $sec2[0]->des ?> </p>
 			<h5><a href="#contact" class="view rew3 scroll"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>Contact Us</a></h5>
 		</div>
 	</div>
