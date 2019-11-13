@@ -21,14 +21,16 @@ class MainC extends CI_Controller{
     {
         $this->load->model('WorkM');
         $data = $this->WorkM->getculturepage();
-        
         $this->load->view('public/Culture',compact('data','sec2'));
     }
     
     public function Dest()
     {
-        $this->load->view('public/Destination');
+        $this->load->model('WorkM');
+        $data = $this->WorkM->GetS('destpage');
+        $this->load->view('public/Destination',compact('data'));
     }
+
     public function AboutUs()
     {
         $this->load->view('public/AboutUs');

@@ -98,59 +98,32 @@
       <h2 class="font-weight-light text-black text-center">Our Attractions</h2><br><br><br>
       <div class="container">
         <div class="row align-items-stretch">
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <a href="#" class="unit-1 text-center">
-              <img src="<?= base_url('assets/images/trambak1.jpg') ?>" alt="Image" class="img-fluid">
-              <div class="unit-1-text">
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <a href="#" class="unit-1 text-center">
-                <img src="<?= base_url('assets/images/VANI1.jpg') ?>" alt="Image" class="img-fluid"> 
 
-              <div class="unit-1-text">
-              </div>
-            </a>
-          </div>
+        <?php for ($i=0; $i < 3 ; $i++): ?>
+
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
             <a href="#" class="unit-1 text-center">
-                <img src="<?= base_url('assets/images/1.jpg') ?>" alt="Image" class="img-fluid"> 
-
+              <img src="<?= base_url('assets/images/').$data[$i]->img ?>" alt="Image" class="img-fluid">
               <div class="unit-1-text">
               </div>
             </a>
           </div>
+
+      <?php endfor; ?>
+
+       <?php for ($i=0; $i < 3 ; $i++): ?>
+
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            
             <div class="unit-4 d-flex">
               <div><br>
-                <h3>TRAMBAKESHWAR</h3>
-                <p>Counted as the holiest temple of India, the Trimbakeshwar Temple houses one of the most important twelve Jyotirlingas, a form of Lord Shiva.</p>
+                <h3><?= $data[$i]->name ?></h3>
+                <p><?= $data[$i]->des ?></p>
                 <p><a href="#">Learn More</a></p>
               </div>
             </div>
           </div>
-          
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="unit-4 d-flex">
-              <div><br>
-                <h3>Panchvati</h3>
-                <p>Nothing short of holy for the ardent belivers of Ramayana, this site gets a lots of visitors in the form of pilgrims and religious
-                  travellers.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-            <div class="unit-4 d-flex">
-              <div><br>
-                <h3>Saptshrungi Gad</h3>
-                <p>Situated on a hill range, consisting of seven hills, Saptashrungi is a site of religious significance for Hindus. The drive to the temple is quite scenic, especially during the monsoon season.</p>
-                <p><a href="#">Learn More</a></p>
-              </div>
-            </div>
-          </div>
+
+          <?php endfor; ?>
         </div>
       </div>
     </div>

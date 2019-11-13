@@ -53,7 +53,7 @@
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>Name:</label>
-                        <input type="text" class="form-control" placeholder="Enter a Name" name="Name" id="Name" value="<?=  $UserData[0]->con_name?>">
+                        <input type="text" class="form-control" placeholder="Enter a Name" name="Name" id="Name" value="<?=  $UserData[0]->name?>">
                       </div>
                     </div>
                   </div>
@@ -61,7 +61,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                       <label>Descripition:</label>
-                      <textarea class="form-control textarea" name="Descripition" id="Descripition" ><?=  $UserData[0]->con_des?></textarea>
+                      <textarea class="form-control textarea" name="Descripition" id="Descripition" ><?=  $UserData[0]->des?></textarea>
                       </div>
                     </div>
                   </div>
@@ -73,7 +73,7 @@
                   </div>             
 
                   <div class="col-md-12">
-                  <img src="<?= base_url('/assets/images/homepage/').$UserData[0]->con_img ?>"  width="200"> 
+                  <img src="<?= base_url('/assets/images/despage/').$UserData[0]->img ?>"  width="200"> 
                   </div>
                   
 
