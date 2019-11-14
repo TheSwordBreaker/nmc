@@ -14,7 +14,6 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
- 
   <link href="<?= base_url('/assets/css/login.css') ?> " rel="stylesheet" />
 </head>
 
@@ -99,24 +98,94 @@
             <p class="color-black-opacity-5" style="font-family: verdana;">Nashik has a personality of its own, due to its mythological, historical, social and cultural importance. The city is situated on the banks of the Godavari River, making it one of the holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it that Lord Rama.</p>
           </div>
         </div>
-        <div class="row">
-          <?php  for($i=0; $i < 12; $i++ ):?>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <a href="https://nashik.com/pande-mithai/" class="unit-1 text-center">
-              <img src="<?= base_url('assets/images/culturepage/').$data[$i]->img ?>" alt="Image" class="img-fluid">
-              <div class="unit-1-text">
-                <h3 class="unit-1-heading"> <?= $data[$i]->name ?> </h3>
-              </div>
-            </a>
-          </div>
-          <?php endfor ?>
-         
+
+
+
+<div class="card-deck">
+        <div>
+        <h2>Example heading <span class="badge badge-secondary">New</span></h2>
         </div>
+        <div class="row">
+
+
+
+
+<div class="col-md-4 ml-3">
+  <div class="card bg-dark text-white">
+      <div class="text-center">
+  <img class="card-img" src="https://www.australia.com/content/australia/en_in/things-to-do/food-and-drinks/australias-trendiest-food-and-wine-experiences/_jcr_content/imagePortrait.adapt.740.medium.jpg" alt="Card image">
+  <div class="card-img-overlay">
+    <h1 class="card-title" style="position: absolute;
+    bottom: 2rem;">Card title</h1>
+         
+            </div>
       </div>
-    
+</div>
+</div>
+
+
+
+  <div class="col-md-4 ml-3">
+    <div class="card">
+        
+        <img class="card-img-top " src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
+        <div class="card-body">
+        <!-- <div class="card-header card-header-success">
+            <h4 class="card-title">Full header coloured</h4>
+            <p class="category">Category subtitle</p>
+        </div> -->
+        <h4 class="card-title">Here is the Icon</h4>
+              The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona...
+        </div>
+        <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
     </div>
-    
     </div>
+  </div>
+
+
+
+  
+
+
+
+
+
+
+      </div>
+    </div>
+</div>
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+</div>
+
+
+</div>
+
     
   
   <footer class="footer" data-background-color="black">

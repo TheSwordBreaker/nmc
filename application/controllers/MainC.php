@@ -11,16 +11,16 @@ class MainC extends CI_Controller{
     public function index()
     {   
         $this->load->model('WorkM');
-        $data = $this->WorkM->getMain();
-        $sec2 = $this->WorkM->gets('homeSec2');
-        $sec3 = $this->WorkM->gets('homeSec3');
+        $data = $this->WorkM->Gets('homepage');
+        $sec3 = $this->WorkM->Gets('homeSec3');
+        $sec2 = $this->WorkM->Gets('homeSec2');
         $this->load->view('public/home',compact('data','sec2','sec3'));
     }
 
-    public function Cul()
+    public function FoodStuff()
     {
         $this->load->model('WorkM');
-        $data = $this->WorkM->getculturepage();
+        $data = $this->WorkM->Gets('culturepage');
         $this->load->view('public/Culture',compact('data','sec2'));
     }
     
@@ -30,6 +30,15 @@ class MainC extends CI_Controller{
         $data = $this->WorkM->GetS('destpage');
         $this->load->view('public/Destination',compact('data'));
     }
+
+    public function Cul()
+    {
+        $this->load->model('WorkM');
+        $data = $this->WorkM->Gets('culturepage');
+        $this->load->view('public/Culture',compact('data','sec2'));
+        // $this->load->view('public/FoodStuff',compact('data','sec2'));
+    }
+
 
     public function AboutUs()
     {

@@ -507,7 +507,7 @@ public function UpdateImg($path,$tempImg){
 
 ?>
 
-/* 
+<!--
 
 
     public function View  ()
@@ -617,4 +617,4 @@ public function UpdateImg($path,$tempImg){
         }            
     }
 
-*/
+-->
