@@ -1,0 +1,51 @@
+
+
+problems /
+
+1. Due to two different theme in home and dest,cul page we need two different types of boostrape versions and js files as will and size of image is also a big problem in loading time
+
+2. Current tempoary header and navbar and footer are used to avoid this but we need a permanet solution
+3. Ethere the single home page or both cul,Dest have to change.
+
+Work Done/
+
+1. Css,JS,Img and all href and links are changes with base_url
+2. Internal working structure and links are doing properly
+3. Different header, Nav,Footer are created.
+4. login system is created
+
+**Views
+
+public/
+1.home
+2.Culutre
+3.Destination
+4.Footer
+    Footer
+5.Header
+    Header2
+6.Navbar
+	Navbar2
+7.login
+
+private/
+1.dashboard
+2.adderuser
+3.viewuser
+
+**Controlier
+
+MainC
+	index
+	cal
+	dest
+WorkC
+	AuthUser
+
+UserC
+	logout
+
+**Model
+
+WorkM
+	CheckUserName
