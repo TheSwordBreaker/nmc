@@ -35,8 +35,8 @@ class MainC extends CI_Controller{
     {
         $this->load->model('WorkM');
         $data = $this->WorkM->Gets('culturepage');
-        $this->load->view('public/Culture',compact('data','sec2'));
-        // $this->load->view('public/FoodStuff',compact('data','sec2'));
+        $this->load->view('public/Culture',compact('data'));
+        $this->load->view('public/FoodStuff',compact('data'));
     }
 
 

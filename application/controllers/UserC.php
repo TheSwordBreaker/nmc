@@ -45,6 +45,14 @@ class UserC extends CI_Controller{
         $this->load->view('private/ViewCulturePage',compact('UserData'));
     }
 
+    public function ViewFoodPage()
+    {
+        $this->load->model('WorkM');
+        $UserData = $this->WorkM->Gets('foodpage');
+        $this->load->view('private/ViewFoodPage',compact('UserData'));
+    }
+
+
     public function map()
     {
         $this->load->view('private/map.php');
@@ -322,6 +330,7 @@ class UserC extends CI_Controller{
         }
         else{   
             
+
             $data['img']=$this->UpdateImg('./assets/images/culturepage/',$tempImg);
             
         }
@@ -463,6 +472,115 @@ class UserC extends CI_Controller{
     }
 
 // Destpage - end
+
+
+// FoodPage - Start 
+
+   
+
+public function loadAddFoodpage()
+{   
+    $up=0;
+    $this->load->view('private/AddFoodpage',compact('up'));
+}
+
+public function loadEditFoodpage($id)
+{   
+    $this->load->model('WorkM');
+    $query = $this->db->where(['id'=>$id])->get('foodpage');
+    $UserData = $query->result();
+    $up=1;
+    $this->load->view('private/AddFoodpage',compact('UserData','up'));
+}
+
+public function AddFoodpage()
+{
+    $na = $this->input->post('Name');
+    $de = $this->input->post('Descripition');
+    
+   
+    $config['upload_path']          = './assets/images/foodpage';
+    $config['allowed_types']        = 'gif|jpg|png';
+    // $config['max_size']             = 10000;
+    // $config['max_width']            = 1024;
+    // $config['max_height']           = 768;
+
+    $this->load->library('upload', $config);
+    if ( ! $this->upload->do_upload('userfile'))
+    {
+        $this->session->set_flashdata('error', 'Inalid DATA');
+        $this->AddHomePage();      // $this->load->view('upload_form', $error);
+    }
+    else
+    {
+          $im = $this->upload->data('file_name');
+            $data = array(
+                            
+                            'img ' => $im,
+                            'name' => $na,
+                            'des'  => $de);
+            // $this->load->view('upload_success', $data);
+
+            $this->load->model('WorkM');
+
+            if($this->WorkM->InsertK('destpage',$data)){
+                return $this->ViewDestpage();
+                // echo "done";
+            }else{
+                $this->session->set_flashdata('error', 'Inalid DATA');
+                $this->AddDestpage();
+            }
+    }
+}
+
+public function EditDestpage($id)
+{
+    $this->load->model('WorkM');
+    
+    $i = $this->WorkM->GetRow('destpage',$id);
+    $tempImg = $i[0]->img;
+
+    $na = $this->input->post('Name');
+    $de = $this->input->post('Descripition');
+    $img = $_FILES['userfile']['name'];
+
+    $data = array('img ' => '',
+                'name' => $na,
+                'des'  => $de);
+   
+    if($img == '' or $img == $tempImg){
+        $data['img']=$tempImg; 
+    }
+   else
+   {
+       $data['img']=$this->UpdateImg('./assets/images/despage/',$tempImg);
+   }
+
+    if($this->WorkM->UpdateK('destpage',$id,$data)){
+        return $this->ViewDestpage();
+    }else{
+        $this->session->set_flashdata('error', 'Inalid DATA');
+        $this->AddDestpage();
+    }
+}
+
+public function RemoveDestpage($id)
+{
+    $this->load->model('WorkM');
+    $i = $this->WorkM->GetRow('destpage',$id);
+    $tempImg = $i[0]->img;
+    
+    if($this->WorkM->DeleteK('destpage',$id)){
+            // Delete image data 
+        $this->delImg('./assets/images/despage/'.$tempImg); 
+        $this->ViewDestpage();
+    }else{
+        return false;
+    }            
+}
+
+// Destpage - end
+
 
 
 // other - functions
