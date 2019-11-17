@@ -20,7 +20,9 @@
                 <div class="table-responsive">
                   <table class="table table-striped ">
                     <thead class=" text-primary">
-                      <tr><th>
+                      <tr>
+                      <th>Checked</th>
+                      <th>
                        Id
                       </th>
                       <th>
@@ -38,6 +40,13 @@
                     <tbody>
                     <?php foreach($UserData as $d):?>
                       <tr>
+                      <td>
+                      <?php   if($d->active==1):?>
+                          <input type="checkbox" style="text-align:center;" checked> 
+                      <?php else:?>                      
+                          <input type="checkbox" style="text-align:center;" >
+                      <?php endif;?>
+                      </td>
                       <td scope="row"> <?= $d->id ?></td>
                         <td> <?= $d->name ?>  </td>
                         <td> <?= $d->des ?>  </td>
@@ -48,6 +57,8 @@
                       <?php endforeach ?> 
                     </tbody>
                   </table>
+                  <button type="button" class="btn btn-success">Submit</button>
+
                 </div>
               </div>
             </div>

@@ -389,6 +389,7 @@ class UserC extends CI_Controller{
     {
         $na = $this->input->post('Name');
         $de = $this->input->post('Descripition');
+        $ce =$this->input->post('Checkbox');
         
        
         $config['upload_path']          = './assets/images/despage';
@@ -410,8 +411,17 @@ class UserC extends CI_Controller{
                                 
                                 'img ' => $im,
                                 'name' => $na,
-                                'des'  => $de);
+                                'des'  => $de,
+                                'active'=>$ce
+                            );
                 // $this->load->view('upload_success', $data);
+
+                if(null!==($this->input->post('Checkbox'))) {
+                    $data['active'] = '1';
+        } else {
+                    $data['active'] = '0';
+        };
+           
 
                 $this->load->model('WorkM');
 
@@ -434,11 +444,24 @@ class UserC extends CI_Controller{
 
         $na = $this->input->post('Name');
         $de = $this->input->post('Descripition');
+        $ce= $this->input->post('Checkbox');
+
+       
+
         $img = $_FILES['userfile']['name'];
+        $ce= $this->input->post('Checkbox');
 
         $data = array('img ' => '',
                     'name' => $na,
-                    'des'  => $de);
+                    'des'  => $de,
+             'active' =>$ce
+            );
+
+            if(null!==($this->input->post('Checkbox'))) {
+                $data['active'] = '1';
+    } else {
+                $data['active'] = '0';
+    };
        
         if($img == '' or $img == $tempImg){
             $data['img']=$tempImg; 
@@ -447,7 +470,9 @@ class UserC extends CI_Controller{
        {
            $data['img']=$this->UpdateImg('./assets/images/despage/',$tempImg);
        }
-    
+    //    echo "<pre>";
+    //    print_r($data);
+    //    echo "</pre>";
         if($this->WorkM->UpdateK('destpage',$id,$data)){
             return $this->ViewDestpage();
         }else{
@@ -478,7 +503,7 @@ class UserC extends CI_Controller{
 
    
 
-public function loadAddFoodpage()
+/*public function loadAddFoodpage()
 {   
     $up=0;
     $this->load->view('private/AddFoodpage',compact('up'));
@@ -533,7 +558,7 @@ public function AddFoodpage()
     }
 }
 
-public function EditDestpage($id)
+public function EditFoodpage($id)
 {
     $this->load->model('WorkM');
     
@@ -564,7 +589,7 @@ public function EditDestpage($id)
     }
 }
 
-public function RemoveDestpage($id)
+public function RemoveFoodpage($id)
 {
     $this->load->model('WorkM');
     $i = $this->WorkM->GetRow('destpage',$id);
@@ -579,7 +604,7 @@ public function RemoveDestpage($id)
     }            
 }
 
-// Destpage - end
+// Destpage - end*/
 
 
 
