@@ -12,8 +12,8 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="<?= base_url('/assets/css2/bootstrap.min.css')?>" rel="stylesheet" />
-  <link href="<?= base_url('/assets/css2/paper-dashboard.css')?>" rel="stylesheet" />
+  <link href="<?= base_url('/assets/admin/css/bootstrap.min.css')?>" rel="stylesheet" />
+  <link href="<?= base_url('/assets/admin/css/paper-dashboard.css')?>" rel="stylesheet" />
   
 </head>
 

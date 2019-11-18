@@ -22,28 +22,135 @@ class UserC extends CI_Controller{
         $this->load->view('private/dashboard',compact('UserData'));
     }
 
-    public function ViewUsers()
-    {
-        $this->load->model('WorkM','user');
-        $UserData = $this->user->Gets('users');     
-        $this->load->view('private/ViewUsers',compact('UserData'));
-    }
-
-   
-
-    public function ViewDestPage()
+    public function View($k)
     {
         $this->load->model('WorkM');
-        $UserData = $this->WorkM->Gets('DestPage');
-        $this->load->view('private/ViewDestpage',compact('UserData'));
+        $UserData = $this->WorkM->Gets($k);  
+        $Page['title'] = $k;   
+        $Page['data'] = $this->load->view('AdminTemplate/View',compact('UserData','k'),True);
+        $this->load->view('AdminTemplate/Base',compact('Page'));
+    }
+    
+    
+    public function LoadAdd($k)
+    {   
+        $up=0; 
+        $this->load->model('WorkM');
+        $UserData = $this->WorkM->Gets($k);  
+        $Page['title'] = $k;   
+        $Page['data'] = $this->load->view('AdminTemplate/Form',compact('UserData','k','up'),True);
+        $this->load->view('AdminTemplate/Base',compact('Page'));
     }
 
-    public function ViewCulturePage()
+    public function loadEdit($k,$id)
+    {   
+        $this->load->model('WorkM');
+        $up=1;
+        $UserData =  $this->WorkM->GetRow($k,$id);
+        $Page['title'] = $k;   
+        $Page['data'] = $this->load->view('AdminTemplate/Form',compact('UserData','k','up'),True);
+        $this->load->view('AdminTemplate/Base',compact('Page'));
+    }
+
+    public function Add($k)
+    {
+        $na = $this->input->post('Name');
+        $de = $this->input->post('Descripition');
+       
+        $config['upload_path']          = './assets/images/'.$k ;
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
+        // $config['max_size']             = 10000;
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+        if ( ! $this->upload->do_upload('userfile'))
+        {
+            $this->session->set_flashdata('error', 'Inalid DATA');
+            $this->Add($k);      // $this->load->view('upload_form', $error);
+        }
+        else
+        {
+              $im = $this->upload->data('file_name');
+                $data = array(
+                                'img ' => $im,
+                                'name' => $na,
+                                'des'  => $de);
+                // $this->load->view('upload_success', $data);
+
+                $this->load->model('WorkM');
+
+                if($this->WorkM->InsertK($k,$data)){
+                    return $this->View($k);
+                    // echo "done";
+                }else{
+                    $this->session->set_flashdata('error', 'Inalid DATA');
+                    $this->Add($k);
+                }
+        }
+    }
+
+
+
+    public function Edit($k,$id)
     {
         $this->load->model('WorkM');
-        $UserData = $this->WorkM->Gets('culturepage');
-        $this->load->view('private/ViewCulturePage',compact('UserData'));
+        $data = array(  'name' => '',
+        'des'  => '',
+        'img'  => ''   );
+        
+        $i = $this->WorkM->GetRow($k,$id);
+        $tempImg = $i[0]->img;
+        $data['name'] = $this->input->post('Name');
+        $data['des'] = $this->input->post('Descripition');
+        $img = $_FILES['userfile']['name'];
+        
+        $data = array(  'name' => $na,
+                        'des'  => $de ,
+                        'img'  => ''   );
+                        // echo $img;
+                        // echo $tempImg;
+                        
+        if($img == '' or $img == $tempImg){
+            $data['img']=$tempImg; 
+        }
+       else{
+        $data['img']=$this->UpdateImg('./assets/images/'.$k.'/',$tempImg);
+       } 
+                
+        if($this->WorkM->UpdateK($k,$id,$data)){
+            return $this->View($k);
+        }else{
+            $this->session->set_flashdata('error', 'Inalid DATA');
+            $this->Add($k);
+        }
+        
+        
+        
+        
     }
+    
+    public function Remove($k,$id)
+    {
+        
+            $this->load->model('WorkM');
+            $i = $this->WorkM->getRow($k,$id);
+            $tempImg = $i[0]->img;
+           
+            if($this->WorkM->Deletek($k,$id)){
+                 // Delete image data 
+                 $this->delImg('./assets/images/'.$k."/".$tempImg);
+                $this->View($k);
+            }else{
+                return false;
+            }
+           
+            
+        
+    }
+
+
+    
 
     public function map()
     {
@@ -255,7 +362,10 @@ class UserC extends CI_Controller{
     public function loadAddCulturePage()
     {   
         $up=0;
-        $this->load->view('private/AddCulturePage',compact('up'));
+        $Page['title'] = "Culture" ;
+        $Page['data'] = $this->load->view('private/example',compact('up'),True);
+        $this->load->view('private/Base',compact('Page'));
+        // $this->load->view('private/AddCulturePage',compact('up'));
     }
 
     public function loadEditCulturePage($id)

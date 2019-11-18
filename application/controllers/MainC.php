@@ -30,19 +30,35 @@ class MainC extends CI_Controller{
         $data = $this->WorkM->GetS('destpage');
         $this->load->view('public/Destination',compact('data'));
     }
-
+    
     public function Cul()
     {
         $this->load->model('WorkM');
-        $data = $this->WorkM->Gets('culturepage');
-        $this->load->view('public/Culture',compact('data','sec2'));
-        // $this->load->view('public/FoodStuff',compact('data','sec2'));
+        // $data = $this->WorkM->Gets('culturepage');
+        $data = $this->WorkM->GetS('destpage');
+        // $this->load->view('public/Culture',compact('data','sec2'));
+        $this->load->view('public/FoodStuff',compact('data','sec2'));
     }
+
+    public function Cul2()
+    {
+        $this->load->model('WorkM');
+        // $data = $this->WorkM->Gets('culturepage');
+        $data = $this->WorkM->GetS('destpage');
+        // $this->load->view('public/Culture',compact('data','sec2'));
+        $this->load->view('public/FoodStuff copy',compact('data','sec2'));
+    }
+
 
 
     public function AboutUs()
     {
         $this->load->view('public/AboutUs');
+    }
+
+    public function DestPlace()
+    {
+        $this->load->view('public/BaseDest.php');
     }
 
     

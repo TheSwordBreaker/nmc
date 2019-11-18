@@ -22,21 +22,21 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="<?= base_url('/assets/js2/core/jquery.min.js')?>"></script>
-  <script src="<?= base_url('/assets/js2/core/popper.min.js')?>"></script>
+  <script src="<?= base_url('/assets/admin/js/core/jquery.min.js')?>"></script>
+  <script src="<?= base_url('/assets/admin/js/core/popper.min.js')?>"></script>
 
-  <script src="<?= base_url('/assets/js2/core/bootstrap.min.js')?>"></script>
-  <script src="<?= base_url('/assets/js2/plugins/perfect-scrollbar.jquery.min.js')?>"></script>
+  <script src="<?= base_url('/assets/admin/js/core/bootstrap.min.js')?>"></script>
+  <script src="<?= base_url('/assets/admin/js/plugins/perfect-scrollbar.jquery.min.js')?>"></script>
   <!--  Google Maps Plugin    -->
  <!--  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
   <!-- Chart JS -->
-  <script src="<?= base_url('/assets/js2/plugins/chartjs.min.js')?>"></script>
+  <script src="<?= base_url('/assets/admin/js/plugins/chartjs.min.js')?>"></script>
   <!--  Notifications Plugin    -->
-  <script src="<?= base_url('/assets/js2/plugins/bootstrap-notify.js')?>"></script>
+  <script src="<?= base_url('/assets/admin/js/plugins/bootstrap-notify.js')?>"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="<?= base_url('/assets/js2/paper-dashboard.min.js')?>"></script>
+  <script src="<?= base_url('/assets/admin/js/paper-dashboard.min.js')?>"></script>
   <!-- TP -->
-  <script src="<?= base_url('/assets/demo/demo.js')?>"></script>
+  <script src="<?= base_url('/assets/admin/demo/demo.js')?>"></script>
   <script>
     $(document).ready(function() {
       // Javascript methods body can be found in assets/assets-for-demo/js/demo.js

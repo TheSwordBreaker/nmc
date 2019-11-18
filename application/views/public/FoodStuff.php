@@ -1,122 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('/assets/images/apple-icon.png')?>">
-  <link rel="icon" type="image/png" href="<?= base_url('/assets/icons/plane.png') ?>">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    Nashik Tourism &mdash; Culture
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  <!-- CSS Files -->
-  <link href="<?= base_url('/assets/css/login.css') ?> " rel="stylesheet" />
-</head>
 
-<body class="index-page sidebar-collapse">
-  <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
-    
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="<?= base_url('MainC/')?>">
-          <i class="fa fa-plane"> </i>
-           NASHIK TOURISM  </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-          <!-- <li class="dropdown nav-item" style="letter-spacing: 1px; font-family: verdana;">
-            <a href="index.html" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                <i class="material-icons">home</i><b> Home </b>
-            </a>
-             <div class="dropdown-menu dropdown-with-icons">
-              <a href="./index.html" class="dropdown-item">
-                <i class="material-icons">layers</i> All Components
-              </a>
-            </div> 
-          </li> -->
-          <li class="nav-item" style="letter-spacing: 1px; font-family: verdana;" >
-            <a class="nav-link" href="<?= base_url('MainC/')?>">
-              <b> Home </b>
-            </a>
-          </li>
-          <li class="nav-item" style="letter-spacing: 1px; font-family: verdana;" >
-            <a class="nav-link" href="<?= base_url('MainC/Dest')?>">
-              <b> Destination </b>
-            </a>
-          </li>
-          <li class="nav-item" style="letter-spacing: 1px; font-family: verdana;">
-            <a class="nav-link" href="<?= base_url('WorkC/')?>">
-              <b> Login </b>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Follow us on Twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Like us on Facebook">
-              <i class="fa fa-facebook-square"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Follow us on Instagram">
-              <i class="fa fa-instagram"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="page-header header-filter " data-parallax="true" style="background-image: url(<?= base_url('assets/images/j6.jpg') ?>);">
+
+
+<?php require('Header2.php') ?>
+
+
+
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url(<?= base_url('assets/images/j6.jpg') ?>)">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 ml-auto mr-auto">
-          <div class="brand">
-            <!-- <h2><b> Never Stop Exploring </b></h2> -->
-          </div>
-        </div>
+        <!-- <div class="col-md-6">
+          <h1 class="title">Your Story Starts With Us.</h1>
+          <h4>Every landing page needs a small description after the big bold title, that&apos;s why we added this text here. Add here all the information that can make you or your product create the first impression.</h4>
+          <br>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
+            <i class="fa fa-play"></i> Watch video
+          </a>
+        </div> -->
       </div>
     </div>
   </div>
   <div class="main main-raised">
-    <div class="site-section">
-      
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center">
-            <h2 class="font-weight-light text-black">Culture and Food!!!</h2>
-            <p class="color-black-opacity-5" style="font-family: verdana;">Nashik has a personality of its own, due to its mythological, historical, social and cultural importance. The city is situated on the banks of the Godavari River, making it one of the holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it that Lord Rama.</p>
+    <div class="container">
+      <div class="section text-center">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <h2 class="title">Foods !!!</h2>
+            <h5 class="description">Nashik has a personality of its own, due to its mythological, historical, social and cultural importance. The city is situated on the banks of the Godavari River, making it one of the holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it that Lord Rama.</h5>
           </div>
         </div>
 
 
-
-<div class="card-deck">
-        <div>
-        <h2>Example heading <span class="badge badge-secondary">New</span></h2>
-        </div>
-        <div class="row">
+        <hr>
 
 
 
+        
+<div class="col-md-12 bg-light w-100">
+  <div class="px-auto ">
+        
+        <div class="row padding">
 
-<div class="col-md-4 ml-3">
+
+
+
+<div class="col-md-4 ">
   <div class="card bg-dark text-white">
       <div class="text-center">
-  <img class="card-img" src="https://www.australia.com/content/australia/en_in/things-to-do/food-and-drinks/australias-trendiest-food-and-wine-experiences/_jcr_content/imagePortrait.adapt.740.medium.jpg" alt="Card image">
-  <div class="card-img-overlay">
-    <h1 class="card-title" style="position: absolute;
-    bottom: 2rem;">Card title</h1>
+  <img class="card-img img-fluid img-responsive w-100" style="height: 361px" src="<?= base_url('/assets/images/FoodSec1/sadhna-misal2.png'); ?>" alt="Card image">
+  <div class="card-img-overlay  d-flex flex-column justify-content-end">
+    <h1 class="card-title display-3 ">Nashik's Best Spicy Food</h1>
          
             </div>
       </div>
@@ -124,16 +57,65 @@
 </div>
 
 
+<div class="col-md-4">
+  <div class="card bg-dark text-white">
+    <div class="text-center">
+      
+      <img class="card-img img-responsive img-fluid w-100" style="height:361px;" src="<?= base_url('/assets/images/FoodSec1/cul3.png'); ?>" alt="Card image">
+      
+      <div class="card-img-overlay d-flex flex-column justify-content-end">
+        <h1 class="card-title display-3">Cool Nashik</h1>
+      </div>
 
-  <div class="col-md-4 ml-3">
-    <div class="card">
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4 ">
+  <div class="card bg-dark text-white">
+      <div class="text-center">
+  <img class="card-img img-responsive img-fluid w-100" style="height: 361px;" src="<?= base_url('/assets/images/FoodSec1/pande mithai.jpg'); ?>" alt="Card image">
+  <div class="card-img-overlay d-flex flex-column justify-content-end">
+    <h1 class="card-title display-3" >Delisious Desserts</h1>
+         
+            </div>
+      </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<hr class="w-75 ">
+
+
+
+
+
+
+
+
+
+        <div class="features">
+          <div class="row">
+          <div class="m-auto">
+        <h2 class="title">Nashik's Trendiest Food </h2>
+        </div>
+  <div class="container-fluid mx-auto">
+
+    <div class="row padding">
+
+      <div class="col-md-6">
+      <div class="card" style="height:35rem">
         
-        <img class="card-img-top " src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
+        <img class="card-img-top " src="<?= base_url('/assets/images/FoodSec2/krishna vadapav.jpg');  ?>" style="height:100%" alt="Card image cap">
         <div class="card-body">
-        <!-- <div class="card-header card-header-success">
-            <h4 class="card-title">Full header coloured</h4>
-            <p class="category">Category subtitle</p>
-        </div> -->
+         <div class="card-header card-header-success">
+            <h3 class="card-title">	Vada Pav</h3>
+            <!-- <p class="category">Category subtitle</p> -->
+        </div> 
         <h4 class="card-title">Here is the Icon</h4>
               The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona...
         </div>
@@ -141,95 +123,216 @@
       <small class="text-muted">Last updated 3 mins ago</small>
     </div>
     </div>
-  </div>
-
-
-
-  
-
-
-
-
-
 
       </div>
+
+      <div class="col-md-6">
+      <div class="card" style="height:35rem">
+        <img class="card-img-top " style="height:20rem" src="<?= base_url('/assets/images/FoodSec2/rock N roll.png'); ?>" alt="Card image cap">
+        <div class="card-body">
+         <div class="card-header card-header-success">
+            <h3 class="card-title">Rock And Roll</h3>
+            <!-- <p class="category">Category subtitle</p> -->
+        </div> 
+        <h4 class="card-title">Here is the Icon</h4>
+              The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona...
+        </div>
+        <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
     </div>
-</div>
-<div class="card-deck">
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
-</div>
+      </div>
 
 
-</div>
+    </div>
 
-    
+  </div>   
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+  <!--  carousel  -->
+    <div class="section" id="carousel">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mr-auto ml-auto">
+            <!-- Carousel Card -->
+            <div class="card card-raised card-carousel">
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100 h-100" style="height:fit-content" src="<?= base_url('assets/images/FoodSec3/shuakin1.jpg') ?>" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h4>
+                        <i class="material-icons">location_on</i> Yellowstone National Park, United States
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100 h-100" style="height:fit-content" src="<?= base_url('assets/images/FoodSec3/shwarama1.png') ?>" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h4>
+                        <i class="material-icons">location_on</i> Somewhere Beyond, United States
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100 h-100" style="height:fit-content" src="<?= base_url('assets/images/FoodSec3/momos2.png') ?>" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h4>
+                        <i class="material-icons">location_on</i> Yellowstone National Park, United States
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <i class="material-icons">keyboard_arrow_left</i>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <i class="material-icons">keyboard_arrow_right</i>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+            <!-- End Carousel Card -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--         end carousel -->
+
+
+
+
+      <div class="section text-center">
+        <h2 class="title">Great Misal Points</h2>
+        <div class="team pt-3">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="team-player">
+                <div class="card card-plain px-3">
+                    <img src="<?= base_url('assets/images/FoodSec4/sathna-misal1.png') ?>" alt="Thumbnail Image" class="img-resized">
+                  <h4 class="card-title">Sadhana Misal:
+                    <br>
+                    <small class="card-description text-muted">Model</small>
+                  </h4>
+                  <div class="card-body">
+                    <p class="card-description text-justify">A stronghold with cheery ambiance where the radiant aroma of sizzling flavors is in the air.  Designed with a village-setting, the hotel showcases hybrid birds and animals including Emu, Turkey, camels for visitors. The hotel is well-known in Nashik as ‘Chulivarchi Misal’.</p>
+                    <p><a href="#" class="btn btn-info m-auto">Learn More</a></p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="team-player">
+                <div class="card card-plain px-3">
+                 
+                    <img src="<?= base_url('assets/images/FoodSec4/sham-sundar1.jpg') ?>" alt="Thumbnail Image" class=" img-resized">
+                  
+                  <h4 class="card-title">Shamsundar Misal 
+                    <br>
+                    <small class="card-description text-muted">Designer</small>
+                  </h4>
+                  <div class="card-body">
+                    <p class="card-description text-justify">Even though this hotel is situated near industrial area, their Misal pav is high on demand. Shamsundar Misal was one of the popular Misal point years ago. Down to increasing competition, the hotel must have lost its name but is striving hard to gain its name and fame by delivering a first class Misal.</p></p>
+
+                       <p><a href="#" class="btn btn-info mb-auto">Learn More</a></p>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="team-player">
+                <div class="card card-plain px-3">
+                 
+                    <img src="<?= base_url('assets/images/FoodSec4/mamacha-mala2.jpg') ?>" alt="Thumbnail Image" class="img-resized img-responsive">
+                  <h4 class="card-title">Mamachya Mala
+                    <br>
+                    <small class="card-description text-muted">Model</small>
+                  </h4>
+                  <div class="card-body">
+                    <p class="card-description text-justify">Mamachya Mala perfect for its delicious Misal, is moreover famous for Jalebis. Based on a village-setting, this is a real good place to be visited in weekends with family. The hotel situated in Makhmalabad-Mahsrul link road, will most of all, let
+                  
+                      <p><a href="#" class="btn btn-info mb-auto">Learn More</a></p>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+
+    </div>
+  </div>
+
+
+
+
   
-  <footer class="footer" data-background-color="black">
+  <footer class="footer footer-default">
     <div class="container">
       <nav class="float-left">
         <ul>
           <li>
-            <a href="<?= base_url('MainC/')?>">
-              Home
+            <a href="https://www.creative-tim.com">
+              Creative Tim
             </a>
           </li>
           <li>
-            <a href="<?= base_url('MainC/Dest')?>">
+            <a href="https://creative-tim.com/presentation">
               About Us
             </a>
           </li>
           <li>
-            <a href="<?= base_url('MainC/Dest')?>">
-             Destination
+            <a href="http://blog.creative-tim.com">
+              Blog
             </a>
           </li>
           <li>
-            <a href="<?= base_url('WorkC/')?>">
-              Login
+            <a href="https://www.creative-tim.com/license">
+              Licenses
             </a>
           </li>
         </ul>
       </nav>
-       <div class="copyright float-right" style="font-family: verdana; font-size: 15px;">
-        © 2019 Nashik Tourism. All rights reserved | Design by GPN Students
+      <div class="copyright float-right">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>, made with <i class="material-icons">favorite</i> by
+        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
       </div>
     </div>
   </footer>
   <!--   Core JS Files   -->
-  <script src="<?= base_url('/assets/js/core/jquery.min.js') ?>" type="text/javascript"></script>
-  <script src="<?= base_url('/assets/js/core/popper.min.js') ?>" type="text/javascript"></script>
-  <script src="<?= base_url('/assets/js/core/bootstrap-material-design.min.js')?>" type="text/javascript"></script>
-  <!--  Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-  <script src="./assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-  <script src="<?= base_url('/assets/js/plugins/moment.min.js') ?>" type="text/javascript"></script>
+  <script src="../assets/js2/core/jquery.min.js" type="text/javascript"></script>
+  <script src="../assets/js2/core/popper.min.js" type="text/javascript"></script>
+  <script src="../assets/js2/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+  <script src="../assets/js2/plugins/moment.min.js"></script>
+  <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+  <script src="../assets/js2/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="<?= base_url('/assets/js/plugins/nouislider.min.js') ?>" type="text/javascript"></script>
+  <script src="../assets/js2/plugins/nouislider.min.js" type="text/javascript"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
-  <script src="<?= base_url('/assets/js/login.js') ?>" type="text/javascript"></script>
+  <script src="../assets/js2/material-kit.js?v=2.0.6" type="text/javascript"></script>
   <script>
     $(document).ready(function() {
       //init DateTimePickers
