@@ -28,7 +28,8 @@ class MainC extends CI_Controller{
     {
         $this->load->model('WorkM');
         $data = $this->WorkM->GetS('destpage');
-        $this->load->view('public/Destination',compact('data'));
+        $n= $this->db->count_all('destpage');  
+        $this->load->view('public/Destination',compact('data','n'));
     }
 
     public function Cul()

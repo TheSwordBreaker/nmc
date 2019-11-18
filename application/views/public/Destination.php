@@ -99,19 +99,29 @@
       <div class="container">
         <div class="row align-items-stretch">
 
-        <?php for ($i=0; $i < 3 ; $i++): ?>
+        
+        
+        <?php for ($i=0; $i < $n ; $i++): ?>
+                <?php if($data[$i]->active==1):?>
+          
 
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+         <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
             <a href="#" class="unit-1 text-center">
               <img src="<?= base_url('assets/images/').$data[$i]->img ?>" alt="Image" class="img-fluid">
               <div class="unit-1-text">
               </div>
             </a>
           </div>
+          <?php endif;?>
 
-      <?php endfor; ?>
+<?php endfor; ?>
+s
 
-       <?php for ($i=0; $i < 3 ; $i++): ?>
+    
+
+          <?php for ($i=0; $i < $n ; $i++): ?>
+            <?php if($data[$i]->active==1):?>
+
 
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="unit-4 d-flex">
@@ -122,6 +132,7 @@
               </div>
             </div>
           </div>
+         <?php endif;?>
 
           <?php endfor; ?>
         </div>

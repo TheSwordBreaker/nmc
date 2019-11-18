@@ -420,23 +420,28 @@ class UserC extends CI_Controller{
                     $data['active'] = '1';
         } else {
                     $data['active'] = '0';
-        };
+        }}
            
 
                 $this->load->model('WorkM');
-
-                if($this->WorkM->InsertK('destpage',$data)){
-                    return $this->ViewDestpage();
+                if($this->WorkM->ConfirmK('destpage'))
+                {    if($this->WorkM->InsertK('destpage',$data))
+                    {
+                        return $this->ViewDestpage();
                     // echo "done";
-                }else{
-                    $this->session->set_flashdata('error', 'Inalid DATA');
-                    $this->AddDestpage();
+                    }else
+                    {
+                         $this->session->set_flashdata('error', 'Inalid DATA');
+                         $this->AddDestpage();
+                    }
                 }
-        }
+                else{
+                    echo "plss select only 3 fields to display...";
+                }
     }
  
     public function EditDestpage($id)
-    {
+{
         $this->load->model('WorkM');
         
         $i = $this->WorkM->GetRow('destpage',$id);
@@ -445,6 +450,7 @@ class UserC extends CI_Controller{
         $na = $this->input->post('Name');
         $de = $this->input->post('Descripition');
         $ce= $this->input->post('Checkbox');
+        
 
        
 
@@ -457,30 +463,41 @@ class UserC extends CI_Controller{
              'active' =>$ce
             );
 
-            if(null!==($this->input->post('Checkbox'))) {
+            if(null!==($this->input->post('Checkbox'))) 
+            {
                 $data['active'] = '1';
-    } else {
+                
+            } else 
+            {
                 $data['active'] = '0';
-    };
+            };
        
-        if($img == '' or $img == $tempImg){
+        if($img == '' or $img == $tempImg)
+        {
             $data['img']=$tempImg; 
         }
        else
        {
            $data['img']=$this->UpdateImg('./assets/images/despage/',$tempImg);
        }
-    //    echo "<pre>";
-    //    print_r($data);
-    //    echo "</pre>";
-        if($this->WorkM->UpdateK('destpage',$id,$data)){
-            return $this->ViewDestpage();
-        }else{
-            $this->session->set_flashdata('error', 'Inalid DATA');
-            $this->AddDestpage();
+          
+       if($this->WorkM->ConfirmK('destpage'))
+       {
+            if($this->WorkM->UpdateK('destpage',$id,$data))
+            {
+                 return $this->ViewDestpage();
+            }
+            else
+            {
+                 $this->session->set_flashdata('error', 'Inalid DATA');
+                $this->AddDestpage();
+            }
+       }
+        else
+        {
+            echo "plss select only 3 fields to display...";
         }
-    }
-
+ }
     public function RemoveDestpage($id)
     {
         $this->load->model('WorkM');
@@ -496,6 +513,7 @@ class UserC extends CI_Controller{
         }            
     }
 
+    
 // Destpage - end
 
 

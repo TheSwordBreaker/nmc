@@ -40,7 +40,25 @@ class WorkM extends CI_Model
             return false;
         }
     }
+    
 
+    public function ConfirmK($tablename)
+    {
+        $this->db->select_sum('active');
+        $this->db->from('destpage');
+        $query= $this->db->get();
+        $res=$query->result();
+        if($res==3)
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    
+ 
+    }
 
 
 

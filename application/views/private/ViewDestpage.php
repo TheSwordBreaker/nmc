@@ -57,7 +57,7 @@
                       <?php endforeach ?> 
                     </tbody>
                   </table>
-                  <button type="button" class="btn btn-success">Submit</button>
+                  <button type="button" class="btn btn-success" onclick>Submit</button>
 
                 </div>
               </div>

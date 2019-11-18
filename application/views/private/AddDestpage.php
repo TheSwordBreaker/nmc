@@ -91,7 +91,7 @@
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label>You Want To Display this:</label>
-                        <input type="checkbox" class="form-control"  name="Checkbox" id="Checkbox" checked>
+                        <input type="checkbox" class="form-control"  name="Checkbox" id="Checkbox">
                       </div>
                     </div>
                   </div>
