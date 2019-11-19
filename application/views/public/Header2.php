@@ -16,4 +16,7 @@
   <!-- CSS Files -->
   <link href="<?= base_url('/assets/css/login.css') ?> " rel="stylesheet" >
 </head>
+<body class="index-page sidebar-collapse">
+  <?php require('navbar2.php') ?>
+
 

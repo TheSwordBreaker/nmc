@@ -69,6 +69,20 @@
           </li>
         </ul>
       </nav>
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
       <div class="copyright float-right" style="font-family: verdana; font-size: 15px;">
         © 2019 Nashik Tourism. All rights reserved | Design by GPN Students
       </div>

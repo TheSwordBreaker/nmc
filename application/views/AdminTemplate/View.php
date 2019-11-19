@@ -31,7 +31,7 @@
                 <?php endif ?>
 
                 <?php if(isset($UserData[0]->img)): ?>
-                      <th>
+                      <th style="width:fit-content;">
                       Img 
                  </th>
                 <?php endif ?>
@@ -48,25 +48,25 @@
                         <tbody>
                         <?php foreach($UserData as $d):?>
                           <tr>
-                          <td scope="row"> <?= $d->id ?></td>
+                          <td scope="row" width="5%"> <?= $d->id ?></td>
                           <?php if(isset($UserData[0]->name)): ?>
-                            <td> <?= $d->name ?>  </td>
+                            <td width="10%"> <?= $d->name ?>  </td>
                             <?php endif ?>
 
                           <?php if(isset($UserData[0]->des)): ?>
-                          <td> <?= $d->des ?>  </td>
+                          <td width="50%"> <?= $d->des ?>  </td>
                           <?php endif ?>
 
                           <?php if(isset($UserData[0]->username)): ?>
-                          <td> <?= $d->username ?>  </td>
+                          <td width="10%"> <?= $d->username ?>  </td>
                           <?php endif ?>
                           
                           <?php if(isset($UserData[0]->img)): ?>
-                            <td> <img src="<?= base_url('/assets/images/').$k."/".$d->img ?>"  width="200"> </td>
+                            <td width="30%"> <img src="<?= base_url('/assets/images/').$k."/".$d->img ?>"  style="width:250px"> </td>
                           <?php endif ?>
 
                           <?php if(isset($UserData[0]->id)): ?>
-                            <td><button class="btn btn-info btn-round "  onclick="ConfirmUpdate(<?= $d->id?>)">Edit</a>
+                            <td class="flex" width="20%"><button class="btn btn-info btn-round m-2"  onclick="ConfirmUpdate(<?= $d->id?>)">Edit</a>
                               <button class="btn btn-danger btn-round"  onclick="ConfirmDel(<?= $d->id?>)">Delete</a></td>
                           <?php endif ?>
               

@@ -76,10 +76,7 @@
   <!-- TP -->
   <script src="<?= base_url('/assets/admin/demo/demo.js')?>"></script>
   <script>
-    $(document).ready(function() {
-      // Javascript methods body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
-    });
+    
  
         var url="<?php echo base_url();?>";
         var k="<?= $k ?>";
@@ -99,10 +96,7 @@
           return false;
         } 
 
-        $(document).ready(function() {
-      // Javascript methods body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
-    });
+       
         </script>
 </body>
 
