@@ -27,10 +27,10 @@
 
             <li class="nav-item dropdown">
                 <div class="dropdown-menu dropdown-menu-right border" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/HomePage') ?>">HomeSec1</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/HomePage') ?>">HomeSec1</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/HomePage') ?>">HomeSec1</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/HomePage') ?>">HomeSec1</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/HomePage') ?>">HomePage</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Homesec2') ?>">HomeSec2</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Homesec3') ?>">HomeSec3</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/HomePage') ?>">HomeSec4</a>
                 </div>
                 <a data-toggle="dropdown" class="nav-link"href="#" aria-haspopup="true" aria-expanded="false">
                     <i class="nc-icon nc-layout-11"></i>
@@ -40,8 +40,8 @@
 
             <li class="nav-item dropdown">
                 <div class="dropdown-menu dropdown-menu-right border" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destpage') ?>">Destination Sec1</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destpage') ?>">Destination Sec1</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destpage') ?>">Destination Page</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destsec2') ?>">Destination Sec2</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/Destpage') ?>">Destination Sec1</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/Destpage') ?>">Destination Sec1</a>
                 </div>
@@ -54,9 +54,9 @@
 
             <li class="nav-item dropdown">
                 <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">Culture Sec1</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">Culture</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">Culture</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">Culture Page</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Culsec1') ?>">Culture Sec1</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Culsec2') ?>">Culture Sec 1</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">Culture</a>
 
                 </div>
@@ -68,7 +68,7 @@
 
             <li class="nav-item dropdown">
                 <div class="dropdown-menu dropdown-menu-right border" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">FoodStuff Sec1</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/foodPage') ?>">FoodStuff Sec1</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">FoodStuff Sec1</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">FoodStuff Sec1</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">FoodStuff Sec1</a>
@@ -96,7 +96,7 @@
             </li> -->
 
             <li>
-                <a href="./map.html">
+                <a href="<?= base_url('UserC/View/pages') ?>">
                     <i class="nc-icon nc-ruler-pencil"></i>
                     <p>Posts</p>
                 </a>

@@ -8,6 +8,13 @@ class WorkM extends CI_Model
         $result = $query->result();
         return $result;
     }
+
+    public function GetName($tablename,$Name){
+        $query = $this->db->where('name',$Name)->get($tablename);
+        $result = $query->result();
+        return $result;
+    }
+
     public function Gets($tablename)
     {
         $query = $this->db->get($tablename);

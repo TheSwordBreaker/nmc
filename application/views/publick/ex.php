@@ -1,0 +1,282 @@
+<div class="section text-center">
+    <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+            <h2 class="title">Foods !!!</h2>
+            <h5 class="description">Nashik has a personality of its own, due to its mythological, historical, social and
+                cultural importance. The city is situated on the banks of the Godavari River, making it one of the
+                holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it
+                that Lord Rama.</h5>
+        </div>
+    </div>
+
+
+    <hr>
+
+
+    <div class="col-md-12 bg-light w-100">
+        <div class="px-auto ">
+
+            <div class="row padding">
+
+
+
+
+                <div class="col-md-4 ">
+                    <div class="card bg-dark text-white">
+                        <div class="text-center">
+                            <img class="card-img img-fluid img-responsive w-100" style="height: 361px"
+                                src="<?= base_url('/assets/images/FoodSec1/sadhna-misal2.png'); ?>" alt="Card image">
+                            <div class="card-img-overlay  d-flex flex-column justify-content-end">
+                                <h1 class="card-title display-3 ">Nashik's Best Spicy Food</h1>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="card bg-dark text-white">
+                        <div class="text-center">
+
+                            <img class="card-img img-responsive img-fluid w-100" style="height:361px;"
+                                src="<?= base_url('/assets/images/FoodSec1/cul3.png'); ?>" alt="Card image">
+
+                            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                <h1 class="card-title display-3">Cool Nashik</h1>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 ">
+                    <div class="card bg-dark text-white">
+                        <div class="text-center">
+                            <img class="card-img img-responsive img-fluid w-100" style="height: 361px;"
+                                src="<?= base_url('/assets/images/FoodSec1/pande mithai.jpg'); ?>" alt="Card image">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                <h1 class="card-title display-3">Delisious Desserts</h1>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <hr class="w-75 ">
+
+
+
+
+
+
+
+
+
+    <div class="features">
+        <div class="row">
+            <div class="m-auto">
+                <h2 class="title">Nashik's Trendiest Food </h2>
+            </div>
+            <div class="container-fluid mx-auto">
+
+                <div class="row padding">
+
+                    <div class="col-md-6">
+                        <div class="card" style="height:35rem">
+
+                            <img class="card-img-top "
+                                src="<?= base_url('/assets/images/FoodSec2/krishna vadapav.jpg');  ?>"
+                                style="height:100%" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="card-header card-header-success">
+                                    <h3 class="card-title"> Vada Pav</h3>
+                                    <!-- <p class="category">Category subtitle</p> -->
+                                </div>
+                                <h4 class="card-title">Here is the Icon</h4>
+                                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to
+                                "Naviglio" where you can enjoy the main night life in Barcelona...
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card" style="height:35rem">
+                            <img class="card-img-top " style="height:20rem"
+                                src="<?= base_url('/assets/images/FoodSec2/rock N roll.png'); ?>" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="card-header card-header-success">
+                                    <h3 class="card-title">Rock And Roll</h3>
+                                    <!-- <p class="category">Category subtitle</p> -->
+                                </div>
+                                <h4 class="card-title">Here is the Icon</h4>
+                                The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to
+                                "Naviglio" where you can enjoy the main night life in Barcelona...
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--  carousel  -->
+<div class="section" id="carousel">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mr-auto ml-auto">
+                <!-- Carousel Card -->
+                <div class="card card-raised card-carousel">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
+                        data-interval="3000">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100 h-100" style="height:fit-content"
+                                    src="<?= base_url('assets/images/FoodSec3/shuakin1.jpg') ?>" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h4>
+                                        <i class="material-icons">location_on</i> Yellowstone National Park, United
+                                        States
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 h-100" style="height:fit-content"
+                                    src="<?= base_url('assets/images/FoodSec3/shwarama1.png') ?>" alt="Second slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h4>
+                                        <i class="material-icons">location_on</i> Somewhere Beyond, United States
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 h-100" style="height:fit-content"
+                                    src="<?= base_url('assets/images/FoodSec3/momos2.png') ?>" alt="Third slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h4>
+                                        <i class="material-icons">location_on</i> Yellowstone National Park, United
+                                        States
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <i class="material-icons">keyboard_arrow_left</i>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <i class="material-icons">keyboard_arrow_right</i>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- End Carousel Card -->
+            </div>
+        </div>
+    </div>
+</div>
+<!--         end carousel -->
+
+
+
+
+<div class="section text-center">
+    <h2 class="title">Great Misal Points</h2>
+    <div class="team pt-3">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="team-player">
+                    <div class="card card-plain px-3">
+                        <img src="<?= base_url('assets/images/FoodSec4/sathna-misal1.png') ?>" alt="Thumbnail Image"
+                            class="img-resized">
+                        <h4 class="card-title">Sadhana Misal:
+                            <br>
+                            <small class="card-description text-muted">Model</small>
+                        </h4>
+                        <div class="card-body">
+                            <p class="card-description text-justify">A stronghold with cheery ambiance where the radiant
+                                aroma of sizzling flavors is in the air. Designed with a village-setting, the hotel
+                                showcases hybrid birds and animals including Emu, Turkey, camels for visitors. The hotel
+                                is well-known in Nashik as ‘Chulivarchi Misal’.</p>
+                            <p><a href="#" class="btn btn-info m-auto">Learn More</a></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-player">
+                    <div class="card card-plain px-3">
+
+                        <img src="<?= base_url('assets/images/FoodSec4/sham-sundar1.jpg') ?>" alt="Thumbnail Image"
+                            class=" img-resized">
+
+                        <h4 class="card-title">Shamsundar Misal
+                            <br>
+                            <small class="card-description text-muted">Designer</small>
+                        </h4>
+                        <div class="card-body">
+                            <p class="card-description text-justify">Even though this hotel is situated near industrial
+                                area, their Misal pav is high on demand. Shamsundar Misal was one of the popular Misal
+                                point years ago. Down to increasing competition, the hotel must have lost its name but
+                                is striving hard to gain its name and fame by delivering a first class Misal.</p>
+                            </p>
+
+                            <p><a href="#" class="btn btn-info mb-auto">Learn More</a></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-player">
+                    <div class="card card-plain px-3">
+
+                        <img src="<?= base_url('assets/images/FoodSec4/mamacha-mala2.jpg') ?>" alt="Thumbnail Image"
+                            class="img-resized img-responsive">
+                        <h4 class="card-title">Mamachya Mala
+                            <br>
+                            <small class="card-description text-muted">Model</small>
+                        </h4>
+                        <div class="card-body">
+                            <p class="card-description text-justify">Mamachya Mala perfect for its delicious Misal, is
+                                moreover famous for Jalebis. Based on a village-setting, this is a real good place to be
+                                visited in weekends with family. The hotel situated in Makhmalabad-Mahsrul link road,
+                                will most of all, let
+
+                                <p><a href="#" class="btn btn-info mb-auto">Learn More</a></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -22,7 +22,7 @@
                     <div><br>
                         <h3><?= $data[$i]->name ?></h3>
                         <p><?= $data[$i]->des ?></p>
-                        <p><a href="#">Learn More</a></p>
+                        <p><a href="<?= base_url('MainC/Dest/').$data[$i]->name ?>">Learn More</a></p>
                     </div>
                 </div>
             </div>

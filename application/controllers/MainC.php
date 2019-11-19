@@ -21,14 +21,27 @@ class MainC extends CI_Controller{
     {
         $this->load->model('WorkM');
         $data = $this->WorkM->Gets('culturepage');
-        $this->load->view('public/Culture',compact('data','sec2'));
+        $Page = $this->WorkM->GetRow('pages',5);
+        $Page['data'] = $this->load->view('publick/FoodStuff',compact('data','sec2'),True);
+        $this->load->view('publicK/Base',compact('Page'));
     }
     
-    public function Dest()
+    public function Dest($Name=NULL)
     {
         $this->load->model('WorkM');
-        $data = $this->WorkM->GetS('destpage');
-        $this->load->view('public/Destination',compact('data'));
+        if($Name == Null)
+        {    
+            $data = $this->WorkM->GetS('destpage');
+            $Page = $this->WorkM->GetRow('pages',2);
+            $Page['data'] = $this->load->view('publicK/Dest',compact('data'),True);
+            $this->load->view('publicK/Base',compact('Page'));
+        }else{
+            $data = $this->WorkM->GetName('destpage',$Name);
+            $Page = $this->WorkM->GetRow('pages',2);
+            $Page['data'] = $this->load->view('publicK/Blog',compact('data'),True);
+            $this->load->view('publicK/Base',compact('Page'));
+        }
+
     }
     
     public function Cul()
@@ -36,8 +49,8 @@ class MainC extends CI_Controller{
         $this->load->model('WorkM');
         // $data = $this->WorkM->Gets('culturepage');
         $data = $this->WorkM->GetS('destpage');
-        // $this->load->view('public/Culture',compact('data','sec2'));
-        $this->load->view('public/FoodStuff',compact('data','sec2'));
+        $this->load->view('public/Culture',compact('data','sec2'));
+        // $this->load->view('public/FoodStuff',compact('data','sec2'));
     }
 
     public function Cul2()
@@ -53,7 +66,11 @@ class MainC extends CI_Controller{
 
     public function AboutUs()
     {
-        $this->load->view('public/AboutUs');
+        $this->load->model('WorkM');
+        $Page = $this->WorkM->GetRow('pages',4);
+        $Page['data'] = $this->load->view('publicK/AboutUs',"" ,True);
+        $this->load->view('publicK/Base',compact('Page'));
+      
     }
 
     public function DestPlace()
