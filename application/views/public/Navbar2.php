@@ -36,6 +36,11 @@
                 </a>
             </li>
             <li class="nav-item" style="letter-spacing: 1px; font-family: verdana;">
+                <a class="nav-link" href="<?= base_url('MainC/FoodStuff')?>">
+                    <b> FoodStuff </b>
+                </a>
+            </li>
+            <li class="nav-item" style="letter-spacing: 1px; font-family: verdana;">
                 <a class="nav-link" href="<?= base_url('MainC/Cul')?>">
                     <b> Culture </b>
                 </a>

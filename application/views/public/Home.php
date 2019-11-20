@@ -1,10 +1,91 @@
 
-<?php include('Header.php') ?>
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+	<title>Nashik Tourism</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Exert Design Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design">
+	<link rel="icon" type="image/png" href="<?= base_url('/assets/icons/plane.png') ?>">
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link rel="stylesheet" href=" <?= base_url('assets/css/bootstrap.css') ?>" type="text/css" media="all">
+	<link rel="stylesheet" href=" <?= base_url('assets/css/font-awesome.css') ?>" type="text/css" media="all">
+	<link rel="stylesheet" href=" <?= base_url('assets/css/lightbox.css') ?>" type="text/css" media="all">
+	<link href=" <?= base_url('assets/css/easy-responsive-tabs.css') ?>" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" href=" <?= base_url('assets/css/style.css') ?>" type="text/css" media="all" />
+</head>
 
 <body>
 	<div class="main" id="home">
 		<!--navigation-->
-		<?php include('Navbar.php'); ?>
+		<div class="header-w3">
+			<div class="header-top-agile">
+				<div class="social-icons-agileits">
+					<ul>
+						<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:info@example.com">nsktourism@gmail.com</a></li>
+						<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +918329007426</li>
+					</ul>
+				</div>
+				<div class="social">
+					<ul>
+						<li><a href="https://www.facebook.com/" class="link facebook" target="_parent"><span class="fa fa-facebook-square"></span></a></li>
+						<li><a href="https://www.twitter.com/" class="link twitter" target="_parent"><span class="fa fa-twitter"></span></a></li>
+						<li><a href="https://www.instagram.com/" class="link google-plus" target="_parent"><span class="fa fa-instagram"></span></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="header-bottom-agile">
+				<div class=navigation>
+					<nav class="navbar navbar-default cl-effect-16" id="cl-effect-16">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+						<div class="logo-agileinfo">
+							<h1><a href="<?= base_url('MainC/')?>"><i class="fa fa-plane" aria-hidden="true"></i> Nashik Tourism</a></h1>
+						</div>
+
+						<div id="navbar" class="navbar-collapse navbar-right collapse hover-effect">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="<?= base_url('MainC/')?>" data-hover="Home">Home</a></li>
+								<li><a href="<?= base_url('MainC/AboutUs')?>" data-hover="About Us">About Us</a></li>
+								<li><a href="<?= base_url('MainC/Dest')?>" data-hover="destination">Destination</a></li>
+								<li><a href="<?= base_url('MainC/Cul')?>" data-hover="culture">Culture</a></li>
+								<li><a href="<?= base_url('WorkC/')?>" data-hover="login">Login</a></li>
+								<li><a href="#contact" data-hover="Contact Us" class="scroll">Contact Us</a></li>
+								
+							</ul>
+
+						</div>
+					</nav>
+				</div>
+				<div class="search">
+					<div class="cd-main-header">
+						<ul class="cd-header-buttons">
+							<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+						</ul>
+					</div>
+					<div id="cd-search" class="cd-search">
+						<form action="#" method="post">
+							<input name="Search" type="search" placeholder="Search..." required="">
+						</form>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
 		<!--//navigation-->
 		<!--banner-->
 		<div class="banner">
@@ -235,4 +316,142 @@
 	<!-- //contact -->
 	<!-- footer -->
 
-	<?php include('Footer.php'); ?>
+	
+	<!-- footer -->
+
+<div class="footer">
+		<div class="container">
+			<div class="agile-logo">
+				<a href="index.html">Nashik Tourism</a>
+			</div>
+			
+			<div class="agile-copy">
+				<!-- <hr class="rgba-white-light" style="margin: 0 15%;"> -->
+				<p>© 2019 Nashik Tourism. All rights reserved | Design <!-- <i class="icon-heart-o" aria-hidden="true"> --></i> by GPN Students</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="thim-click-to-bottom">
+			<a href="#home" class="scroll">
+			<i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+
+		</a>
+		</div>
+	</div>
+	<!-- //footer -->
+
+	<!-- js -->
+	<script type="text/javascript" src="<?= base_url('assets/js/jquery-2.1.4.min.js ') ?>"></script>
+	<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.js ') ?>"></script>
+	<!-- Necessary-JavaScript-File-For-Bootstrap -->
+	<!-- //js -->
+	<!--  light box js -->
+	<script type="text/javascript" src="<?= base_url('assets/js/lightbox-plus-jquery.min.js ') ?>">
+	</script>
+	<!-- //light box js-->
+
+	<!-- video-js -->
+	<script src="<?= base_url('assets/js/jquery.vide.min.js ') ?>"></script>
+	<!-- //video-js -->
+
+
+	<!-- Baneer-js -->
+	<!--responsive slider-->
+	<script src="<?= base_url('assets/js/responsiveslides.min.js ') ?>"></script>
+	<!--//responsive slider-->
+
+	<!--banner Slider starts Here-->
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			// Slideshow 3
+			$("#slider3").responsiveSlides({
+				auto: true,
+				pager: false,
+				nav: true,
+				speed: 500,
+				namespace: "callbacks",
+				before: function () {
+					$('.places').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.places').append("<li>after event fired.</li>");
+				}
+			});
+
+		});
+	</script>
+	<!--//End-slider-script-->
+
+	<!-- //Baneer-js -->
+	<!-- search-jQuery -->
+	<script src="<?= base_url('assets/js/main1.js ') ?>"></script>
+	<!-- //search-jQuery -->
+
+	<!-- required-js-files-->
+	<link href="<?= base_url('assets/css/owl.carousel.css')?>" rel="stylesheet">
+	<script src="<?= base_url('assets/js/owl.carousel.js ') ?>"></script>
+	<script>
+		$(document).ready(function () {
+			$("#owl-demo").owlCarousel({
+				items: 1,
+				itemsDesktop: [768, 4],
+				itemsDesktopSmall: [414, 3],
+				lazyLoad: true,
+				autoPlay: true,
+				navigation: true,
+
+				navigationText: false,
+				pagination: true,
+
+			});
+
+		});
+	</script>
+	<!--//required-js-files-->
+
+	<!-- script for responsive tabs -->
+	<script src="<?= base_url('assets/js/easy-responsive-tabs.js ') ?>"></script>
+	<script>
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion           
+				width: 'auto', //auto or any width like 600px
+				fit: true, // 100% fit in a container
+				closed: 'accordion', // Start closed if in accordion view
+				activate: function (event) { // Callback function if tab is switched
+					var $tab = $(this);
+					var $info = $('#tabInfo');
+					var $name = $('span', $info);
+					$name.text($tab.text());
+					$info.show();
+				}
+			});
+			$('#verticalTab').easyResponsiveTabs({
+				type: 'vertical',
+				width: 'auto',
+				fit: true
+			});
+		});
+	</script>
+	<!-- start-smooth-scrolling -->
+	<script type="text/javascript" src="<?= base_url('assets/js/move-top.js ') ?>"></script>
+	<script type="text/javascript" src="<?= base_url('assets/js/easing.js ') ?>"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //end-smooth-scrolling -->
+	<!-- smooth scrolling -->
+	<script src="<?= base_url('assets/js/SmoothScroll.min.js ') ?>"></script>
+	<!-- //smooth scrolling -->
+
+</body>
+</html>

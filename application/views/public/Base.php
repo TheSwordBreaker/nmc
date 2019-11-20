@@ -7,7 +7,7 @@
         <link rel="icon" type="image/png" href="<?= base_url('/assets/images/favicon.png')?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>
-            <?= $Page['title'] ?>
+            <?= $Page[0]->title ?>
         </title>
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
             name='viewport' />
@@ -25,16 +25,17 @@
         <?php require('Navbar2.php'); ?>
 
 
-        <div class="page-header header-filter " data-parallax="true"style="background-image: url(<?= base_url('assets/images/').$Page['img'] ?>);">
+        <div class="page-header header-filter " data-parallax="true"
+            style="background-image: url(<?= base_url('assets/images/').$Page[0]->img ?>);">
             <div class="container">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-8 ml-auto mr-auto">
                         <div class="brand text-center">
                             <h1>Your title here</h1>
                             <h3 class="title text-center">Subtitle</h3>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="main main-raised">
@@ -100,13 +101,7 @@
         <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
         <script src="<?= base_url('/assets/js/login.js') ?>" type="text/javascript"></script>
         <script>
-        $(document).ready(function() {
-            //init DateTimePickers
-            materialKit.initFormExtendedDatetimepickers();
-
-            // Sliders Init
-            materialKit.initSliders();
-        });
+        
 
 
         function scrollToDownload() {

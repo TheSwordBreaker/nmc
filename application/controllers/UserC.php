@@ -20,8 +20,8 @@ class UserC extends CI_Controller{
         $this->load->model('WorkM');
         $UserData = $this->WorkM->Gets('users');
         $Page['title'] = "Admin Area | Dashboard";
-        $Page['data'] = $this->load->view('AdminTemplate/dashboard',compact('UserData'),True);
-        $this->load->view('AdminTemplate/Base',compact('Page'));
+        $Page['data'] = $this->load->view('private/dashboard',compact('UserData'),True);
+        $this->load->view('private/Base',compact('Page'));
 
     }
 
@@ -30,8 +30,8 @@ class UserC extends CI_Controller{
         $this->load->model('WorkM');
         $UserData = $this->WorkM->Gets($k);  
         $Page['title'] = $k;   
-        $Page['data'] = $this->load->view('AdminTemplate/View',compact('UserData','k'),True);
-        $this->load->view('AdminTemplate/Base',compact('Page'));
+        $Page['data'] = $this->load->view('private/View',compact('UserData','k'),True);
+        $this->load->view('private/Base',compact('Page'));
     }
     
     
@@ -41,8 +41,8 @@ class UserC extends CI_Controller{
         $this->load->model('WorkM');
         $UserData = $this->WorkM->Gets($k);  
         $Page['title'] = $k;   
-        $Page['data'] = $this->load->view('AdminTemplate/Form',compact('UserData','k','up'),True);
-        $this->load->view('AdminTemplate/Base',compact('Page'));
+        $Page['data'] = $this->load->view('private/Form',compact('UserData','k','up'),True);
+        $this->load->view('private/Base',compact('Page'));
     }
 
     public function loadEdit($k,$id)
@@ -51,8 +51,8 @@ class UserC extends CI_Controller{
         $up=1;
         $UserData =  $this->WorkM->GetRow($k,$id);
         $Page['title'] = $k;   
-        $Page['data'] = $this->load->view('AdminTemplate/Form',compact('UserData','k','up'),True);
-        $this->load->view('AdminTemplate/Base',compact('Page'));
+        $Page['data'] = $this->load->view('private/Form',compact('UserData','k','up'),True);
+        $this->load->view('private/Base',compact('Page'));
     }
 
     public function Add($k)
