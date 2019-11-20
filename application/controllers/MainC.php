@@ -24,6 +24,14 @@ class MainC extends CI_Controller{
         
         $this->load->view('public/Culture',compact('data'));
     }
+
+    public function Cul1()
+    {
+        // $this->load->model('WorkM');
+        // $data = $this->WorkM->getculturepage();
+        
+        $this->load->view('public/Culture1');
+    }
     
     public function Dest()
     {

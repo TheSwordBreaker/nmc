@@ -1,6 +1,5 @@
 
 <?php include('Header.php') ?>
-
 <body>
 	<div class="main" id="home">
 		<!--navigation-->
@@ -63,9 +62,9 @@
 								<div class="w3-agile-news-info">
 									<a href="#" data-toggle="modal" data-target="#myModal1"><?= $data[$i]->name ?></a>
 									<p><?= $data[$i]->des ?></p>
-								</div>
-								<div class="button">
-									<a href="<?= base_url('MainC/Dest')?>">More</a>
+								</div><br>
+								<div class="w3l-button" style="text-align: justify;"
+										<a href="<?= base_url('MainC/Dest')?>" data-toggle="modal" data-target="#myModal3">More</a>
 								</div>
 							</div>
 						</div>
@@ -82,8 +81,8 @@
  <div class="agileinfo_counter_section" id="about" >
  <!-- style="background: url(<?= base_url('assets/images/').$sec2[0]->pic ?>)" -->
 		<div class="container">
-			<h3><?= $sec2[0]->name ?></h3>
-			<p class="sub_para two"><?= $sec2[0]->des ?> </p>
+			<h3> <?= $sec2[0]->name ?></h3>
+			<p class="sub_para two" style="text-align: justify;"><?= $sec2[0]->des ?> </p>
 			<h5><a href="<?= base_url('MainC/AboutUs')?>" class="view rew3"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>About Us</a></h5>
 		</div>
 	</div>
@@ -313,28 +312,140 @@
 	<!-- about -->
 			<!-- <hr class="rgba-white-light" style="margin: 0 15%; display: flex; justify-content: center; color:red;"> -->
 <div class="about bg-light py-5" id="about">
-		<div class="container py-3">
-				<h3 class="wthree_title_agile">FOOD-STUFF</h3><br>
-				<div class="middle-heading text-center mb-5">
-					<!-- <h3>about</h3> -->
-				</div>
-
-				<div class="row">
-						<div class="col-lg-4 mb-lg-0 mb-5 about-left">
-							<h2 class="">Pande Mithai</h2>
-						</div>
-						<div class="col-lg-8 about-right pl-4">
-							<span>s</span><p class="right-text">Lorem ipsum amet consectetur maximus vitae enim ac, suscipit mollis purus. Morbi dictum nibh vel pellentesque congue. Cras ut purus tellus. Duis rhoncus sem nec arcu tincidunt tincidunt Morbi dictum nibh vel pellentesque congue.</p>
-							<p class="my-3">maximus vitae enim ac, suscipit mollis purus. Morbi dictum nibh vel pellentesque congue. Cras ut purus tellus. Duis rhoncus sem nec arcu tincidunt tincidunt.</p>
-						</div>
-						
-				</div>
-				<br>
-				<img src="<?= base_url('./assets/images/about.jpg')?>" class="img-fluid mt-5" alt="" style="padding-right: 0.2px;"><br><br>
-				<p class="iner mt-4"> Nunc fermentum adipiscing tempor cursus nascetur adipiscing adipiscing. Primis aliquam mus lacinia lobortis phasellus suscipit. Fermentum lobortis non tristique ante proin sociis accumsan lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia natoque aenean scelerisque.</p>
+		<div class="container">
+				<h3 class="wthree_title_agile">CULTURE</h3>
+					<p class="iner mt-4" style="font-size: 15px;" >Nashik has a personality of its own, due to its mythological, historical, social and cultural importance. The city is situated on the banks of the Godavari River, making it one of the holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it that Lord Rama, </p>
+					<p class="iner mt-4" style="font-size: 15px;">the King of Ayodhya, made Nashik his adobe during his 14 years in exile.At the same place Lord Laxman, by the wish of Lord Rama, cut the nose of “Shurpnakha” and thus this city was named as “Nashik”.In Kritayuga, Nashik was ‘Trikantak’,</p>
+					<br>
+				<img src="<?= base_url('./assets/images/homeCul.jpg')?>" class="center" style="margin-right: 80px; font-size: 15px;" alt="">
+				<p class="iner mt-4">‘Janasthana’ in Dwaparyuga and later in Kuliyuga it became ‘Navashikh’ or ‘Nashik’. Renowed poets like Valmiki, Kalidas and Bhavabhooti have paid rich tributes here. Nashik in 150 BC.was beleived to be the country’s largets market place. From 1487 A.D, this province came under the rule of Mughals and was known as ‘Gulchanabad’. It was also home of emperor Akbar and he has written at lenght about Nashik in ‘Ein-e-Akbari’.</p>
+			</div>
 		</div>
-</div>
 <br><br>
 <!-- //about -->
-
+	<!-- news -->
+	<div class="news" id="events">
+			<div class="container">
+				<h3 class="wthree_title_agile"><span></span>FOOD-STUFF</h3>
+				<br>
+				<div class="wthree-news-grids">
+					<div class="col-md-4 agile-news-left">
+						<img src="<?= base_url('./assets/images/j6.jpg')?>" alt="">
+						<div class="agile-news-right">
+							<div class="date-grid">
+								<div class="time">
+									<!-- <p><i class="fa fa-calendar" aria-hidden="true"></i> June 12,2017</p> -->
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="w3-agile-news-info">
+								<a href="#" data-toggle="modal" data-target="#myModal1">KOKNI DARBAR</a>
+								<p style="text-align: justify; font-size: 15px;">This is the best place in nashik for non vegetarian. Taste of food here is mind blowing. U will not experience such a good taste anywhere in nashik for non veg. The most famous dish over here is chicken sizzlers.</p>
+							</div><br>
+							<div class="w3l-button">
+								<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 agile-news-left">
+						<div class="agile-news-right w3l-newsw">
+							
+							<div class="w3-agile-news-info">
+								<a href="#" data-toggle="modal" data-target="#myModal2">Sadhana Misal</a>
+								<p style="text-align: justify; font-size: 15px;">One who enjoys misal is just gonna fall in love with Sadhana Misal in Nashik which is situated very close to Someshwar. Sadhana is just two and a half years old restaurant and has become so very famous in such a short while </p>
+							</div><br>
+							<div class="w3l-button">
+								<a href="#" data-toggle="modal" data-target="#myModal2">More</a>
+							</div>
+							<br>
+						</div>
+						<img src="<?= base_url('./assets/images/sadhna_misal.jpg')?>" alt="">
+					</div>
+					<div class="col-md-4 agile-news-left">
+						<img src="<?= base_url('./assets/images/gulabjamun.jpg')?>" alt="">
+						<div class="agile-news-right">
+							<div class="date-grid">
+								<div class="time">
+									<!-- <p><i class="fa fa-calendar" aria-hidden="true"></i> July 14,2017</p> -->
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="w3-agile-news-info">
+								<a href="#" data-toggle="modal" data-target="#myModal3">bhudha halwai</a>
+								<p style="text-align: justify; font-size: 15px;">This is well known mithai shop in Nashik. An iconic place in Nasik since decades.
+									Famous for its Jaleebi, but rest of the items are also very tasty.
+									One of the must visits in nashik, this is situated in the heart of the city in panchavati.</p>
+							</div><br>
+							<div class="w3l-button">
+								<a href="#" data-toggle="modal" data-target="#myModal3">More</a>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal1 -->
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="wthree_title_agile" style="font-size: 20px;">Kokni darbar</h3>
+						<img src="<?= base_url('./assets/images/j6.jpg')?>" alt="blog-image" />
+						<span>
+							Second most famous dish - Chicken Kolhapuri.<br>
+							Rating - Taste : 5/5<br>
+							Service : 3.5/5 ( very crowded so slow service)<br>
+							Value for money : 4/5 ( little expensive) 
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal1 -->
+		<!-- Modal2 -->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="wthree_title_agile" style="font-size: 20px;">sadhana misal</h3>
+						<img src="<?= base_url('./assets/images/sadhna_misal.jpg')?>" alt="blog-image" />
+						<span>
+							Rating - 
+							Taste: 5/5<br>
+							Service: 4.5/5<br>
+							Food options: 5/5<br>
+							Pricing: 5/5<br>
+							Location: 5/5
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal2 -->
+		<!-- Modal3 -->
+		<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="wthree_title_agile" style="font-size: 20px;">bhudha halwai</h3>
+						<img src="<?= base_url('./assets/images/gulabjamun.jpg')?>" alt="blog-image" />
+						<span>Rating - 
+								Taste: 5/5<br>
+								Service: 3/5<br>
+								Food options: 5/5<br>
+								Pricing: 4/5<br>
+								Location: 5/5</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal3 -->
+		<!-- news -->
 	<?php include('Footer.php'); ?>

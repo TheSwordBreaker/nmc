@@ -7,22 +7,59 @@
 				<a href="index.html">Nashik Tourism</a>
 			</div>	
 		</div>
+		<!-- Button trigger modal -->
 		<!-- <hr class="rgba-white-light" style="margin: 0 15%; display: flex; justify-content: center;"> -->
 		<div class="container align-center" style="display: flex; justify-content: center;">
 			<div class="agile-copy">
 				<a href="index.html">WEBSITE POLICIES |</a>
-				<a href="index.html">HELP |</a>
-				<a href="index.html">CONTACT US |</a>
-				<a href="index.html">FEEDBACK</a>
-			</div>	
+				<a href="index.html">HELP |</a> 
+				<div id="abc">
+						<!-- Popup Div Starts Here -->
+						<div id="popupContact">
+						<!-- Contact Us Form -->
+						<form action="#" id="form" method="post" name="form">
+						<img id="close" src="<?= base_url('./assets/images/close.png')?>" onclick ="div_hide()">
+						<h2>Contact Us</h2>
+						 <!-- <hr> -->
+						<input id="name" name="name" placeholder="Name" type="text" style="font-family: verdana;">
+						<input id="email" name="email" placeholder="Email" type="text" style="font-family: verdana;">
+						<textarea id="msg" name="message" placeholder="Message" style="font-family: verdana;"></textarea>
+						<a href="javascript:%20check_empty()" id="submit" style="font-family: verdana;">Send</a>
+						<br>
+						</form>
+						</div>
+						<!-- Popup Div Ends Here -->
+						</div>
+						<a type="button" id="#popupContact" onclick="div_show()">CONTACT US |</a>
+						
+						<div id="abc1">
+							<!-- Popup Div Starts Here -->
+							<div id="popupFeedback">
+							<!-- Contact Us Form -->
+							<form action="#" method="post" name="form" style="max-width: 600; max-height: 250;">
+							<img id="close" src="<?= base_url('./assets/images/close.png')?>" onclick ="div_hide1()">
+							<h2>FEEDBACK FORM</h2>
+							<h3 style="text-align: center;">We would love to hear your thoughts, concerns or problems with anything so we can improve!</h3>
+							<!-- <hr> -->
+							<input id="name" name="name" placeholder="Name" type="text" style="font-family: verdana;">
+							<textarea id="msg" name="message" placeholder="Message" style="font-family: verdana;"></textarea>
+							<a href="javascript:%20check_empty()" id="submit" style="font-family: verdana;">Send</a>
+							<br>
+							</form>
+							</div>
+							<!-- Popup Div Ends Here -->
+							</div>
+							<a type="button" id="#popupFeedback" onclick="div_show1()">FEEDBACK</a>
+								
+			</div>	 
 		</div> 
+		
 		<div class="container align-center" style="display: flex; justify-content: center; padding: 1px;">
 			<div class="agile-copy">
 			<p>© 2019 Nashik Tourism. All rights reserved | Design <!-- <i class="icon-heart-o" aria-hidden="true"> --></i> by GPN Students</p>
 			</div>
 		</div>
 </div>
-		
 		
 		<!-- <div class="thim-click-to-bottom">
 			<a href="#home" class="scroll">
@@ -31,8 +68,9 @@
 		</a>
 		</div> -->
 </div>
-	<!-- //footer -->
 
+<script type="text/javascript" src="<?= base_url('assets/js/my_js.js ') ?>"></script>
+	<!-- //footer -->
 	<!-- js -->
 	<script type="text/javascript" src="<?= base_url('assets/js/jquery-2.1.4.min.js ') ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.js ') ?>"></script>

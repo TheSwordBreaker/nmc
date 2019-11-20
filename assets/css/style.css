@@ -299,6 +299,13 @@ label{
 .center-container {
     background: rgba(0, 0, 0, 0.21);
 }
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: 100%;
+  }
 .logo h1 {
     font-size: 4em;
     display: inline-block;
@@ -725,6 +732,55 @@ a.callbacks_nav.callbacks1_nav.prev {
     display: none;
 }
 /*--//Slider part Ends Here --*/
+/*-- blog --*/
+.blog-side h3 span {
+    color: #445c6e;
+    margin-right: 7px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.blog-side h3 {
+    text-transform: capitalize;
+    font-size: 32px;
+    letter-spacing: 2px;
+    color: #000;
+    padding-top: 4em;
+}
+.card-body {
+    background: #f1f1f1;
+}
+h5.blog-title.card-title.font-weight-bold {
+    font-size: 22px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    color: #717171;
+}
+.blog_icon span.fa {
+    font-size: 25px;
+    color: #445c6e;
+}
+.middle-heading h3 {
+    font-size: 45px;
+}
+.middle-heading1 h3 {
+    font-size: 45px;
+}
+/*-- //Reset-Code --*/
+.middle-heading h3 {
+    font-size: 55px;
+    color: #003666;
+    text-shadow: 0px 1px 1px #000000;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.middle-heading1 h3 {
+    font-size: 55px;
+    color: #fff;
+    text-shadow: 0px 1px 1px #000000;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+/*-- //blog --*/
 /*-- search --*/
 .cd-main-header {
   /* Force Hardware Acceleration in WebKit */
@@ -1111,11 +1167,126 @@ h2.wthree_title_agile, .gallery h3.wthree_title_agile {
   text-align: center;
   color: #fff;
 }
+/* POPUP Contact Form */
+@import "http://fonts.googleapis.com/css?family=Raleway";
+#abc {
+width:100%;
+height:100%;
+opacity:.95;
+top:0;
+left:0;
+display:none;
+position:fixed;
+background-color:#313131;
+overflow:auto
+}
+#abc1 {
+	width:100%;
+	height:100%;
+	opacity:.95;
+	top:0;
+	left:0;
+	display:none;
+	position:fixed;
+	background-color:#313131;
+	overflow:auto
+	}
+img#close {
+position:absolute;
+right:-14px;
+top:-14px;
+cursor:pointer
+}
+div#popupContact {
+position:absolute;
+left:50%;
+top:17%;
+margin-left:-202px;
+font-family:'Raleway',sans-serif
+}
+div#popupFeedback {
+	position:absolute;
+	left:50%;
+	top:17%;
+	margin-left:-202px;
+	font-family:'Raleway',sans-serif
+	}
+form {
+max-width:450px;
+min-width:250px;
+padding:10px 50px;
+border:2px solid gray;
+border-radius:10px;
+font-family:raleway;
+background-color:#fff
+}
+p {
+margin-top:30px
+}
+h2 {
+background-color:#FEFFED;
+padding:20px 35px;
+margin:-10px -50px;
+text-align:center;
+border-radius:10px 10px 0 0
+}
+h3
+{	
+font-size: 15px;
+padding:20px 35px;
+margin:-10px -50px;
+/* text-align:center; */
+border-radius:10px 10px 0 0
+}
+hr {
+margin:10px -50px;
+border:0;
+border-top:1px solid #ccc
+}
+input[type=text] {
+width:82%;
+padding:10px;
+margin-top:30px;
+border:1px solid #ccc;
+padding-left:40px;
+font-size:16px;
+font-family:raleway
+}
+#submit {
+text-decoration:none;
+width:100%;
+text-align:center;
+display:block;
+background-color:#f70255;
+color:#fff;
+border:1px solid #f70255;
+padding:10px 0;
+font-size:20px;
+cursor:pointer;
+border-radius:5px
+}
+/* span {
+color:red;
+font-weight:700
+} */
+button {
+width:10%;
+height:45px;
+border-radius:3px;
+background-color:#cd853f;
+color:#fff;
+font-family:'Raleway',sans-serif;
+font-size:18px;
+cursor:pointer
+}
+/* //POPUP Contact Form */
 
 /* Custom Animate.css */
 
 .animated.hinge {
   -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+	     -o-animation-duration: 2s;
           animation-duration: 2s;
 }
 
@@ -1437,6 +1608,11 @@ span.hi-icon {
     width: 55px;
     height: 55px;
 }
+@media screen and (max-width: 667px){
+	.blog-side h3 {
+		padding-top: 2em;
+	}
+	}
 .hi-icon:before {
     speak: none;
     font-size: 22px;

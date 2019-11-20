@@ -92,18 +92,13 @@ class WorkM extends CI_Model
         return $result;
     }
 
-    public function InsertUser($un, $pw)
-    {
-        $data = array(
-            'username' => $un,
-            'password' => $pw
-        );
-        if ($this->db->insert('users', $data)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // public function getculture1page()
+    // {
+    //     $query = $this->db->get('culturepage');
+    //     $result = $query->result();
+    //     return $result;
+    // }
+
 
 
     public function UpdateUser($id, $un, $pw)
