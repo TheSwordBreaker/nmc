@@ -17,6 +17,22 @@ class MainC extends CI_Controller{
         $this->load->view('public/home',compact('data','sec2','sec3'));
     }
 
+
+    public function Search()
+    {
+        $this->load->model('WorkM');
+        if($this->input->post('query'))
+        {
+         $query = $this->input->post('query');
+        }
+        $result = $this->WorkM->fetch($query);
+        
+        $Page = $this->WorkM->GetRow('pages',5);
+        $Page['data'] =  $this->load->view('public/Search',compact('result'),True);
+        $this->load->view('public/Base',compact('Page'));
+    
+    }
+
     public function FoodStuff()
     {
         $this->load->model('WorkM');
@@ -73,10 +89,7 @@ class MainC extends CI_Controller{
       
     }
 
-    public function DestPlace()
-    {
-        $this->load->view('public/BaseDest.php');
-    }
+  
 
     
 

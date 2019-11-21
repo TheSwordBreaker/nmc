@@ -21,6 +21,21 @@ class WorkM extends CI_Model
         $result = $query->result();
         return $result;
     }
+
+    public function fetch($query)
+    {
+        if($query != '')
+        {
+        $query = $this->db->like('name', $query)
+                            ->order_by('id', 'DESC')
+                            ->get('destpage');
+        $result = $query->result();
+        return $result;
+        }
+        
+
+        
+    }
     public function InsertK($tablename,$data)
     {
         if ($this->db->insert($tablename, $data)) {

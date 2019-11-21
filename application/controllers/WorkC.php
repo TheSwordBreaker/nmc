@@ -16,6 +16,9 @@ class WorkC extends CI_Controller{
     {
         $this->load->view('public/Login');
     }
+
+
+    
     
     public function AuthUser() 
     {

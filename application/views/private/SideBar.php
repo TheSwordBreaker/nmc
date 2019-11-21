@@ -107,11 +107,19 @@
                     <p>User Profile</p>
                 </a>
             </li>
-            <li>
-                <a href="./tables.html">
-                    <i class="nc-icon nc-tile-56"></i>
-                    <p>Table List</p>
+
+            <li class="nav-item dropdown">
+            <div class="dropdown-menu dropdown-menu-right border" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="<?= base_url('UserC/View/Destination') ?>">Destination</a>
+                  <a class="dropdown-item" href="<?= base_url('UserC/View/Culture') ?>">Culture</a>
+                  <a class="dropdown-item" href="<?= base_url('UserC/View/FoodStuff') ?>">FoodStuff</a>
+
+                </div>
+              <a data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
+              <i class="nc-icon nc-tile-56"></i>
+                    <p>Table List<b class="caret"></b></p>
                 </a>
+                
             </li>
         </ul>
     </div>

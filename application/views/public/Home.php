@@ -78,8 +78,8 @@
 						</ul>
 					</div>
 					<div id="cd-search" class="cd-search">
-						<form action="#" method="post">
-							<input name="Search" type="search" placeholder="Search..." required="">
+						<form action="<?= base_url('MainC/Search');?>" method="post">
+							<input name="query" type="search" placeholder="Search..." required="">
 						</form>
 					</div>
 				</div>

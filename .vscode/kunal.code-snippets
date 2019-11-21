@@ -40,4 +40,14 @@
 		],
 		"description": "Log output to console"
 	},
+	"k2" : {
+		
+		"prefix": "pri",
+		"body": ["echo '<pre>'; ",
+			"print_r($1);",
+			"echo '</pre>';",
+				"$0"
+		],
+		"description": "Log output to console"
+	},
 }

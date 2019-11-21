@@ -12,7 +12,7 @@
         <div class="card-body">
         <?php if(!$up):?>
           <?php echo form_open_multipart('UserC/Add/'.$k); ?>  
-          <?php if(isset($UserData[0]->name)): ?>
+          <?php if(array_key_exists("name",$UserData)): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -23,7 +23,7 @@
             </div>
             <?php endif ?>
 
-            <?php if(isset($UserData[0]->des)): ?>
+            <?php if(array_key_exists("des",$UserData)): ?>
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -34,7 +34,7 @@
             </div>
             <?php endif ?>
 
-            <?php if(isset($UserData[0]->username)): ?>
+            <?php if(array_key_exists("username",$UserData)): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -55,7 +55,7 @@
 
             <?php endif ?>
 
-            <?php if(isset($UserData[0]->img)): ?>
+            <?php if(array_key_exists("img",$UserData)): ?>
             <div class="col-md-12">
               <div class="form-group">
                 <label>Image :</label>
@@ -77,7 +77,7 @@
             <?php else: ?>
             <?= form_open_multipart('UserC/edit/'.$k."/".$UserData[0]->id);?>   
             
-            <?php if(isset($UserData[0]->name)): ?>
+            <?php if(array_key_exists($UserData,name)): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -89,7 +89,7 @@
 
             <?php endif ?>
 
-<?php if(isset($UserData[0]->des)): ?>
+<?php if(array_key_exists($UserData,des)): ?>
 
             <div class="row">
               <div class="col-md-12">
@@ -102,7 +102,7 @@
 
             <?php endif ?>
 
-            <?php if(isset($UserData[0]->username)): ?>
+            <?php if(array_key_exists($UserData,username)): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -125,7 +125,7 @@
 
 
 
-            <?php if(isset($UserData[0]->img)): ?>
+            <?php if(array_key_exists($UserData,img)): ?>
             
             <div class="col-md-12">
               <div class="form-group">
