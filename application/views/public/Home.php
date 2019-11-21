@@ -40,7 +40,7 @@
 		</div>
 		<!--//banner-->
 	</div>
-
+	
 	<!-- news --> <br><br> 
 	 
 	 <!-- news -->

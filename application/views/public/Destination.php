@@ -81,6 +81,7 @@
       </div>
     </div>
   </nav>
+
   <div class="page-header header-filter clear-filter" data-parallax="true" style="background-image: url(<?= base_url('assets/images/dham.jpg') ?>);">
     <div class="container">
       <div class="row">
@@ -92,6 +93,7 @@
       </div>
     </div>
   </div>
+
   <div class="main main-raised">
     <div class="site-section">
       <h2 class="font-weight-light text-black text-center">Our Attractions</h2><br><br><br>
