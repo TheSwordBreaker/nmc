@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2019 at 11:55 AM
+-- Generation Time: Nov 21, 2019 at 07:19 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -21,6 +21,101 @@ SET time_zone = "+00:00";
 --
 -- Database: `nmc`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culsec1`
+--
+
+CREATE TABLE `culsec1` (
+  `id` int(100) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `img` varchar(5000) NOT NULL,
+  `des` varchar(5000) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culsec2`
+--
+
+CREATE TABLE `culsec2` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `des` varchar(5000) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culsec3`
+--
+
+CREATE TABLE `culsec3` (
+  `id` int(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `img` varchar(5000) NOT NULL,
+  `des` varchar(5000) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culsec4`
+--
+
+CREATE TABLE `culsec4` (
+  `id` int(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `img` varchar(5000) NOT NULL,
+  `des` varchar(5000) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culsec5`
+--
+
+CREATE TABLE `culsec5` (
+  `id` int(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `img` varchar(5000) NOT NULL,
+  `des` varchar(5000) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culsec6`
+--
+
+CREATE TABLE `culsec6` (
+  `id` int(50) NOT NULL,
+  `des` varchar(500) NOT NULL,
+  `active` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culture`
+--
+
+CREATE TABLE `culture` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `des` varchar(1000) NOT NULL,
+  `img` varchar(100) NOT NULL,
+  `active` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -51,7 +146,22 @@ INSERT INTO `culturepage` (`id`, `name`, `img`, `active`) VALUES
 (9, 'Kondaji Chivda', 'Kondaji_Chivda.jpg', 1),
 (10, 'Sayantara', 'sayantara.jpg', 1),
 (11, 'Coffee', 'coffee.jpg', 1),
-(12, 'Chienese', 'chiness.jpg', 1);
+(12, 'Chienese', 'chiness.jpg', 1),
+(16, 'pandvaleni', '1556288209_g13-big_png.jpg', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `destination`
+--
+
+CREATE TABLE `destination` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `des` varchar(1000) NOT NULL,
+  `img` varchar(100) NOT NULL,
+  `active` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -100,6 +210,61 @@ INSERT INTO `destsec2` (`id`, `name`, `img`, `active`) VALUES
 (5, 'Kala-Ram Mandir', 'kalaram.jpg', b'1'),
 (6, 'Anjeneri', 'PRIMG5.jpg', b'1'),
 (8, 'Trambkeshwar', 'trambak1.jpg', b'1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foodsec1`
+--
+
+CREATE TABLE `foodsec1` (
+  `id` int(11) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `img` varchar(50000) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foodsec2`
+--
+
+CREATE TABLE `foodsec2` (
+  `id` int(11) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `img` varchar(50000) NOT NULL,
+  `des` mediumtext NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foodsec3`
+--
+
+CREATE TABLE `foodsec3` (
+  `id` int(11) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `img` varchar(50000) NOT NULL,
+  `des` mediumtext NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foodstuff`
+--
+
+CREATE TABLE `foodstuff` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `des` varchar(1000) NOT NULL,
+  `img` varchar(100) NOT NULL,
+  `active` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -193,7 +358,8 @@ INSERT INTO `pages` (`id`, `name`, `title`, `img`) VALUES
 (1, 'home', 'NASHIK TOURISM', '1.mp4'),
 (2, 'Destination', 'Nashik Tourism &mdash; Destination', 'dham.jpg'),
 (3, 'Culture', 'Nashik Tourism &mdash; Culture', 'j6.jpg'),
-(4, 'About Us', 'Nashik Tourism &mdash; About Us', 'PRIMG3.jpg');
+(4, 'About Us', 'Nashik Tourism &mdash; About Us', 'PRIMG3.jpg'),
+(5, 'Food Stuff', 'Nashik Tourism &mdash; FoodStuff', 'j6.jpg');
 
 -- --------------------------------------------------------
 
@@ -220,9 +386,57 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
 --
 
 --
+-- Indexes for table `culsec1`
+--
+ALTER TABLE `culsec1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culsec2`
+--
+ALTER TABLE `culsec2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culsec3`
+--
+ALTER TABLE `culsec3`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culsec4`
+--
+ALTER TABLE `culsec4`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culsec5`
+--
+ALTER TABLE `culsec5`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culsec6`
+--
+ALTER TABLE `culsec6`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culture`
+--
+ALTER TABLE `culture`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `culturepage`
 --
 ALTER TABLE `culturepage`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `destination`
+--
+ALTER TABLE `destination`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -235,6 +449,30 @@ ALTER TABLE `destpage`
 -- Indexes for table `destsec2`
 --
 ALTER TABLE `destsec2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `foodsec1`
+--
+ALTER TABLE `foodsec1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `foodsec2`
+--
+ALTER TABLE `foodsec2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `foodsec3`
+--
+ALTER TABLE `foodsec3`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `foodstuff`
+--
+ALTER TABLE `foodstuff`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -273,10 +511,58 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `culsec1`
+--
+ALTER TABLE `culsec1`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culsec2`
+--
+ALTER TABLE `culsec2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culsec3`
+--
+ALTER TABLE `culsec3`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culsec4`
+--
+ALTER TABLE `culsec4`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culsec5`
+--
+ALTER TABLE `culsec5`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culsec6`
+--
+ALTER TABLE `culsec6`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culture`
+--
+ALTER TABLE `culture`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `culturepage`
 --
 ALTER TABLE `culturepage`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `destination`
+--
+ALTER TABLE `destination`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `destpage`
@@ -289,6 +575,30 @@ ALTER TABLE `destpage`
 --
 ALTER TABLE `destsec2`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `foodsec1`
+--
+ALTER TABLE `foodsec1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `foodsec2`
+--
+ALTER TABLE `foodsec2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `foodsec3`
+--
+ALTER TABLE `foodsec3`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `foodstuff`
+--
+ALTER TABLE `foodstuff`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `homepage`
@@ -312,7 +622,7 @@ ALTER TABLE `homesec3`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
