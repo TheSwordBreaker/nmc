@@ -12,7 +12,7 @@
         <div class="card-body">
         <?php if(!$up):?>
           <?php echo form_open_multipart('UserC/Add/'.$k); ?>  
-          <?php if(array_key_exists("name",$UserData)): ?>
+          <?php if($this->db->field_exists("name","homepage")): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -23,7 +23,7 @@
             </div>
             <?php endif ?>
 
-            <?php if(array_key_exists("des",$UserData)): ?>
+            <?php if($this->db->field_exists("des","homepage")): ?>
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -34,7 +34,7 @@
             </div>
             <?php endif ?>
 
-            <?php if(array_key_exists("username",$UserData)): ?>
+            <?php if($this->db->field_exists("username","homepage")): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -55,14 +55,23 @@
 
             <?php endif ?>
 
-            <?php if(array_key_exists("img",$UserData)): ?>
+            <?php if($this->db->field_exists("img","homepage")): ?>
             <div class="col-md-12">
               <div class="form-group">
                 <label>Image :</label>
                 <input type="file" class="form-control form-control-file" placeholder="Image" name="userfile" id="Image"> <button class="btn btn-info">Upload </button>
               </div>
             </div>
+            <?php endif ?>
 
+
+            <?php if($this->db->field_exists("active","homepage")): ?>
+            <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Want to display this:  </label>
+                      <input type="checkbox"  name="Checkbox" id="Checkbox">
+                    </div>
+                  </div>
             <?php endif ?>
 
             
@@ -77,7 +86,7 @@
             <?php else: ?>
             <?= form_open_multipart('UserC/edit/'.$k."/".$UserData[0]->id);?>   
             
-            <?php if(array_key_exists($UserData,name)): ?>
+            <?php if($this->db->field_exists("name","homepage")): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -89,7 +98,7 @@
 
             <?php endif ?>
 
-<?php if(array_key_exists($UserData,des)): ?>
+<?php if($this->db->field_exists("des","homepage")): ?>
 
             <div class="row">
               <div class="col-md-12">
@@ -102,7 +111,7 @@
 
             <?php endif ?>
 
-            <?php if(array_key_exists($UserData,username)): ?>
+            <?php if($this->db->field_exists("username","homepage")): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -125,8 +134,7 @@
 
 
 
-            <?php if(array_key_exists($UserData,img)): ?>
-            
+            <?php if($this->db->field_exists("img","homepage")): ?>            
             <div class="col-md-12">
               <div class="form-group">
               <input type="file" class="form-control form-control-file" placeholder="Image" name="userfile" id="Image"> <button class="btn btn-info">Upload </button>
@@ -139,10 +147,21 @@
             
             <?php endif ?>
 
+            <?php if($this->db->field_exists("active","homepage")): ?>
+            <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Want to display this:  </label>
+
+                      <input type="checkbox"  name="Checkbox" id="Checkbox" checked>
+                    </div>
+                  </div>
+            <?php endif ?>
+
+
             </div>
             <div class="row">
               <div class="update ml-auto mr-auto">
-                <button type="submit" class="btn btn-primary btn-round">Update Content</button>
+                <button type="submit" class="btn btn-primary btn-round" onclick="ConfirmUpdate(<?= $UserData[0]->id ?>)">Update Content</button>
               </div>
             </div>
 
