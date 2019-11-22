@@ -14,6 +14,10 @@
                   <table class="table table-striped ">
                     <thead class=" text-primary">
                       <tr><th>
+                      Selected
+                      </th>
+                      
+                      <th>
                        Id
                       </th>
 
@@ -48,7 +52,19 @@
                         <tbody>
                         <?php foreach($UserData as $d):?>
                           <tr>
+
+                          <td scope="row" width="5%"> 
+                          <?php   if($d->active==1):?>
+                          <input type="checkbox" style="text-align:center;" checked> 
+                      <?php else:?>                      
+                          <input type="checkbox" style="text-align:center;" >
+                      <?php endif;?>
+                      
+                          </td>
+
                           <td scope="row" width="5%"> <?= $d->id ?></td>
+
+
                           <?php if(isset($UserData[0]->name)): ?>
                             <td width="10%"> <?= $d->name ?>  </td>
                             <?php endif ?>
