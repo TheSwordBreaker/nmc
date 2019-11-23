@@ -39,7 +39,9 @@ class MainC extends CI_Controller{
         $sec3 = $this->WorkM->Gets('foodsec3');
         $sec4 = $this->WorkM->Gets('foodsec4');
         $Page = $this->WorkM->GetRow('pages',5);
+
         $Page['data'] = $this->load->view('public/FoodStuff',compact('sec1','sec2','sec3','sec4'),True);
+
         $this->load->view('public/Base',compact('Page'));
     }
     
@@ -66,8 +68,13 @@ class MainC extends CI_Controller{
     {
         $this->load->model('WorkM');
         // $data = $this->WorkM->Gets('culturepage');
+
         //$data = $this->WorkM->GetS('destpage');
         //$this->load->view('public/Cul',compact('data','sec2'));
+
+        $data = $this->WorkM->GetS('destpage');
+        $this->load->view('public/Culture',compact('data'));
+
         // $this->load->view('public/FoodStuff',compact('data','sec2'));
         $data = $this->WorkM->Gets('culturepage');
         $Page = $this->WorkM->GetRow('pages',3);

@@ -64,6 +64,7 @@
 								<li><a href="<?= base_url('MainC/Dest')?>" data-hover="destination">Destination</a></li>
 								<li><a href="<?= base_url('MainC/FoodStuff')?>" data-hover="culture">Food Stuff</a></li>
 								<li><a href="<?= base_url('MainC/Cul')?>" data-hover="culture">Culture</a></li>
+								<li><a href="<?= base_url('MainC/FoodStuff')?>" data-hover="FoodStuff">FoodStuff</a></li>
 								<li><a href="<?= base_url('WorkC/')?>" data-hover="login">Login</a></li>
 								<li><a href="#contact" data-hover="Contact Us" class="scroll">Contact Us</a></li>
 								

@@ -63,6 +63,10 @@ class UserC extends CI_Controller{
         {
             $data['name'] = $this->input->post('Name');
         }
+        if(isset($_POST['Checkbox']))
+        {
+            $data['active'] = $this->input->post('Checkbox');
+        }
 
        if(isset($_POST['Descripition']))
         {    
@@ -78,6 +82,12 @@ class UserC extends CI_Controller{
         {    
             $data['password'] = $this->input->post('password');                
         }  
+
+          if(null!==($this->input->post('Checkbox'))) {
+                    $data['active'] = '1';
+        } else {
+                    $data['active'] = '0';
+        }
 
         if(isset($_FILES['userfile']))
         {
@@ -109,13 +119,50 @@ class UserC extends CI_Controller{
 
         $this->load->model('WorkM');
 
-        if($this->WorkM->InsertK($k,$data)){
-        return $this->View($k);
-        // echo "done";
-        }else{
-        $this->session->set_flashdata('error', 'Inalid DATA');
-        $this->LoadAdd($k);
+        if(null!=($this->input->post('Checkbox')))
+        {
+            
+             // print_r("checkbox===1");
+                        // $this->WorkM->ConfirmK($k);
+
+            
+            if($this->WorkM->ConfirmK($k))
+            {
+                $this->session->set_flashdata('error', 'Inalid DATA');
+                $this->LoadAdd($k);
+
+            }
+            else
+            {
+                if($this->WorkM->InsertK($k,$data)){
+                    return $this->View($k);
+                    // echo "done";
+                    }else{
+                    $this->session->set_flashdata('error', 'Inalid DATA');
+                    $this->LoadAdd($k);
+                    }
+            }
+
         }
+        else
+        {
+            if($this->WorkM->InsertK($k,$data)){
+                return $this->View($k);
+                // echo "done";
+                }else{
+                $this->session->set_flashdata('error', 'Inalid DATA');
+                $this->LoadAdd($k);
+                }
+        
+        }
+
+        // if($this->WorkM->InsertK($k,$data)){
+        // return $this->View($k);
+        // // echo "done";
+        // }else{
+        // $this->session->set_flashdata('error', 'Inalid DATA');
+        // $this->LoadAdd($k);
+        // }
     }
 
 
@@ -128,6 +175,12 @@ class UserC extends CI_Controller{
         {
             $data['name'] = $this->input->post('Name');
         }
+
+        if(isset($_POST['Checkbox']))
+        {
+            $data['active'] = $this->input->post('Checkbox');
+        }
+
 
         if(isset($_POST['Descripition']))
         {    
@@ -144,6 +197,16 @@ class UserC extends CI_Controller{
             $data['password'] = $this->input->post('password');                
         }  
 
+        if(null!==($this->input->post('Checkbox'))) 
+        {
+            $data['active'] = '1';
+            
+        } else 
+        {
+            $data['active'] = '0';
+        };
+
+
         if(isset($_FILES['userfile']))
         {    
             $i = $this->WorkM->GetRow($k,$id);
@@ -158,16 +221,64 @@ class UserC extends CI_Controller{
             $data['img']=$k."/".$this->UpdateImg('./assets/images/'.$k."/",$tempImg,$k,$id);
             } 
         }
+
+
+
+        if($data['active'] == '1')
+        {
+            if($this->WorkM->ConfirmK($k))
+            {
+                    print_r("can't select more");
+            }
+            else
+            {
+                if($this->WorkM->UpdateK($k,$id,$data))
+                {
+                    return $this->View($k);
+                }else
+                {
+                    $this->session->set_flashdata('error', 'Inalid DATA');
+                    print("select only 3....");
+                    $this->Add($k);
+                }
+            }
+    
+        }
+        else
+        {
+            if($this->WorkM->UpdateK($k,$id,$data))
+                {
+                    return $this->View($k);
+                }else
+                {   
+                    $this->session->set_flashdata('error', 'Inalid DATA');
+                    print("select only 3....");
+                    $this->Add($k);
+                }
+        }
         
+        // if($data[active]==1)
+        // {
+        //     $res=$this->WorkM->ConfirmK($k);
+        //     if($res==3)
+        //     {
+        //         print_r("only 3 fields should be selected!!!...");
+        //     }
+        // }
+        // else
+        // {
+        //     if($this->WorkM->UpdateK($k,$id,$data)){
+        //         return $this->View($k);
+        //     }else{
+        //         $this->session->set_flashdata('error', 'Inalid DATA');
+        //         // print("select only 3....");
+        //         $this->Add($k);
+        //     }
+        // }
     
 
             
-        if($this->WorkM->UpdateK($k,$id,$data)){
-            return $this->View($k);
-        }else{
-            $this->session->set_flashdata('error', 'Inalid DATA');
-            $this->Add($k);
-        }
+        
     }
     
     public function Remove($k,$id)

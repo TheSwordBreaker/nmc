@@ -102,13 +102,34 @@ class WorkM extends CI_Model
     }
 
     public function UpdateK($tablename,$id,$data)
-    {
-        $this->db->where('id', $id);
+    {    
+         $this->db->where('id', $id);
         if ( $this->db->update($tablename, $data)) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public function ConfirmK($tablename)
+    {
+        $this->db->select_sum('active');
+        $this->db->from($tablename);
+        $query= $this->db->get();
+        $res=$query->result();
+                // print_r($res[0]->active);
+        if($res[0]->active==3)
+        {
+            return true;
+        }
+        else
+        {
+            if($res[0]<3)
+            {
+                
+            }
+        }
+
     }
 
 
@@ -131,4 +152,4 @@ class WorkM extends CI_Model
     }
 
 
-}
+} 
