@@ -153,7 +153,7 @@ margin-bottom:30px
 			<?php  for($i=0; $i < 3; $i++ ):?>
 
 						<div class="col-md-4 agile-news-left">
-							<img src="<?= base_url('assets/images/homepage/').$data[$i]->img ?>" alt="">
+							<img src="<?= base_url('assets/images/').$data[$i]->img ?>" alt="">
 							<div class="agile-news-right">
 								<div class="date-grid">
 									<div class="time">
