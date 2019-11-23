@@ -62,6 +62,7 @@
 								<li class="active"><a href="<?= base_url('MainC/')?>" data-hover="Home">Home</a></li>
 								<li><a href="<?= base_url('MainC/AboutUs')?>" data-hover="About Us">About Us</a></li>
 								<li><a href="<?= base_url('MainC/Dest')?>" data-hover="destination">Destination</a></li>
+								<li><a href="<?= base_url('MainC/FoodStuff')?>" data-hover="culture">Food Stuff</a></li>
 								<li><a href="<?= base_url('MainC/Cul')?>" data-hover="culture">Culture</a></li>
 								<li><a href="<?= base_url('WorkC/')?>" data-hover="login">Login</a></li>
 								<li><a href="#contact" data-hover="Contact Us" class="scroll">Contact Us</a></li>
@@ -133,7 +134,7 @@
 			<?php  for($i=0; $i < 3; $i++ ):?>
 
 						<div class="col-md-4 agile-news-left">
-							<img src="<?= base_url('assets/images/homepage/').$data[$i]->img ?>" alt="">
+							<img src="<?= base_url('assets/images/').$data[$i]->img ?>" alt="">
 							<div class="agile-news-right">
 								<div class="date-grid">
 									<div class="time">
@@ -146,7 +147,7 @@
 									<p><?= $data[$i]->des ?></p>
 								</div>
 								<div class="button">
-									<a href="<?= base_url('MainC/Dest')?>">More</a>
+									<a href="<?= base_url('MainC/all/destpage')?>">More</a>
 								</div>
 							</div>
 						</div>
@@ -159,8 +160,8 @@
 	</div>
 
 	<!--/counter-->
- <div class="agileinfo_counter_section" id="about">
- <!-- style="background: url(<?= base_url('assets/images/').$sec2[0]->pic ?>)" -->
+ <div class="agileinfo_counter_section" id="about"
+ style="background: url(<?= base_url('assets/images/').$sec2[0]->img ?>) no-repeat 0px 0px, background-size: cover;">
 		<div class="container">
 			<h3><?= $sec2[0]->name ?></h3>
 			<p class="sub_para two"><?= $sec2[0]->des ?> </p>

@@ -100,7 +100,7 @@ class UserC extends CI_Controller{
                 }
                 else
                 {
-                    $data['img'] = $this->upload->data('file_name');
+                    $data['img'] = $k."/".$this->upload->data('file_name');
                 }
             }
         }
@@ -155,7 +155,7 @@ class UserC extends CI_Controller{
                 $data['img']=$tempImg; 
             }
             else{
-            $data['img']=$this->UpdateImg('./assets/images/'.$k.'/',$tempImg);
+            $data['img']=$k."/".$this->UpdateImg('./assets/images/'.$k."/",$tempImg,$k,$id);
             } 
         }
         
@@ -193,17 +193,17 @@ class UserC extends CI_Controller{
     }
 
     
-public function UpdateImg($path,$tempImg){
+public function UpdateImg($path,$tempImg,$k,$id){
     $config['upload_path']          = $path;
     $config['allowed_types']        = 'gif|jpg|png';
-    // $config['max_size']             = 10000;
+    $config['max_size']             = 100000000;
     // $config['max_width']            = 1024;
     // $config['max_height']           = 768;
     $this->load->library('upload', $config);
     if ( ! $this->upload->do_upload('userfile'))
     {
-        $this->session->set_flashdata('error', 'Inalid DATA');
-        $this->AddDestpage();      // $this->load->view('upload_form', $error);
+        $this->session->set_flashdata('error', $this->upload->display_errors());
+        $this->loadEdit($k,$id);      // $this->load->view('upload_form', $error);
     }
     else
     {

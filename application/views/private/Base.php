@@ -27,6 +27,7 @@
       <!-- Navbar -->
       
       <?php include('Navbar.php') ?>
+      <?php include('error.php') ?>
 
 
 
@@ -95,6 +96,14 @@
         else
           return false;
         } 
+
+
+    $("ul.nav li").on("click", function() {
+      $("ul.nav li").removeClass("active");
+      $(this).addClass("active");
+    });
+
+
 
        
         </script>

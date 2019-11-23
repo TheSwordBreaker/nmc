@@ -9,9 +9,36 @@ class WorkM extends CI_Model
         return $result;
     }
 
-    public function GetName($tablename,$Name){
-        $query = $this->db->where('name',$Name)->get($tablename);
+    public function col_exist($field_name, $table_name)
+    {
+        if ($this->db->field_exists($field_name, $table_name))
+        {
+               return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public function GetNumRow($table)
+    {
+        $query = $this->db->get($table);
+        $result = $query->num_rows();
+        return $result;
+    }
+
+    public function GetAll($table,$limit,$offest=0)
+    {
+        $query = $this->db->limit($limit,$offest)
+                           ->get($table);
         $result = $query->result();
+        return $result;
+    }
+
+    public function GetName($Name){
+        $query = $this->db->where('name',$Name);
+        $result = $query->get('destpage')->result();
+        $result += $query->get('Culturepage')->result();
         return $result;
     }
 
@@ -22,20 +49,41 @@ class WorkM extends CI_Model
         return $result;
     }
 
-    public function fetch($query)
+    public function fetch_row($query)
     {
         if($query != '')
         {
-        $query = $this->db->like('name', $query)
-                            ->order_by('id', 'DESC')
-                            ->get('destpage');
-        $result = $query->result();
-        return $result;
+            $query = $this->db->query("SELECT id,name,img from destpage UNION SELECT id,name,img from culturepage WHERE `name` LIKE '%".$query."%' ESCAPE '!' ");
+        
+            // print_r($result);
+            // return false;
+            return $query->num_rows();
         }
         
-
-        
     }
+    public function fetch_limit($search,$limit,$offset=0)
+    {
+        if($offset == ""){$offset=0;}
+        $query = "";
+    //     if($search != '' && $offset == ''){
+    //         $query = $this->db->query("SELECT id,name,img from destpage UNION SELECT id,name,img from culturepage WHERE `name` LIKE '%".$search."%' ESCAPE '!' LIMIT ".$limit);
+    //     }
+        
+
+        if($search != '')
+        {
+        $query = $this->db->query("SELECT id,name,img from destpage UNION SELECT id,name,img from culturepage WHERE `name` LIKE '%".$search."%' ESCAPE '!' LIMIT ".$offset.",".$limit);
+ 
+        }
+    
+    return $query->result();
+       
+    // echo "<pre>";
+    // echo $offset;
+    // echo "</pre>";
+    }
+
+
     public function InsertK($tablename,$data)
     {
         if ($this->db->insert($tablename, $data)) {

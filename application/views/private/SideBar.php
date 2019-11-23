@@ -68,10 +68,10 @@
 
             <li class="nav-item dropdown">
                 <div class="dropdown-menu dropdown-menu-right border" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/foodPage') ?>">FoodStuff Sec1</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">FoodStuff Sec1</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">FoodStuff Sec1</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">FoodStuff Sec1</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/FoodSec1') ?>">FoodStuff Sec1</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/FoodSec2') ?>">FoodStuff Sec2</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/FoodSec3') ?>">FoodStuff Sec3</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/FoodSec4') ?>">FoodStuff Sec4</a>
 
                 </div>
                 <a data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
@@ -95,13 +95,13 @@
                 </a>
             </li> -->
 
-            <li>
+            <li class="nav-item ">
                 <a href="<?= base_url('UserC/View/pages') ?>">
                     <i class="nc-icon nc-ruler-pencil"></i>
                     <p>Posts</p>
                 </a>
             </li>
-            <li>
+            <li class="nav-item">
                 <a href="<?= base_url('UserC/View/Users') ?>">
                     <i class="nc-icon nc-single-02"></i>
                     <p>User Profile</p>

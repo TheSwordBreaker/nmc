@@ -12,7 +12,7 @@
         <div class="card-body">
         <?php if(!$up):?>
           <?php echo form_open_multipart('UserC/Add/'.$k); ?>  
-          <?php if(array_key_exists("name",$UserData)): ?>
+          <?php if($this->db->field_exists("name",$k)): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -23,7 +23,7 @@
             </div>
             <?php endif ?>
 
-            <?php if(array_key_exists("des",$UserData)): ?>
+            <?php if($this->db->field_exists("des",$k)): ?>
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -34,7 +34,7 @@
             </div>
             <?php endif ?>
 
-            <?php if(array_key_exists("username",$UserData)): ?>
+            <?php if($this->db->field_exists("username",$k)): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -55,7 +55,7 @@
 
             <?php endif ?>
 
-            <?php if(array_key_exists("img",$UserData)): ?>
+            <?php if($this->db->field_exists("img",$k)): ?>
             <div class="col-md-12">
               <div class="form-group">
                 <label>Image :</label>
@@ -77,7 +77,7 @@
             <?php else: ?>
             <?= form_open_multipart('UserC/edit/'.$k."/".$UserData[0]->id);?>   
             
-            <?php if(array_key_exists($UserData,name)): ?>
+            <?php if($this->db->field_exists('name',$k)): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -89,7 +89,7 @@
 
             <?php endif ?>
 
-<?php if(array_key_exists($UserData,des)): ?>
+<?php if($this->db->field_exists('des',$k)): ?>
 
             <div class="row">
               <div class="col-md-12">
@@ -102,7 +102,7 @@
 
             <?php endif ?>
 
-            <?php if(array_key_exists($UserData,username)): ?>
+            <?php if($this->db->field_exists('username',$k)): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -125,7 +125,7 @@
 
 
 
-            <?php if(array_key_exists($UserData,img)): ?>
+            <?php if($this->db->field_exists('img',$k)): ?>
             
             <div class="col-md-12">
               <div class="form-group">
