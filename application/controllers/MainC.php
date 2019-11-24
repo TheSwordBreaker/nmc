@@ -14,7 +14,7 @@ class MainC extends CI_Controller{
         $data = $this->WorkM->Gets('homepage');
         $sec3 = $this->WorkM->Gets('homeSec3');
         $sec2 = $this->WorkM->Gets('homeSec2');
-        $this->load->view('public/home',compact('data','sec2','sec3'));
+        $this->load->view('public/Home',compact('data','sec2','sec3'));
     }
 
 
@@ -60,24 +60,35 @@ class MainC extends CI_Controller{
 
     }
     
-    public function Cul()
+    // public function Cul()
+    // {
+    //     $this->load->model('WorkM');
+    //     // $data = $this->WorkM->Gets('culturepage');
+    //     $data = $this->WorkM->GetS('destpage');
+    //     $this->load->view('public/Culture',compact('data'));
+    //     // $this->load->view('public/FoodStuff',compact('data','sec2'));
+    // }
+
+    // public function Cul2()
+    // {
+    //     $this->load->model('WorkM');
+    //     // $data = $this->WorkM->Gets('culturepage');
+    //     $data = $this->WorkM->GetS('destpage');
+    //     // $this->load->view('public/Culture',compact('data','sec2'));
+    //     $this->load->view('public/FoodStuff copy',compact('data','sec2'));
+    // }
+
+
+    public function Culture()
     {
         $this->load->model('WorkM');
-        // $data = $this->WorkM->Gets('culturepage');
-        $data = $this->WorkM->GetS('destpage');
-        $this->load->view('public/Culture',compact('data'));
-        // $this->load->view('public/FoodStuff',compact('data','sec2'));
+        $data = $this->WorkM->Gets('culturepage');
+        $Page = $this->WorkM->GetRow('pages',3);
+        $Page['data'] = $this->load->view('public/Culture',compact('data'),True);
+        $this->load->view('public/Base',compact('Page'));
     }
 
-    public function Cul2()
-    {
-        $this->load->model('WorkM');
-        // $data = $this->WorkM->Gets('culturepage');
-        $data = $this->WorkM->GetS('destpage');
-        // $this->load->view('public/Culture',compact('data','sec2'));
-        $this->load->view('public/FoodStuff copy',compact('data','sec2'));
-    }
-
+    
 
 
     public function AboutUs()

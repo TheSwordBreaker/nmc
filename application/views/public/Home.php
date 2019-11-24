@@ -62,7 +62,7 @@
 								<li class="active"><a href="<?= base_url('MainC/')?>" data-hover="Home">Home</a></li>
 								<li><a href="<?= base_url('MainC/AboutUs')?>" data-hover="About Us">About Us</a></li>
 								<li><a href="<?= base_url('MainC/Dest')?>" data-hover="destination">Destination</a></li>
-								<li><a href="<?= base_url('MainC/Cul')?>" data-hover="culture">Culture</a></li>
+								<li><a href="<?= base_url('MainC/Culture')?>" data-hover="Culture">Culture</a></li>
 								<li><a href="<?= base_url('MainC/FoodStuff')?>" data-hover="FoodStuff">FoodStuff</a></li>
 								<li><a href="<?= base_url('WorkC/')?>" data-hover="login">Login</a></li>
 								<li><a href="#contact" data-hover="Contact Us" class="scroll">Contact Us</a></li>

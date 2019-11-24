@@ -4,6 +4,17 @@
   Feature Section
 ---------------------*/
 
+.btn {
+  border-radius: 0;
+}
+
+.btn-outline-primary {
+  color: #ef6c57;
+  background-color: transparent;
+  background-image: none;
+  border-color: #ef6c57;
+}
+
 .feature-item {
 	height: 415px;
 	position: relative;
