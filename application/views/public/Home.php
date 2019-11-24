@@ -55,54 +55,68 @@ margin-bottom:30px
 <body>
 	<div class="main" id="home">
 		<!--navigation-->
-		<nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <div class="navbar-toggle">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
-            </div>
-            <a class="navbar-brand" href="dashboard.html">Dashboard </a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <ul class="navbar-nav">
-              <li class="nav-item btn-rotate dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="nc-icon nc-bell-55"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Some Actions</span>
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-              <li class="nav-item btn-rotate dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="nc-icon nc-settings-gear-65"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Some Actions</span>
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="user.html">Admin Profile</a>
-                  <a class="dropdown-item" href="<?= base_url('UserC/logout')?>">Logout</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+			<!--navigation-->
+			<div class="header-w3">
+			<div class="header-top-agile">
+				<div class="social-icons-agileits">
+					<ul>
+						<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:info@example.com">nsktourism@gmail.com</a></li>
+						<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +918329007426</li>
+					</ul>
+				</div>
+				<div class="social">
+					<ul>
+						<li><a href="https://www.facebook.com/" class="link facebook" target="_parent"><span class="fa fa-facebook-square"></span></a></li>
+						<li><a href="https://www.twitter.com/" class="link twitter" target="_parent"><span class="fa fa-twitter"></span></a></li>
+						<li><a href="https://www.instagram.com/" class="link google-plus" target="_parent"><span class="fa fa-instagram"></span></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="header-bottom-agile">
+				<div class=navigation>
+					<nav class="navbar navbar-default cl-effect-16" id="cl-effect-16">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+						<div class="logo-agileinfo">
+							<h1><a href="<?= base_url('MainC/')?>"><i class="fa fa-plane" aria-hidden="true"></i> Nashik Tourism</a></h1>
+						</div>
+
+						<div id="navbar" class="navbar-collapse navbar-right collapse hover-effect">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="<?= base_url('MainC/')?>" data-hover="Home">Home</a></li>
+								<li><a href="<?= base_url('MainC/AboutUs')?>" data-hover="About Us">About Us</a></li>
+								<li><a href="<?= base_url('MainC/Dest')?>" data-hover="destination">Destination</a></li>
+								<li><a href="<?= base_url('MainC/Cul')?>" data-hover="Food Stuff">Food Stuff</a></li>
+								<li><a href="<?= base_url('MainC/Cul1')?>" data-hover="Culture">Culture</a></li>
+
+								<!-- <li><a href="" data-hover="Culture" class="scroll">Culture</a></li> -->
+								<li><a href="<?= base_url('WorkC/')?>" data-hover="login">Login</a></li>
+							</ul>
+
+						</div>
+					</nav>
+				</div>
+				<div class="search">
+					<div class="cd-main-header">
+						<ul class="cd-header-buttons">
+							<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+						</ul>
+					</div>
+					<div id="cd-search" class="cd-search">
+						<form action="#" method="post">
+							<input name="Search" type="search" placeholder="Search..." required="">
+						</form>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!--//navigation-->
 
       <div class="content">
         <div class="row">
