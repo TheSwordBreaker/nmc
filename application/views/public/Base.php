@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
         <!-- CSS Files -->
         <link href="<?= base_url('/assets/css/login.css') ?> " rel="stylesheet">
+        <link href="<?= base_url('/assets/css/owl.corousel.css') ?> " rel="stylesheet">
 
     </head>
 
