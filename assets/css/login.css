@@ -7904,7 +7904,7 @@ button.bg-dark:focus {
 
 .pb-5,
 .py-5 {
-  padding-bottom: 3rem !important;
+  padding-bottom: 2rem !important;
 }
 
 .pl-5,
@@ -10235,7 +10235,7 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
 .btn.btn-outline-primary.focus,
 .btn.btn-outline-primary:hover {
   color: #9c27b0;
-  background-color: #ef6c57;s
+  background-color: #ef6c57;
   border-color: #9c27b0;
 }
 

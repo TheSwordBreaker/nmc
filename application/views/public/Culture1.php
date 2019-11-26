@@ -67,10 +67,10 @@
 
     <!-- welcome -->
 <section class="welcome py-5">
-	<div class="container py-3">
+	<div class="container py-3" style="height:800px">
   <h2 class="title">Our Speciality</h2> 
 
-  <h4 class="color-black-opacity-5">Exploring the city of divercity....</h4>
+  <h4 class="color-black-opacity-5">Exploring the city of divers0ity....</h4>
 <!--  carousel  -->
 <!-- <div class="section" id="carousel">
     <div class="container" >
@@ -183,26 +183,11 @@
 			                    </div>
                         </div>        
                             </div>
-                        </div>
-                        <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                            data-slide="prev">
-                            <i class="material-icons">keyboard_arrow_left</i>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                            data-slide="next">
-                            <i class="material-icons">keyboard_arrow_right</i>
-                            <span class="sr-only">Next</span>
-                        </a> -->
-                    <!--  </div> -->
-                <!-- </div> -->
-                <!-- End Carousel Card -->
-            <!-- </div> --> 
-        <!-- </div> -->
-    <!-- </div> -->
-<!-- </div> --> 
+                        </div>               
 
 </div>
 </section>
 <!--         end carousel -->
+
+<!-- <p class="iner mt-4">Nashik city is a gem in the crown of Maharashtra. The city is a pilgrimage, shopping hub, industrial center and a true beauty for the eyes. The city is well known for many of its specialities among the frequent visitors. If you are coming to Nashik please do try your hands at the specialities of the city that are listed above.</p> -->
 

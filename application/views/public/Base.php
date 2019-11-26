@@ -66,7 +66,7 @@
                 </a>
             </li>
             <li class="nav-item" style="letter-spacing: 1px; font-family: verdana;">
-                <a class="nav-link" href="<?= base_url('MainC/Cul')?>">
+                <a class="nav-link" href="<?= base_url('MainC/Culture')?>">
                     <b> Culture </b>
                 </a>
             </li>
