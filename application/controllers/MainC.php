@@ -24,8 +24,10 @@ class MainC extends CI_Controller{
         if($this->input->post('query'))
         {
             $query = $this->input->post('query');
+            $S = explode(" ",$query);
+            $S = $S[0];
         }
-        return redirect("MainC/SearchResult/$query");
+        return redirect("MainC/SearchResult/$S");
     }
     
     
@@ -58,7 +60,11 @@ class MainC extends CI_Controller{
     public function Places($Name=NULL)
     {
         $this->load->model('WorkM');
-            $data = $this->WorkM->GetName($Name);
+        $N = explode("%20",$Name);
+        
+            $data = $this->WorkM->GetName($N[0]);
+
+
             $Page = $this->WorkM->GetRow('pages',2);
             $Page['data'] = $this->load->view('public/Blog',compact('data'),True);
             $this->load->view('public/Base',compact('Page'));

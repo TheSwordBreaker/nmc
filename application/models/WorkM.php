@@ -37,13 +37,11 @@ class WorkM extends CI_Model
 
     public function GetName($Name){
         $query = $this->db->like('name',$Name);
-        echo $Name;
-        echo str_replace($Name);
+
         $result = $query->get('destpage')->result();
-        $result += $query->where('name',$Name)->get('Culturepage')->result();
-        echo '<pre>'; 
-        print_r($result);
-        echo '</pre>';
+        $result += $query->like('name',$Name)->get('Culturepage')->result();
+        
+        return $result;
         
     }
 
