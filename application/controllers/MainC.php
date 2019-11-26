@@ -25,7 +25,7 @@ class MainC extends CI_Controller{
         {
             $query = $this->input->post('query');
         }
-        return redirect("MainC/SerachResult/$query");
+        return redirect("MainC/SearchResult/$query");
     }
     
     
@@ -92,14 +92,14 @@ class MainC extends CI_Controller{
     }
 
 
-    public function SerachResult($query)
+    public function SearchResult($query)
     {
         $this->load->model('WorkM');
-        $data = $this->WorkM->fetch_row($query);
+        $row = $this->WorkM->fetch_row($query);
         $config = [
             'base_url'   => base_url('/MainC/SearchResult/'.$query),
             'per_page'   => 8,
-            'total_rows' => $data,
+            'total_rows' => $row,
             'uri_segment' => 4,
             'full_tag_open' => '<ul class="pagination pagination-info">',
             'full_tag_close' => "</ul>",
@@ -127,7 +127,7 @@ class MainC extends CI_Controller{
        
 
 
-        $result = $this->WorkM->fetch_limit($data,$config['per_page'],$offset);
+        $result = $this->WorkM->fetch_limit($query,$config['per_page'],$offset);
         
         $Page = $this->WorkM->GetRow('pages',5);
         $Page['data'] =  $this->load->view('public/Search',compact('result'),True);
@@ -152,10 +152,10 @@ class MainC extends CI_Controller{
         $config['last_link'] = 'Last';
         $config['last_tag_open'] = '<li class=" page-item">';
         $config['last_tag_close'] = '</li>';
-        $config['next_link'] = 'prev';
+        $config['next_link'] = '>>';
         $config['next_tag_open'] = '<li class="page-item">';
         $config['next_tag_close'] = '</li>';
-        $config['prev_link'] = 'next';
+        $config['prev_link'] = '<<';
         $config['prev_tag_open'] = '<li class="page-item">';
         $config['prev_tag_close'] = '</li>';
         $config['num_tag_open'] = '<li class="page-item">';

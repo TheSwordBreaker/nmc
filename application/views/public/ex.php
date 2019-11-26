@@ -1,5 +1,6 @@
 <div class="col-lg-12 m-4 pt-5">
     <h4 class="widget-title display-2">All </h4>
+   
     <div class="row">
         <?php foreach($data as $row): ?>
         <div class="col-md-4 ">

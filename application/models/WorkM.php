@@ -36,10 +36,15 @@ class WorkM extends CI_Model
     }
 
     public function GetName($Name){
-        $query = $this->db->where('name',$Name);
+        $query = $this->db->like('name',$Name);
+        echo $Name;
+        echo str_replace($Name);
         $result = $query->get('destpage')->result();
-        $result += $query->get('Culturepage')->result();
-        return $result;
+        $result += $query->where('name',$Name)->get('Culturepage')->result();
+        echo '<pre>'; 
+        print_r($result);
+        echo '</pre>';
+        
     }
 
     public function Gets($tablename)
@@ -103,7 +108,7 @@ class WorkM extends CI_Model
 
     public function UpdateK($tablename,$id,$data)
     {    
-         $this->db->where('id', $id);
+        $this->db->where('id', $id);
         if ( $this->db->update($tablename, $data)) {
             return true;
         } else {

@@ -13,9 +13,12 @@
                 <div class="table-responsive">
                   <table class="table table-striped ">
                     <thead class=" text-primary">
-                      <tr><th>
+                      <tr>
+                      <?php if($this->db->field_exists("active",$k)): ?>                      <th>
+                        <th>
                       Selected
                       </th>
+                      <?php endif ?>
                       
                       <th>
                        Id
@@ -53,7 +56,8 @@
                         <tbody>
                         <?php foreach($UserData as $d):?>
                           <tr>
-
+                          <?php if($this->db->field_exists("active",$k)): ?>                      <th>
+                      
                           <td scope="row" width="5%"> 
                           <?php   if($d->active==1):?>
                           <input type="checkbox" style="text-align:center;" checked> 
@@ -62,6 +66,7 @@
                       <?php endif;?>
                       
                           </td>
+                          <?php endif ?>
 
                           <td scope="row" width="5%"> <?= $d->id ?></td>
 

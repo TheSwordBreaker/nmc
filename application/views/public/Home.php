@@ -91,8 +91,8 @@ margin-bottom:30px
 								<li class="active"><a href="<?= base_url('MainC/')?>" data-hover="Home">Home</a></li>
 								<li><a href="<?= base_url('MainC/AboutUs')?>" data-hover="About Us">About Us</a></li>
 								<li><a href="<?= base_url('MainC/Dest')?>" data-hover="destination">Destination</a></li>
-								<li><a href="<?= base_url('MainC/Cul')?>" data-hover="Food Stuff">Food Stuff</a></li>
-								<li><a href="<?= base_url('MainC/Cul1')?>" data-hover="Culture">Culture</a></li>
+								<li><a href="<?= base_url('MainC/Foodstuff')?>" data-hover="Food Stuff">Food Stuff</a></li>
+								<li><a href="<?= base_url('MainC/Cul')?>" data-hover="Culture">Culture</a></li>
 
 								<!-- <li><a href="" data-hover="Culture" class="scroll">Culture</a></li> -->
 								<li><a href="<?= base_url('WorkC/')?>" data-hover="login">Login</a></li>
@@ -108,8 +108,8 @@ margin-bottom:30px
 						</ul>
 					</div>
 					<div id="cd-search" class="cd-search">
-						<form action="#" method="post">
-							<input name="Search" type="search" placeholder="Search..." required="">
+						<form action="<?= base_url('MainC/Search')?>" method="post">
+							<input name="query" type="search" placeholder="Search..." required="">
 						</form>
 					</div>
 				</div>

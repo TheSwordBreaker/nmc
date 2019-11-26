@@ -66,6 +66,12 @@ class UserC extends CI_Controller{
         if(isset($_POST['Checkbox']))
         {
             $data['active'] = $this->input->post('Checkbox');
+            
+            if(null!==($this->input->post('Checkbox'))) {
+                    $data['active'] = '1';
+            } else {
+                   $data['active'] = '0';
+            }
         }
 
        if(isset($_POST['Descripition']))
@@ -83,11 +89,6 @@ class UserC extends CI_Controller{
             $data['password'] = $this->input->post('password');                
         }  
 
-          if(null!==($this->input->post('Checkbox'))) {
-                    $data['active'] = '1';
-        } else {
-                    $data['active'] = '0';
-        }
 
         if(isset($_FILES['userfile']))
         {
@@ -204,7 +205,7 @@ class UserC extends CI_Controller{
         } else 
         {
             $data['active'] = '0';
-        };
+        }
 
 
         if(isset($_FILES['userfile']))

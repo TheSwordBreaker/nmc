@@ -17,13 +17,14 @@
     </div>
 
     <div class="sidebar-wrapper">
-        <ul class="nav">
+        <ul class="nav ">
             <li class="active ">
                 <a href="<?= base_url('UserC') ?>">
                     <i class="nc-icon nc-bank"></i>
                     <p>Dashboard</p>
                 </a>
             </li>
+            
 
             <li class="nav-item dropdown">
                 <div class="dropdown-menu dropdown-menu-right border" aria-labelledby="navbarDropdownMenuLink">
