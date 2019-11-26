@@ -71,14 +71,7 @@
             <?php endif ?>
 
 
-            <?php if($this->db->field_exists("active","homepage")): ?>
-            <div class="col-md-12">
-                    <div class="form-group">
-                      <label>Want to display this:  </label>
-                      <input type="checkbox"  name="Checkbox" id="Checkbox">
-                    </div>
-                  </div>
-            <?php endif ?>
+          
 
             
 
@@ -155,15 +148,7 @@
             
             <?php endif ?>
 
-            <?php if($this->db->field_exists("active","homepage")): ?>
-            <div class="col-md-12">
-                    <div class="form-group">
-                      <label>Want to display this:  </label>
-
-                      <input type="checkbox"  name="Checkbox" id="Checkbox" checked>
-                    </div>
-                  </div>
-            <?php endif ?>
+            
 
 
             </div>

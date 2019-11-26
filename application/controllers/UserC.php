@@ -29,8 +29,32 @@ class UserC extends CI_Controller{
     {
         $this->load->model('WorkM');
         $UserData = $this->WorkM->Gets($k);  
+        $C = 0;
         $Page['title'] = $k;   
-        $Page['data'] = $this->load->view('private/View',compact('UserData','k'),True);
+        $Page['data'] = $this->load->view('private/View',compact('UserData','k','C'),True);
+        $this->load->view('private/Base',compact('Page'));
+    }
+
+
+    public function Change($k)
+    {
+        $this->load->model('WorkM');
+        $UserData = $this->WorkM->Gets($k);  
+        $C = 1;
+        $Page['title'] = $k;   
+        $Page['data'] = $this->load->view('private/View',compact('UserData','k','C'),True);
+        $this->load->view('private/Base',compact('Page'));
+    }
+
+    public function FinalChange($k)
+    {
+        $this->load->model('WorkM');
+        $UserData = $this->WorkM->Gets($k);  
+
+        
+        $C = 0;
+        $Page['title'] = $k;   
+        $Page['data'] = $this->load->view('private/View',compact('UserData','k','C'),True);
         $this->load->view('private/Base',compact('Page'));
     }
     
