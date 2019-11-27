@@ -82,9 +82,11 @@ class MainC extends CI_Controller{
     public function Culture()
     {
         $this->load->model('WorkM');
-        $data = $this->WorkM->Gets('culsec1');
+        $sec1 = $this->WorkM->Gets('culsec1');
+        $sec2 = $this->WorkM->Gets('culsec2');
+        $sec3 = $this->WorkM->Gets('culsec3');
         $Page = $this->WorkM->GetRow('pages',3);
-        $Page['data'] = $this->load->view('public/Culture',compact('data'),True);
+        $Page['data'] = $this->load->view('public/Culture',compact('sec1','sec2','sec3'),True);
         $this->load->view('public/Base',compact('Page'));     
     }
 
