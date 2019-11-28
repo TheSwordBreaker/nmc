@@ -12,12 +12,12 @@
 
     <div class="about bg-light py-6" id="about">
 		<div class="container" style="height:800px;">
-				<h2 class="title">History</h2>
-					<p class="iner mt-4" style="font-size: 15px;" >Nashik was known as Panchavati before Ramayana period. Nashik has mythological, historical, social and cultural importance. The city is situated on the banks of the Godavari River, making it one of the holiest places for Hindus all over the world.</p>
-					<p class="iner mt-4" style="font-size: 15px;">Nashik has a rich historical past, as the mythology has it that Lord Rama, the King of Ayodhya, made Nashik his abode during his 14 years in exile. At the same place Lord Laxman, by the wish of Lord Rama, cut the nose of “Shurpnakha” and thus this city was named as “Nashik”. </p>
+				<h2 class="title"><?=$sec1[0]->name?></h2>
+					<p class="iner mt-4" style="font-size: 15px;" ><?= $sec1[0]->des1 ?></p>
+					<p class="iner mt-4" style="font-size: 15px;"><?= $sec1[0]->des2 ?></p>
 					<br>
-                <img src="<?= base_url('./assets/images/KumbhMela2.jpg')?>" class="center" style="margin-right: 20px; margin-left: 20px;" alt="">
-				<p class="iner mt-4"> It was also known as the ‘Land of the Brave’ during the regime of Shivaji. The most important historical significance is that Kumbh Mela is conducted at Nashik once every twelve years, out of 4 places in India</p>
+                <img src="<?= base_url('assets/images/culsec1/').$sec1[0]->img ?>" class="center" style="margin-right: 20px; margin-left: 20px;" alt="">
+				<p class="iner mt-4"><?= $sec1[0]->des3 ?> </p>
 			</div>
 		</div>
 
@@ -26,31 +26,25 @@
         <div class="row justify-content-center mb-3">
           <div class="col-md-3 text-center">
             <h2 class="title">Our Events</h2>
-            <h4 class="color-black-opacity-5">The Events of Nashik City...</h4>
+            <h4 class="color-black-opacity-5">The Events of Nashik City</h4>
           </div>
         </div>
         <div class="row mb-3 align-items-stretch">
+
+        <?php for( $i=0; $i < 2; $i++ ): ?>
+
           <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
             <div class="h-entry">
-              <img src="<?= base_url('assets/images/KumbhMela1.jpg') ?>" alt="Image" class="img-fluid">
+              <img src="<?= base_url('assets/images/culsec2/').$sec2[$i]->img ?>" alt="Image" class="img-fluid">
               <br>
-              <h3 class="card-title">Kumbh Mela</h3>
-              <!-- <a href="#" data-toggle="modal" data-target="#myModal1">Kumbh Mela</a><br> -->
-             <!-- <div class="meta mb-4"><span class="mx-2">&bullet;</span>Last held on July 2015<span class="mx-2">&bullet;</span> <a href="#">News</a>
-             <span class="mx-2">&bullet;</span><a href="#">Videos</a></div> -->
-              <p>Millions of people, who gather without any invitation, notice or summon from all over the globe to participate in the stream of knowledge and spirituality on the banks of sacred rivers is Kumbhamela.The Kumbh Mela is an important festival according to Kumbh Melathe Hindu mythology. The festival is one of the largest public gatherings of faith in the world as it draws crores of pilgrims over a course of 48 days to bathe in the holy confluence of rivers-- the Ganga, the Yamuna and the Saraswati. Though the Mela is visited by Hindu devotees from across the world, the congregation mainly includes sadhus, sadhvis, ascetics, kalpvais and pilgrims.</p>
+              <h3 class="card-title"><?= $sec2[$i]->name ?></h3>
+             
+              <p><?= $sec2[$i]->des?></p>
             </div> 
           </div>
-          <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-            <div class="h-entry">
-              <img src="<?= base_url('assets/images/RamRath1.jpeg')?>" alt="Image" class="img-fluid">
-              <br>
-              <h3 class="card-title">Ram-Ratha Yatra</h3>
-              <!-- <div class="meta mb-4"><span class="mx-2">&bullet;</span>Last held in September 2018 <span class="mx-2">&bullet;</span><a href="#">News</a> -->
-                <!-- <span class="mx-2">&bullet;</span><a href="#">Videos</a></div> -->
-              <p>Nashik City mainly knows as the place where Lord Ramachandra stayed for more than 12 years in the area known as Panchavati. Ramnavmi Ratha Yatra is held during the festival of Janmotsava at the Sansthan Shri Kalaram Mandir at Panchavati which is dedicated to Lord Rama. The festival is which lasts for 15days begin from the first day of Chaitra till Chaitra Purnima. The major attraction of the festival is Ratha Yathra held on the second day, that starts at about 4.30 p.m and continuous till late night with the rath of Lord Rama and Lord Hanuman. The raths have a big wooden round rod known as Dhuri and are pulled with heavy ropes by the rath sevakas. 
-            </div>
-          </div>
+
+          <?php endfor?>
+                
         </div>
         <div class="button">
           <!-- <div class="text-center"> -->
@@ -65,17 +59,14 @@
 
 
 
-    <!-- welcome -->
+  
 <section class="welcome py-5">
-	<div class="container py-3">
+	<div class="container py-3" style="height:800px">
   <h2 class="title">Our Speciality</h2> 
 
-  <h4 class="color-black-opacity-5">Exploring the city of divercity....</h4>
+  <h4 class="color-black-opacity-5">Exploring the city of diversity....</h4>
 <!--  carousel  -->
-<!-- <div class="section" id="carousel">
-    <div class="container" >
-        <div class="row" > -->
-            <div class="col-md-14 mr-auto ml-auto" style="height: 800px; weidth: 1500px">
+  <div class="col-md-14 mr-auto ml-auto" style="height: 800px; weidth: 1500px">
                 <!-- Carousel Card -->
                 <div class="card card-raised card-carousel">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
@@ -92,117 +83,43 @@
                     <div class="carousel-item active"><br><br><br>
                         <div class="row welcome-grids">
 			                    <div class="col-lg-6">
-				                    <h2 class="mb-3">Nashik Dhol</h2>
-				                    <h3>"The Tune Of Happiness...."</h3> 
-				                    <p class="my-4"  style="font-size: 20px;margin-left: 18px;" >Nashik dhol was prepared by army band which was supposed to play in the prade Band did play it in the republic day parade so it was named”Nashik Dhol”. Tune was played in Nashik as it was invented here.</p>
+				                    <h2 class="mb-3"><?= $sec3[0]->name?></h2>
+				                    <h3><?= $sec3[0]->des1?></h3> 
+				                    <p class="my-4"  style="font-size: 20px;margin-left: 18px;" ><?= $sec3[0]->des?></p>
 				                    <a href="#">Read More</a>
 			                    </div>
 			                    <div class="col-lg-6 mt-lg-0 mt-5 welcome-grid3" >
 				                    <div class="position" style="margin-right:15px;">
-					                  <img src="<?= base_url('assets\images\culture\music&sport\nashik-dhol3.png') ?>" alt="" class="img-fluid" />
+					                  <img src="<?= base_url('assets/images/culsec3/').$sec3[0]->img?>" alt="" class="img-fluid" />
 				                    </div>
 			                    </div>
                         </div>                               
                     </div>
 
+                    <?php  for($i=1; $i < 6; $i++ ):?>
+
                     <div class="carousel-item"><br><br><br>
                             <div class="row welcome-grids">
 			                    <div class="col-lg-6">
-				                    <h2 class="mb-3">Grapes</h2>
-				                    <h3>"Nothing great is created suddenly, any more than a bunch of grapes or a fig."</h3>
-				                    <p class="my-4" style="font-size: 20px;margin-left: 18px; text-align:justify;">Nashik is very famous for its table and wine grapes. The grapes are sure to tickle your taste buds. The black, green, seed and seedless varities are all popular. Grapes from the city are exported to Europe, the Middle East, and Asia.</p>
+				                    <h2 class="mb-3"><?= $sec3[$i]->name?></h2>
+				                    <h3><?= $sec3[$i]->des1 ?></h3>
+				                    <p class="my-4" style="font-size: 20px;margin-left: 18px; text-align:justify;"><?= $sec3[$i]->des?></p>
 				                    <a href="#">Read More</a>
 			                    </div>
 			                    <div class="col-lg-6 mt-lg-0 mt-5 welcome-grid3">
 				                    <div class="position" style="margin-right:15px;">
-					                  <img src="<?= base_url('assets\images\culture\music&sport\grapes5.png') ?>" alt="" class="img-fluid" />
+					                  <img src="<?= base_url('assets/images/culsec3/').$sec3[$i]->img?>" alt="" class="img-fluid" />
 				                    </div>
 			                    </div>
                         </div>        
                             </div>
+                            <?php endfor ?>
+                            
 
-                            <div class="carousel-item"><br><br><br>
-                            <div class="row welcome-grids">
-			                    <div class="col-lg-6">
-				                    <h2 class="mb-3">Chivda</h2>
-				                    <h3>"Sometimes satisfying our hanger is just not enough.. TASTE is very important."</h3>
-				                    <p class="my-4" style="font-size: 20px;margin-left: 18px;">Chivda is a traditional Maharashtrian snack. The Nashik Chivda is very unique and delicious. It is a combination of flattened rice (Poha in Marathi), roasted gram, dried coconut, fried curry leaves, peanuts, sometimes cashews and masalas. Some famous brands selling Nashik Chivda are – Kondaji, Madhavji etc.</p>
-				                    <a href="#">Read More</a>
-			                    </div>
-			                    <div class="col-lg-6 mt-lg-0 mt-5 welcome-grid3">
-				                    <div class="position" style="margin-right:15px;">
-					                  <img src="<?= base_url('assets\images\culture\music&sport\chivda.jpg') ?>" alt="" class="img-fluid" />
-				                    </div>
-			                    </div>
-                        </div>        
-                            </div>
-
-                            <div class="carousel-item"><br><br><br>
-                            <div class="row welcome-grids">
-			                    <div class="col-lg-6">
-				                    <h2 class="mb-3">Misal</h2>
-				                    <h3>It's not just Misal, it's an experience !!!</h3>
-				                    <p class="my-4" style="font-size: 20px;margin-left: 18px;">The Misal is a delicacy made from the mixture of various sprouts like mung, matki, chana, beans and lots of spicy, oily masala. The Misal Pav is a relatively cheap yet nutritional snack or meal. It is a must must have if you are in Nashik.</p>
-				                    <a href="#">Read More</a>
-			                    </div>
-			                    <div class="col-lg-6 mt-lg-0 mt-5 welcome-grid3">
-				                    <div class="position" style="margin-right:15px;">
-					                  <img src="<?= base_url('assets\images\culture\music&sport\misal.jpg') ?>" alt="" class="img-fluid" />
-				                    </div>
-			                    </div>
-                        </div>        
-                            </div>
-
-                            <div class="carousel-item"><br><br><br>
-                            <div class="row welcome-grids">
-			                    <div class="col-lg-6">
-				                    <h2 class="mb-3">Wine</h2>
-				                    <h3>Wine is a passport to World....</h3>
-				                    <p class="my-4" style="font-size: 20px;margin-left: 18px;">Nashik is the “Wine Capital of India”, so how can one miss it when in the city. There are around 33 wineries in and around Nashik. You can get white, red etc types of quality and exclusive Wines in Nashik.</p>
-				                    <a href="#">Read More</a>
-			                    </div>
-			                    <div class="col-lg-6 mt-lg-0 mt-5 welcome-grid3">
-				                    <div class="position" style="margin-right:15px;">
-					                  <img src="<?= base_url('assets\images\culture\music&sport\wine2.png') ?>" alt="" class="img-fluid" />
-				                    </div>
-			                    </div>
-                        </div>        
-                            </div>
-                            <div class="carousel-item"><br><br><br>
-                            <div class="row welcome-grids">
-			                    <div class="col-lg-6">
-				                    <h2 class="mb-3">Guava</h2>
-				                    <h3>"One that would have the fruit must climb the tree."</h3>
-				                    <p class="my-4" style="font-size: 20px;margin-left: 18px;">Nashik is also known as the “Kitchen garden” of Mumbai and other neighboring cities. The Guavas (Peru in Marathi) from Nashik are popular for their unique taste.</p>
-				                    <a href="#">Read More</a>
-			                    </div>
-			                    <div class="col-lg-6 mt-lg-0 mt-5 welcome-grid3">
-				                    <div class="position" style="margin-right:15px;" >
-					                  <img src="<?= base_url('assets\images\culture\music&sport\guava4.png') ?>" alt="" class="img-fluid" />
-				                    </div>
-			                    </div>
-                        </div>        
-                            </div>
-                        </div>
-                        <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                            data-slide="prev">
-                            <i class="material-icons">keyboard_arrow_left</i>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                            data-slide="next">
-                            <i class="material-icons">keyboard_arrow_right</i>
-                            <span class="sr-only">Next</span>
-                        </a> -->
-                    <!--  </div> -->
-                <!-- </div> -->
-                <!-- End Carousel Card -->
-            <!-- </div> --> 
-        <!-- </div> -->
-    <!-- </div> -->
-<!-- </div> --> 
+                            
 
 </div>
 </section>
 <!--         end carousel -->
+
 

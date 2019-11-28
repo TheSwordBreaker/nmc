@@ -60,24 +60,7 @@ class MainC extends CI_Controller{
 
     }
     
-    // public function Cul()
-    // {
-    //     $this->load->model('WorkM');
-    //     // $data = $this->WorkM->Gets('culturepage');
-    //     $data = $this->WorkM->GetS('destpage');
-    //     $this->load->view('public/Culture',compact('data'));
-    //     // $this->load->view('public/FoodStuff',compact('data','sec2'));
-    // }
-
-    // public function Cul2()
-    // {
-    //     $this->load->model('WorkM');
-    //     // $data = $this->WorkM->Gets('culturepage');
-    //     $data = $this->WorkM->GetS('destpage');
-    //     // $this->load->view('public/Culture',compact('data','sec2'));
-    //     $this->load->view('public/FoodStuff copy',compact('data','sec2'));
-    // }
-
+   
 
     public function Culture()
     {
