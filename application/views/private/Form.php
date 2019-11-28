@@ -12,7 +12,9 @@
         <div class="card-body">
         <?php if(!$up):?>
           <?php echo form_open_multipart('UserC/Add/'.$k); ?>  
-          <?php if($this->db->field_exists("name","homepage")): ?>
+
+          <?php if($this->db->field_exists("name",$k)): ?>
+
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -23,7 +25,8 @@
             </div>
             <?php endif ?>
 
-            <?php if($this->db->field_exists("des","homepage")): ?>
+            <?php if($this->db->field_exists("des",$k)): ?>
+
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -34,7 +37,9 @@
             </div>
             <?php endif ?>
 
-            <?php if($this->db->field_exists("username","homepage")): ?>
+
+            <?php if($this->db->field_exists("username",$k)): ?>
+
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -55,7 +60,8 @@
 
             <?php endif ?>
 
-            <?php if($this->db->field_exists("img","homepage")): ?>
+            <?php if($this->db->field_exists("img",$k)): ?>
+
             <div class="col-md-12">
               <div class="form-group">
                 <label>Image :</label>
@@ -65,14 +71,7 @@
             <?php endif ?>
 
 
-            <?php if($this->db->field_exists("active","homepage")): ?>
-            <div class="col-md-12">
-                    <div class="form-group">
-                      <label>Want to display this:  </label>
-                      <input type="checkbox"  name="Checkbox" id="Checkbox">
-                    </div>
-                  </div>
-            <?php endif ?>
+          
 
             
 
@@ -86,7 +85,7 @@
             <?php else: ?>
             <?= form_open_multipart('UserC/edit/'.$k."/".$UserData[0]->id);?>   
             
-            <?php if($this->db->field_exists("name","homepage")): ?>
+            <?php if($this->db->field_exists('name',$k)): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -98,7 +97,7 @@
 
             <?php endif ?>
 
-<?php if($this->db->field_exists("des","homepage")): ?>
+<?php if($this->db->field_exists('des',$k)): ?>
 
             <div class="row">
               <div class="col-md-12">
@@ -111,7 +110,8 @@
 
             <?php endif ?>
 
-            <?php if($this->db->field_exists("username","homepage")): ?>
+            <?php if($this->db->field_exists('username',$k)): ?>
+
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -134,7 +134,8 @@
 
 
 
-            <?php if($this->db->field_exists("img","homepage")): ?>            
+            <?php if($this->db->field_exists('img',$k)): ?>
+
             <div class="col-md-12">
               <div class="form-group">
               <input type="file" class="form-control form-control-file" placeholder="Image" name="userfile" id="Image"> <button class="btn btn-info">Upload </button>
@@ -147,15 +148,7 @@
             
             <?php endif ?>
 
-            <?php if($this->db->field_exists("active","homepage")): ?>
-            <div class="col-md-12">
-                    <div class="form-group">
-                      <label>Want to display this:  </label>
-
-                      <input type="checkbox"  name="Checkbox" id="Checkbox" checked>
-                    </div>
-                  </div>
-            <?php endif ?>
+            
 
 
             </div>

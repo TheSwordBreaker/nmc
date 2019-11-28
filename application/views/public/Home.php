@@ -22,12 +22,41 @@
 	<link rel="stylesheet" href=" <?= base_url('assets/css/lightbox.css') ?>" type="text/css" media="all">
 	<link href=" <?= base_url('assets/css/easy-responsive-tabs.css') ?>" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href=" <?= base_url('assets/css/style.css') ?>" type="text/css" media="all" />
+	 <style>
+#name {
+width:100%;
+background-image:url("<?= base_url('./assets/images/user.png')?>");
+background-repeat:no-repeat;
+background-position:5px 7px
+}
+#email {
+width:100%;
+background-image:url("<?= base_url('./assets/images/email1.png')?>");
+background-repeat:no-repeat;
+background-position:5px 7px
+}
+textarea {
+background-image:url("<?= base_url('./assets/images/msg1.png')?>");
+background-repeat:no-repeat;
+background-position:5px 7px;
+width:100%;
+height:95px;
+padding:10px;
+resize:none;
+margin-top:30px;
+border:1px solid #ccc;
+padding-left:40px;
+font-size:16px;
+font-family:raleway;
+margin-bottom:30px
+}
+</style>
 </head>
-
 <body>
 	<div class="main" id="home">
 		<!--navigation-->
-		<div class="header-w3">
+			<!--navigation-->
+			<div class="header-w3">
 			<div class="header-top-agile">
 				<div class="social-icons-agileits">
 					<ul>
@@ -62,11 +91,16 @@
 								<li class="active"><a href="<?= base_url('MainC/')?>" data-hover="Home">Home</a></li>
 								<li><a href="<?= base_url('MainC/AboutUs')?>" data-hover="About Us">About Us</a></li>
 								<li><a href="<?= base_url('MainC/Dest')?>" data-hover="destination">Destination</a></li>
+<<<<<<< HEAD
 								<li><a href="<?= base_url('MainC/Culture')?>" data-hover="Culture">Culture</a></li>
 								<li><a href="<?= base_url('MainC/FoodStuff')?>" data-hover="FoodStuff">FoodStuff</a></li>
+=======
+								<li><a href="<?= base_url('MainC/Foodstuff')?>" data-hover="Food Stuff">Food Stuff</a></li>
+								<li><a href="<?= base_url('MainC/Cul')?>" data-hover="Culture">Culture</a></li>
+
+								<!-- <li><a href="" data-hover="Culture" class="scroll">Culture</a></li> -->
+>>>>>>> c2e449f0577227bca388ccb9e1eabc86b1a2ae3f
 								<li><a href="<?= base_url('WorkC/')?>" data-hover="login">Login</a></li>
-								<li><a href="#contact" data-hover="Contact Us" class="scroll">Contact Us</a></li>
-								
 							</ul>
 
 						</div>
@@ -79,7 +113,7 @@
 						</ul>
 					</div>
 					<div id="cd-search" class="cd-search">
-						<form action="<?= base_url('MainC/Search');?>" method="post">
+						<form action="<?= base_url('MainC/Search')?>" method="post">
 							<input name="query" type="search" placeholder="Search..." required="">
 						</form>
 					</div>
@@ -87,6 +121,10 @@
 				<div class="clearfix"></div>
 			</div>
 		</div>
+		<!--//navigation-->
+
+      <div class="content">
+        <div class="row">
 		<!--//navigation-->
 		<!--banner-->
 		<div class="banner">
@@ -123,7 +161,7 @@
 		</div>
 		<!--//banner-->
 	</div>
-
+	
 	<!-- news --> <br><br> 
 	 
 	 <!-- news -->
@@ -134,7 +172,7 @@
 			<?php  for($i=0; $i < 3; $i++ ):?>
 
 						<div class="col-md-4 agile-news-left">
-							<img src="<?= base_url('assets/images/homepage/').$data[$i]->img ?>" alt="">
+							<img src="<?= base_url('assets/images/').$data[$i]->img ?>" alt="">
 							<div class="agile-news-right">
 								<div class="date-grid">
 									<div class="time">
@@ -145,9 +183,9 @@
 								<div class="w3-agile-news-info">
 									<a href="#" data-toggle="modal" data-target="#myModal1"><?= $data[$i]->name ?></a>
 									<p><?= $data[$i]->des ?></p>
-								</div>
-								<div class="button">
-									<a href="<?= base_url('MainC/Dest')?>">More</a>
+								</div><br>
+								<div class="w3l-button" style="text-align: justify;"
+										<a href="<?= base_url('MainC/Dest')?>" data-toggle="modal" data-target="#myModal3">More</a>
 								</div>
 							</div>
 						</div>
@@ -160,17 +198,21 @@
 	</div>
 
 	<!--/counter-->
- <div class="agileinfo_counter_section" id="about">
+	<div class="page-header header-filter " data-parallax="true">
+ <div class="agileinfo_counter_section" id="about" >
  <!-- style="background: url(<?= base_url('assets/images/').$sec2[0]->pic ?>)" -->
 		<div class="container">
-			<h3><?= $sec2[0]->name ?></h3>
-			<p class="sub_para two"><?= $sec2[0]->des ?> </p>
-			<h5><a href="#contact" class="view rew3 scroll"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>Contact Us</a></h5>
+			<h3> <?= $sec2[0]->name ?></h3>
+			<p class="sub_para two" style="text-align: justify;"><?= $sec2[0]->des ?> </p>
+			<h5><a href="<?= base_url('MainC/AboutUs')?>" class="view rew3"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>About Us</a></h5>
 		</div>
 	</div>
+</div>
+	<br>
+	<br>
 	<!--//counter-->
 	<!-- gallery -->
-		<div class="gallery1"><br><br>
+		<!-- <div class="gallery1"><br><br>
 		<div class="container">
 			<div class="agile-heading">
 				<h3 class="wthree_title_agile">Our Culture</h3>
@@ -265,12 +307,12 @@
 
 			</div>	
 		</div>	
-	</div>
+	</div> -->
 <!-- //gallery -->
 		<!-- /services -->
 
 	<!-- contact -->
-	<div class="contact" id="contact">
+	<!-- <div class="contact" id="contact">
 		<h3 class="wthree_title_agile"><span>C</span>ontact</h3>
 		<div class="container">
 			<div class="col-md-6 contact-agileits">
@@ -314,33 +356,291 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
-	<!-- //contact -->
-	<!-- footer -->
+	//contact -->
+	<!-- <div>
+	<section class="main-content" id="home">
+	<div class="csslider infinity" id="slider1">
+		<input type="radio" name="slides" checked="checked" id="slides_1" />
+		<input type="radio" name="slides" id="slides_2" />
+		<input type="radio" name="slides" id="slides_3" />
+		<input type="radio" name="slides" id="slides_4" />
+		<ul>
+			<li>
+				<div id="bg">
+					<div class="banner-info-wthree">
+						<div class="container">
+							<h6>PHOTOGRAPHY</h6>
 
-	
+							<h3>Model Photography</h3>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="bg1">
+					<div class="banner-info-wthree">
+						<div class="container">
+							 <h6>PHOTOGRAPHY</h6>
+							<h3> Art of the Camera</h3> 
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="bg2">
+					<div class="banner-info-wthree">
+						<div class="container">
+							<h6>PHOTOGRAPHY</h6>
+							<h3>Model Photography</h3>
+
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div id="bg3">
+					<div class="banner-info-wthree">
+						<div class="container">
+							<h6>PHOTOGRAPHY</h6>
+							<h3> Art of the Camera</h3>
+						</div>
+					</div>
+				</div>
+			</li>
+
+		</ul>
+		<div class="arrows">
+			<label for="slides_1"></label>
+			<label for="slides_2"></label>
+			<label for="slides_3"></label>
+			<label for="slides_4"></label>
+		</div>
+		<div class="navigation">
+			<div>
+				<label for="slides_1"></label>
+				<label for="slides_2"></label>
+				<label for="slides_3"></label>
+				<label for="slides_4"></label>
+			</div>
+		</div>
+	</div>
+</section>
+</div>
+<br>
+	<br> -->
+	<!-- //banner -->
+	<!-- footer -->
+	<!-- about -->
+			<!-- <hr class="rgba-white-light" style="margin: 0 15%; display: flex; justify-content: center; color:red;"> -->
+<div class="about bg-light py-5" id="about">
+		<div class="container">
+				<h3 class="wthree_title_agile">CULTURE</h3>
+					<p class="iner mt-4" style="font-size: 15px;" >Nashik has a personality of its own, due to its mythological, historical, social and cultural importance. The city is situated on the banks of the Godavari River, making it one of the holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it that Lord Rama, </p>
+					<p class="iner mt-4" style="font-size: 15px;">the King of Ayodhya, made Nashik his adobe during his 14 years in exile.At the same place Lord Laxman, by the wish of Lord Rama, cut the nose of “Shurpnakha” and thus this city was named as “Nashik”.In Kritayuga, Nashik was ‘Trikantak’,</p>
+					<br>
+				<img src="<?= base_url('./assets/images/homeCul.jpg')?>" class="center" style="margin-right: 80px; font-size: 15px;" alt="">
+				<p class="iner mt-4">‘Janasthana’ in Dwaparyuga and later in Kuliyuga it became ‘Navashikh’ or ‘Nashik’. Renowed poets like Valmiki, Kalidas and Bhavabhooti have paid rich tributes here. Nashik in 150 BC.was beleived to be the country’s largets market place. From 1487 A.D, this province came under the rule of Mughals and was known as ‘Gulchanabad’. It was also home of emperor Akbar and he has written at lenght about Nashik in ‘Ein-e-Akbari’.</p>
+			</div>
+		</div>
+<br><br>
+<!-- //about -->
+	<!-- news -->
+	<div class="news" id="events">
+			<div class="container">
+				<h3 class="wthree_title_agile"><span></span>FOOD-STUFF</h3>
+				<br>
+				<div class="wthree-news-grids">
+					<div class="col-md-4 agile-news-left">
+						<img src="<?= base_url('./assets/images/j6.jpg')?>" alt="">
+						<div class="agile-news-right">
+							<div class="date-grid">
+								<div class="time">
+									<!-- <p><i class="fa fa-calendar" aria-hidden="true"></i> June 12,2017</p> -->
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="w3-agile-news-info">
+								<a href="#" data-toggle="modal" data-target="#myModal1">KOKNI DARBAR</a>
+								<p style="text-align: justify; font-size: 15px;">This is the best place in nashik for non vegetarian. Taste of food here is mind blowing. U will not experience such a good taste anywhere in nashik for non veg. The most famous dish over here is chicken sizzlers.</p>
+							</div><br>
+							<div class="w3l-button">
+								<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 agile-news-left">
+						<div class="agile-news-right w3l-newsw">
+							
+							<div class="w3-agile-news-info">
+								<a href="#" data-toggle="modal" data-target="#myModal2">Sadhana Misal</a>
+								<p style="text-align: justify; font-size: 15px;">One who enjoys misal is just gonna fall in love with Sadhana Misal in Nashik which is situated very close to Someshwar. Sadhana is just two and a half years old restaurant and has become so very famous in such a short while </p>
+							</div><br>
+							<div class="w3l-button">
+								<a href="#" data-toggle="modal" data-target="#myModal2">More</a>
+							</div>
+							<br>
+						</div>
+						<img src="<?= base_url('./assets/images/sadhna_misal.jpg')?>" alt="">
+					</div>
+					<div class="col-md-4 agile-news-left">
+						<img src="<?= base_url('./assets/images/gulabjamun.jpg')?>" alt="">
+						<div class="agile-news-right">
+							<div class="date-grid">
+								<div class="time">
+									<!-- <p><i class="fa fa-calendar" aria-hidden="true"></i> July 14,2017</p> -->
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="w3-agile-news-info">
+								<a href="#" data-toggle="modal" data-target="#myModal3">bhudha halwai</a>
+								<p style="text-align: justify; font-size: 15px;">This is well known mithai shop in Nashik. An iconic place in Nasik since decades.
+									Famous for its Jaleebi, but rest of the items are also very tasty.
+									One of the must visits in nashik, this is situated in the heart of the city in panchavati.</p>
+							</div><br>
+							<div class="w3l-button">
+								<a href="#" data-toggle="modal" data-target="#myModal3">More</a>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal1 -->
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="wthree_title_agile" style="font-size: 20px;">Kokni darbar</h3>
+						<img src="<?= base_url('./assets/images/j6.jpg')?>" alt="blog-image" />
+						<span>
+							Second most famous dish - Chicken Kolhapuri.<br>
+							Rating - Taste : 5/5<br>
+							Service : 3.5/5 ( very crowded so slow service)<br>
+							Value for money : 4/5 ( little expensive) 
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal1 -->
+		<!-- Modal2 -->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="wthree_title_agile" style="font-size: 20px;">sadhana misal</h3>
+						<img src="<?= base_url('./assets/images/sadhna_misal.jpg')?>" alt="blog-image" />
+						<span>
+							Rating - 
+							Taste: 5/5<br>
+							Service: 4.5/5<br>
+							Food options: 5/5<br>
+							Pricing: 5/5<br>
+							Location: 5/5
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal2 -->
+		<!-- Modal3 -->
+		<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h3 class="wthree_title_agile" style="font-size: 20px;">bhudha halwai</h3>
+						<img src="<?= base_url('./assets/images/gulabjamun.jpg')?>" alt="blog-image" />
+						<span>Rating - 
+								Taste: 5/5<br>
+								Service: 3/5<br>
+								Food options: 5/5<br>
+								Pricing: 4/5<br>
+								Location: 5/5</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //Modal3 -->
+		<!-- news -->
 	<!-- footer -->
 
 <div class="footer">
-		<div class="container">
+		<div class="container align-center" style="display: flex; justify-content: center;">
 			<div class="agile-logo">
 				<a href="index.html">Nashik Tourism</a>
-			</div>
-			
-			<div class="agile-copy">
-				<!-- <hr class="rgba-white-light" style="margin: 0 15%;"> -->
-				<p>© 2019 Nashik Tourism. All rights reserved | Design <!-- <i class="icon-heart-o" aria-hidden="true"> --></i> by GPN Students</p>
-			</div>
-			<div class="clearfix"></div>
+			</div>	
 		</div>
-		<div class="thim-click-to-bottom">
+		<!-- Button trigger modal -->
+		<!-- <hr class="rgba-white-light" style="margin: 0 15%; display: flex; justify-content: center;"> -->
+		<div class="container align-center" style="display: flex; justify-content: center;">
+			<div class="agile-copy">
+				<a href="index.html">WEBSITE POLICIES |</a>
+				<a href="index.html">HELP |</a> 
+				<div id="abc">
+						<!-- Popup Div Starts Here -->
+						<div id="popupContact">
+						<!-- Contact Us Form -->
+						<form action="#" id="form" method="post" name="form">
+						<img id="close" src="<?= base_url('./assets/images/close.png')?>" onclick ="div_hide()">
+						<h2>Contact Us</h2>
+						 <!-- <hr> -->
+						<input id="name" name="name" placeholder="Name" type="text" style="font-family: verdana;">
+						<input id="email" name="email" placeholder="Email" type="text" style="font-family: verdana;">
+						<textarea id="msg" name="message" placeholder="Message" style="font-family: verdana;"></textarea>
+						<a href="javascript:%20check_empty()" id="submit" style="font-family: verdana;">Send</a>
+						<br>
+						</form>
+						</div>
+						<!-- Popup Div Ends Here -->
+						</div>
+						<a type="button" id="#popupContact" onclick="div_show()">CONTACT US |</a>
+						
+						<div id="abc1">
+							<!-- Popup Div Starts Here -->
+							<div id="popupFeedback">
+							<!-- Contact Us Form -->
+							<form action="#" method="post" name="form" style="max-width: 600; max-height: 250;">
+							<img id="close" src="<?= base_url('./assets/images/close.png')?>" onclick ="div_hide1()">
+							<h2>FEEDBACK FORM</h2>
+							<h3 style="text-align: center;">We would love to hear your thoughts, concerns or problems with anything so we can improve!</h3>
+							<!-- <hr> -->
+							<input id="name" name="name" placeholder="Name" type="text" style="font-family: verdana;">
+							<textarea id="msg" name="message" placeholder="Message" style="font-family: verdana;"></textarea>
+							<a href="javascript:%20check_empty()" id="submit" style="font-family: verdana;">Send</a>
+							<br>
+							</form>
+							</div>
+							<!-- Popup Div Ends Here -->
+							</div>
+							<a type="button" id="#popupFeedback" onclick="div_show1()">FEEDBACK</a>
+								
+			</div>	 
+		</div> 
+		
+		<div class="container align-center" style="display: flex; justify-content: center; padding: 1px;">
+			<div class="agile-copy">
+			<p>© 2019 Nashik Tourism. All rights reserved | Design <!-- <i class="icon-heart-o" aria-hidden="true"> --></i> by GPN Students</p>
+			</div>
+		</div>
+</div>
+		
+		<!-- <div class="thim-click-to-bottom">
 			<a href="#home" class="scroll">
 			<i class="fa fa-long-arrow-up" aria-hidden="true"></i>
 
 		</a>
-		</div>
-	</div>
-	<!-- //footer -->
+		</div> -->
+</div>
 
+<script type="text/javascript" src="<?= base_url('assets/js/my_js.js ') ?>"></script>
+	<!-- //footer -->
 	<!-- js -->
 	<script type="text/javascript" src="<?= base_url('assets/js/jquery-2.1.4.min.js ') ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.js ') ?>"></script>
