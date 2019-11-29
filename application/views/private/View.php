@@ -105,16 +105,25 @@
 <?php else:?>
 
 
+    <?php echo form_open_multipart('UserC/LoadSubmit/'.$k); ?>  
 
 <div class="col-md-12">
     <div class="card">
         <div class="card-header ">
             <div class="card-title ">
-                <h4> <span class="text-capitalize"><?= $k ?> </span> Table
+                      <h4> <span class="text-capitalize"><?= $k ?> </span> Table
                     <a role="button" class="btn btn-sm btn-success btn-round float-right"
                         href="<?= base_url('UserC/LoadAdd/').$k?>">
                         <small class="">Add context</small>
                     </a>
+
+                    <button type="submit" class="btn btn-primary btn-round">Confirm Changes</button>
+
+
+                    <!-- <a role="button" class="btn btn-sm btn-success btn-round float-right"
+                        href="<?= base_url('UserC/LoadSubmit/').$k?>">
+                        <small class="">Confirm Changes</small>
+                    </a> -->
                 </h4>
             </div>
         </div>
@@ -164,48 +173,36 @@
 
 
                     <tbody>
-                        <?php foreach($UserData as $d):?>
+                        <?php for($i=0; $i < 3; $i++):?>
                         <tr>
                             <?php if($this->db->field_exists("active",$k)): ?> <th>
 
                             <td scope="row" width="5%" class="text-center">
-                                <?php   if($d->active==1):?>
-                                <input type="checkbox" style="text-align:center;" checked>
-                                <?php else:?>
-                                <input type="checkbox" style="text-align:center;">
-                                <?php endif;?>
+                                
+                             <input type="checkbox" name="checklist[]" id="checkbox"  style="text-align:center;">
+                                
 
                             </td>
                             <?php endif ?>
 
-                            <td scope="row" width="5%"> <?= $d->id ?></td>
-
+                            <td scope="row" width="5%"> <?= $data[$i]->id ?></td>
 
                             <?php if($this->db->field_exists("name",$k)): ?>
-                            <td width="10%"> <?= $d->name ?> </td>
+                            <td width="10%"> <?= $data[$i]->name ?> </td>
                             <?php endif ?>
 
                             <?php if($this->db->field_exists("des",$k)): ?>
-                            <td width="50%"> <?= $d->des ?> </td>
-                            <?php endif ?>
-
-                            <?php if($this->db->field_exists('username',$k)): ?>
-                            <td width="10%"> <?= $d->username ?> </td>
-                            <?php endif ?>
-
-                            <?php if($this->db->field_exists("img",$k)): ?>
-                            <td width="30%"> <img src="<?= base_url('/assets/images/').$d->img ?>" style="width:250px">
-                            </td>
+                            <td width="50%"> <?= $data[$i]->des ?> </td>
                             <?php endif ?>
 
                             <?php if($this->db->field_exists("id",$k)): ?>
-                            <td class="flex" width="20%">
+                            <td class="flex" width="20%"> 
                                     <button class="btn btn-danger btn-round"
-                                        onclick="ConfirmDel(<?= $d->id?>)">Delete</a></td>
+                                        onclick="ConfirmDel(<?= $data[$i]->id?>)">Delete</a></td>
                             <?php endif ?>
 
                         </tr>
-                        <?php endforeach ?>
+                        <?php endfor ?>
                     </tbody>
                 </table>
             </div>
@@ -217,3 +214,16 @@
 </div>
 
 <?php endif ?>
+
+
+<!--<?php if($this->db->field_exists('username',$k)): ?> 
+                            <td width="10%"> <?= $d->username ?> </td>
+                            <?php endif ?>
+
+                            <?php if($this->db->field_exists("img",$k)): ?>
+                            <td width="30%"> <img src="<?= base_url('/assets/images/').$d->img ?>" style="width:250px">
+                            </td>
+                            <?php endif ?>
+
+                           
+                            -->

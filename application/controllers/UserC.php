@@ -39,10 +39,10 @@ class UserC extends CI_Controller{
     public function Change($k)
     {
         $this->load->model('WorkM');
-        $UserData = $this->WorkM->Gets($k);  
+        $data = $this->WorkM->Gets($k);  
         $C = 1;
         $Page['title'] = $k;   
-        $Page['data'] = $this->load->view('private/View',compact('UserData','k','C'),True);
+        $Page['data'] = $this->load->view('private/View',compact('data','k','C'),True);
         $this->load->view('private/Base',compact('Page'));
     }
 
@@ -70,7 +70,8 @@ class UserC extends CI_Controller{
     }
 
     public function loadEdit($k,$id)
-    {   
+    
+{   
         $this->load->model('WorkM');
         $up=1;
         $UserData =  $this->WorkM->GetRow($k,$id);
@@ -79,6 +80,39 @@ class UserC extends CI_Controller{
         $this->load->view('private/Base',compact('Page'));
     }
 
+    public function LoadSubmit($k)
+{   $sr=0; 
+        if($k=='HomePage')
+        {
+            $sr=3;
+        }
+        // echo "in load submit"; 
+        $this->load->model('WorkM');
+        // $data= $this->WorkM->Gets($k);
+       print_r($sr);
+       for($i =0; $i < $sr; $i++)
+        if(isset($_POST['checkbox']))
+        {
+            $data['active'] = $this->input->post('checkbox[]');
+            
+            if(null!==($this->input->post('checkbox[]'))) {
+                    $data['active'] = '1';
+                    echo "active=1";
+            } else {
+                   $data['active'] = '0';
+                   echo "active=0";
+            }
+        }
+        
+        // $this->WorkM->InsertK($k,$data);
+    
+       
+        // 
+        // print_r($data[1]->active);
+        // print_r($data[2]->active);
+        // print_r($sr);
+    
+}
     public function Add($k)
     {   
 
