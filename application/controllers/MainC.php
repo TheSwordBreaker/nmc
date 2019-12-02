@@ -50,27 +50,16 @@ class MainC extends CI_Controller{
     public function Dest()
     {
         $this->load->model('WorkM');
-<<<<<<< HEAD
-        $data = $this->WorkM->GetS('destpage');
-        $n= $this->db->count_all('destpage');  
-        $this->load->view('public/Destination',compact('data','n'));
-=======
            
             $data = $this->WorkM->GetS('destpage');
             $Page = $this->WorkM->GetRow('pages',2);
             $Page['data'] = $this->load->view('public/Dest',compact('data'),True);
             $this->load->view('public/Base',compact('Page'));
->>>>>>> 65b05ec75072b0adc6c9ea9dcc9a430509157334
     }
 
     public function Places($Name=NULL)
     {
         $this->load->model('WorkM');
-<<<<<<< HEAD
-        $data = $this->WorkM->Gets('culturepage');
-        $this->load->view('public/Culture',compact('data'));
-        $this->load->view('public/FoodStuff',compact('data'));
-=======
         $N = explode("%20",$Name);
         
             $data = $this->WorkM->GetName($N[0]);
@@ -81,21 +70,6 @@ class MainC extends CI_Controller{
             $this->load->view('public/Base',compact('Page'));
     }
     
-// <<<<< HEAD
-   
-
-    public function Culture()
-    {
-        $this->load->model('WorkM');
-        $sec1 = $this->WorkM->Gets('culsec1');
-        $sec2 = $this->WorkM->Gets('culsec2');
-        $sec3 = $this->WorkM->Gets('culsec3');
-        $Page = $this->WorkM->GetRow('pages',3);
-        $Page['data'] = $this->load->view('public/Culture',compact('sec1','sec2','sec3'),True);
-        $this->load->view('public/Base',compact('Page')); }    
-// =======
-    
-
 
 
 
@@ -126,8 +100,7 @@ public function Cul()
         $Page['data'] = $this->load->view('public/AboutUs',"" ,True);
         $this->load->view('public/Base',compact('Page'));
       
-// >>>>>>> c2e449f0577227bca388ccb9e1eabc86b1a2ae3f
->>>>>>> 65b05ec75072b0adc6c9ea9dcc9a430509157334
+
     }
 
     

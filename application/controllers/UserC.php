@@ -48,33 +48,6 @@ class UserC extends CI_Controller
     public function FinalChange($k)
     {
         $this->load->model('WorkM');
-<<<<<<< HEAD
-        $UserData = $this->WorkM->Gets('culturepage');
-        $this->load->view('private/ViewCulturePage',compact('UserData'));
-    }
-
-    public function ViewFoodPage()
-    {
-        $this->load->model('WorkM');
-        $UserData = $this->WorkM->Gets('foodpage');
-        $this->load->view('private/ViewFoodPage',compact('UserData'));
-    }
-
-
-    public function map()
-    {
-        $this->load->view('private/map.php');
-    }
-    public function user()
-    {
-        $this->load->view('private/user.php');
-    }
-    public function tables()
-    {
-        $this->load->view('private/tables.php');
-    }
-=======
->>>>>>> 65b05ec75072b0adc6c9ea9dcc9a430509157334
 
         if (isset($_POST['submit'])) {
 
@@ -382,27 +355,9 @@ class UserC extends CI_Controller
             }
             }
 
-<<<<<<< HEAD
-        $data = array(  'name' => $na,
-                        'img'  => ''   );
-        
-        if($img == '' or $img == $tempImg){
-            $data['img']=$tempImg; 
-        }
-        else{   
-            
-
-            $data['img']=$this->UpdateImg('./assets/images/culturepage/',$tempImg);
-            
-        }
-        if($this->WorkM->UpdateK('CulturePage',$id,$data)){
-            return $this->ViewCulturePage();
-        }else{
-=======
         if ($this->WorkM->UpdateK($k, $id, $data)) {
             return $this->View($k);
         } else {
->>>>>>> 65b05ec75072b0adc6c9ea9dcc9a430509157334
             $this->session->set_flashdata('error', 'Inalid DATA');
             print("select only 3....");
             $this->Add($k);
@@ -464,123 +419,12 @@ class UserC extends CI_Controller
 
     public function UpdateImg($path, $tempImg, $k, $id)
     {
-<<<<<<< HEAD
-        $na = $this->input->post('Name');
-        $de = $this->input->post('Descripition');
-        $ce =$this->input->post('Checkbox');
-        
-       
-        $config['upload_path']          = './assets/images/despage';
-=======
         $config['upload_path']          = $path;
->>>>>>> 65b05ec75072b0adc6c9ea9dcc9a430509157334
         $config['allowed_types']        = 'gif|jpg|png';
         $config['max_size']             = 100000000;
         // $config['max_width']            = 1024;
         // $config['max_height']           = 768;
         $this->load->library('upload', $config);
-<<<<<<< HEAD
-        if ( ! $this->upload->do_upload('userfile'))
-        {
-            $this->session->set_flashdata('error', 'Inalid DATA');
-            $this->AddHomePage();      // $this->load->view('upload_form', $error);
-        }
-        else
-        {
-              $im = $this->upload->data('file_name');
-                $data = array(
-                                
-                                'img ' => $im,
-                                'name' => $na,
-                                'des'  => $de,
-                                'active'=>$ce
-                            );
-                // $this->load->view('upload_success', $data);
-
-                if(null!==($this->input->post('Checkbox'))) {
-                    $data['active'] = '1';
-        } else {
-                    $data['active'] = '0';
-        }}
-           
-
-                $this->load->model('WorkM');
-                if($this->WorkM->ConfirmK('destpage'))
-                {    if($this->WorkM->InsertK('destpage',$data))
-                    {
-                        return $this->ViewDestpage();
-                    // echo "done";
-                    }else
-                    {
-                         $this->session->set_flashdata('error', 'Inalid DATA');
-                         $this->AddDestpage();
-                    }
-                }
-                else{
-                    echo "plss select only 3 fields to display...";
-                }
-    }
- 
-    public function EditDestpage($id)
-{
-        $this->load->model('WorkM');
-        
-        $i = $this->WorkM->GetRow('destpage',$id);
-        $tempImg = $i[0]->img;
-
-        $na = $this->input->post('Name');
-        $de = $this->input->post('Descripition');
-        $ce= $this->input->post('Checkbox');
-        
-
-       
-
-        $img = $_FILES['userfile']['name'];
-        $ce= $this->input->post('Checkbox');
-
-        $data = array('img ' => '',
-                    'name' => $na,
-                    'des'  => $de,
-             'active' =>$ce
-            );
-
-            if(null!==($this->input->post('Checkbox'))) 
-            {
-                $data['active'] = '1';
-                
-            } else 
-            {
-                $data['active'] = '0';
-            };
-       
-        if($img == '' or $img == $tempImg)
-        {
-            $data['img']=$tempImg; 
-        }
-       else
-       {
-           $data['img']=$this->UpdateImg('./assets/images/despage/',$tempImg);
-       }
-          
-       if($this->WorkM->ConfirmK('destpage'))
-       {
-            if($this->WorkM->UpdateK('destpage',$id,$data))
-            {
-                 return $this->ViewDestpage();
-            }
-            else
-            {
-                 $this->session->set_flashdata('error', 'Inalid DATA');
-                $this->AddDestpage();
-            }
-       }
-        else
-        {
-            echo "plss select only 3 fields to display...";
-        }
- }
-    public function RemoveDestpage($id)
-=======
         if (!$this->upload->do_upload('userfile')) {
             $this->session->set_flashdata('error', $this->upload->display_errors());
             $this->loadEdit($k, $id);      // $this->load->view('upload_form', $error);
@@ -601,132 +445,14 @@ class UserC extends CI_Controller
     }
 
     public function logout()
->>>>>>> 65b05ec75072b0adc6c9ea9dcc9a430509157334
     {
         $this->session->unset_userdata('username');
         redirect('MainC');
         // $this->session->unset_userdata('id');
     }
 
-<<<<<<< HEAD
-    
-// Destpage - end
 
 
-// FoodPage - Start 
-
-   
-
-/*public function loadAddFoodpage()
-{   
-    $up=0;
-    $this->load->view('private/AddFoodpage',compact('up'));
-}
-
-public function loadEditFoodpage($id)
-{   
-    $this->load->model('WorkM');
-    $query = $this->db->where(['id'=>$id])->get('foodpage');
-    $UserData = $query->result();
-    $up=1;
-    $this->load->view('private/AddFoodpage',compact('UserData','up'));
-}
-
-public function AddFoodpage()
-{
-    $na = $this->input->post('Name');
-    $de = $this->input->post('Descripition');
-    
-   
-    $config['upload_path']          = './assets/images/foodpage';
-    $config['allowed_types']        = 'gif|jpg|png';
-    // $config['max_size']             = 10000;
-    // $config['max_width']            = 1024;
-    // $config['max_height']           = 768;
-
-    $this->load->library('upload', $config);
-    if ( ! $this->upload->do_upload('userfile'))
-    {
-        $this->session->set_flashdata('error', 'Inalid DATA');
-        $this->AddHomePage();      // $this->load->view('upload_form', $error);
-    }
-    else
-    {
-          $im = $this->upload->data('file_name');
-            $data = array(
-                            
-                            'img ' => $im,
-                            'name' => $na,
-                            'des'  => $de);
-            // $this->load->view('upload_success', $data);
-
-            $this->load->model('WorkM');
-
-            if($this->WorkM->InsertK('destpage',$data)){
-                return $this->ViewDestpage();
-                // echo "done";
-            }else{
-                $this->session->set_flashdata('error', 'Inalid DATA');
-                $this->AddDestpage();
-            }
-    }
-}
-
-public function EditFoodpage($id)
-{
-    $this->load->model('WorkM');
-    
-    $i = $this->WorkM->GetRow('destpage',$id);
-    $tempImg = $i[0]->img;
-
-    $na = $this->input->post('Name');
-    $de = $this->input->post('Descripition');
-    $img = $_FILES['userfile']['name'];
-
-    $data = array('img ' => '',
-                'name' => $na,
-                'des'  => $de);
-   
-    if($img == '' or $img == $tempImg){
-        $data['img']=$tempImg; 
-    }
-   else
-   {
-       $data['img']=$this->UpdateImg('./assets/images/despage/',$tempImg);
-   }
-
-    if($this->WorkM->UpdateK('destpage',$id,$data)){
-        return $this->ViewDestpage();
-    }else{
-        $this->session->set_flashdata('error', 'Inalid DATA');
-        $this->AddDestpage();
-    }
-}
-
-public function RemoveFoodpage($id)
-{
-    $this->load->model('WorkM');
-    $i = $this->WorkM->GetRow('destpage',$id);
-    $tempImg = $i[0]->img;
-    
-    if($this->WorkM->DeleteK('destpage',$id)){
-            // Delete image data 
-        $this->delImg('./assets/images/despage/'.$tempImg); 
-        $this->ViewDestpage();
-    }else{
-        return false;
-    }            
-}
-
-// Destpage - end*/
-
-
-
-// other - functions
-=======
-
-
->>>>>>> 65b05ec75072b0adc6c9ea9dcc9a430509157334
 
     public function map()
     {

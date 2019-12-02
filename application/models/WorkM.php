@@ -140,22 +140,6 @@ class WorkM extends CI_Model
     public function ConfirmK($tablename)
     {
         $this->db->select_sum('active');
-<<<<<<< HEAD
-        $this->db->from('destpage');
-        $query= $this->db->get();
-        $res=$query->result();
-        if($res==3)
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
-
-    
- 
-    }
-=======
         $this->db->from($tablename);
         $query= $this->db->get();
         $res=$query->result();
@@ -174,7 +158,6 @@ class WorkM extends CI_Model
 
     }
 
->>>>>>> 65b05ec75072b0adc6c9ea9dcc9a430509157334
 
 
 
