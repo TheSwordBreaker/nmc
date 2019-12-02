@@ -105,7 +105,7 @@
 <?php else:?>
 
 
-    <?php echo form_open_multipart('UserC/LoadSubmit/'.$k); ?>  
+    <?php echo form_open_multipart('UserC/FinalChange/'.$k); ?>  
 
 <div class="col-md-12">
     <div class="card">
@@ -117,11 +117,11 @@
                         <small class="">Add context</small>
                     </a>
 
-                    <button type="submit" class="btn btn-primary btn-round">Confirm Changes</button>
+                    <button type="submit" class="btn btn-primary btn-round" name="submit">Confirm Changes</button>
 
 
                     <!-- <a role="button" class="btn btn-sm btn-success btn-round float-right"
-                        href="<?= base_url('UserC/LoadSubmit/').$k?>">
+                        href="<?= base_url('UserC/FinalChange/').$k?>">
                         <small class="">Confirm Changes</small>
                     </a> -->
                 </h4>
@@ -173,13 +173,14 @@
 
 
                     <tbody>
-                        <?php for($i=0; $i < 3; $i++):?>
+                        <?php for($i=0; $i < 4; $i++):?> 
+                            
                         <tr>
                             <?php if($this->db->field_exists("active",$k)): ?> <th>
 
-                            <td scope="row" width="5%" class="text-center">
+                            <td scope="row" width="5%" class="text-center" id="myid<?= $i?>">
                                 
-                             <input type="checkbox" name="checklist[]" id="checkbox"  style="text-align:center;">
+                             <input type="checkbox" name="check_list[]" value="<?= $data[$i]->id ?>"  style="text-align:center;">
                                 
 
                             </td>

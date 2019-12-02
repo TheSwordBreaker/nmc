@@ -1,18 +1,18 @@
-<?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class UserC extends CI_Controller{
+class UserC extends CI_Controller
+{
 
-    public function __construct()  
+    public function __construct()
     {
         parent::__construct();
-        if(!$this->session->userdata('username'))
-        {
+        if (!$this->session->userdata('username')) {
             redirect('MainC');
         }
     }
 
-// Menu - Start
+    // Menu - Start
 
     public function index()
     {
@@ -20,200 +20,284 @@ class UserC extends CI_Controller{
         $this->load->model('WorkM');
         $UserData = $this->WorkM->Gets('users');
         $Page['title'] = "Admin Area | Dashboard";
-        $Page['data'] = $this->load->view('private/dashboard',compact('UserData'),True);
-        $this->load->view('private/Base',compact('Page'));
-
+        $Page['data'] = $this->load->view('private/dashboard', compact('UserData'), True);
+        $this->load->view('private/Base', compact('Page'));
     }
 
     public function View($k)
     {
         $this->load->model('WorkM');
-        $UserData = $this->WorkM->Gets($k);  
+        $UserData = $this->WorkM->Gets($k);
         $C = 0;
-        $Page['title'] = $k;   
-        $Page['data'] = $this->load->view('private/View',compact('UserData','k','C'),True);
-        $this->load->view('private/Base',compact('Page'));
+        $Page['title'] = $k;
+        $Page['data'] = $this->load->view('private/View', compact('UserData', 'k', 'C'), True);
+        $this->load->view('private/Base', compact('Page'));
     }
 
 
     public function Change($k)
     {
         $this->load->model('WorkM');
-        $data = $this->WorkM->Gets($k);  
+        $data = $this->WorkM->Gets($k);
         $C = 1;
-        $Page['title'] = $k;   
-        $Page['data'] = $this->load->view('private/View',compact('data','k','C'),True);
-        $this->load->view('private/Base',compact('Page'));
+        $Page['title'] = $k;
+        $Page['data'] = $this->load->view('private/View', compact('data', 'k', 'C'), True);
+        $this->load->view('private/Base', compact('Page'));
     }
 
     public function FinalChange($k)
     {
         $this->load->model('WorkM');
-        $UserData = $this->WorkM->Gets($k);  
+
+        if (isset($_POST['submit'])) {
+
+            if (!empty($_POST['check_list'])) 
+            {
+                
+                // $checked_count = count($_POST['check_list']);
+                // echo "You have selected following " . $checked_count . " option(s): <br/>";
+               
+                // foreach ($_POST['check_list'] as $selected) {
+                //     echo "<p>" . $selected . "</p>";
+                // }
+                $id = $_POST['check_list'];
+                if($this->WorkM->Change($k,$id))
+                {
+                    redirect('UserC/View/'.$k);
+                }else
+                {
+                    echo "Not done";
+                }
+                
+               
+            }
+             else
+            {
+                echo "<b>Please Select Atleast One Option.</b>";
+            }
+        }
+
 
         
-        $C = 0;
-        $Page['title'] = $k;   
-        $Page['data'] = $this->load->view('private/View',compact('UserData','k','C'),True);
-        $this->load->view('private/Base',compact('Page'));
-    }
-    
-    
-    public function LoadAdd($k)
-    {   
-        $up=0; 
-        $this->load->model('WorkM');
-        $UserData = $this->WorkM->Gets($k);  
-        $Page['title'] = $k;   
-        $Page['data'] = $this->load->view('private/Form',compact('UserData','k','up'),True);
-        $this->load->view('private/Base',compact('Page'));
     }
 
-    public function loadEdit($k,$id)
-    
-{   
+
+    public function LoadAdd($k)
+    {
+        $up = 0;
         $this->load->model('WorkM');
-        $up=1;
-        $UserData =  $this->WorkM->GetRow($k,$id);
-        $Page['title'] = $k;   
-        $Page['data'] = $this->load->view('private/Form',compact('UserData','k','up'),True);
-        $this->load->view('private/Base',compact('Page'));
+        $UserData = $this->WorkM->Gets($k);
+        $Page['title'] = $k;
+        $Page['data'] = $this->load->view('private/Form', compact('UserData', 'k', 'up'), True);
+        $this->load->view('private/Base', compact('Page'));
+    }
+
+    public function loadEdit($k, $id)
+
+    {
+        $this->load->model('WorkM');
+        $up = 1;
+        $UserData =  $this->WorkM->GetRow($k, $id);
+        $Page['title'] = $k;
+        $Page['data'] = $this->load->view('private/Form', compact('UserData', 'k', 'up'), True);
+        $this->load->view('private/Base', compact('Page'));
     }
 
     public function LoadSubmit($k)
-{   $sr=0; 
-        if($k=='HomePage')
-        {
-            $sr=3;
-        }
-        // echo "in load submit"; 
+    {
         $this->load->model('WorkM');
-        // $data= $this->WorkM->Gets($k);
-       print_r($sr);
-       for($i =0; $i < $sr; $i++)
-        if(isset($_POST['checkbox']))
-        {
-            $data['active'] = $this->input->post('checkbox[]');
-            
-            if(null!==($this->input->post('checkbox[]'))) {
-                    $data['active'] = '1';
-                    echo "active=1";
-            } else {
-                   $data['active'] = '0';
-                   echo "active=0";
+
+        if (isset($_POST['submit'])) {
+
+            if (!empty($_POST['check_list'])) 
+            {
+                
+                // $checked_count = count($_POST['check_list']);
+                // echo "You have selected following " . $checked_count . " option(s): <br/>";
+               
+                // foreach ($_POST['check_list'] as $selected) {
+                //     echo "<p>" . $selected . "</p>";
+                // }
+                $id = $_POST['check_list'];
+                if($this->WorkM->Change($k,$id))
+                {
+                    redirect('UserC/View/'.$k);
+                }else
+                {
+                    echo "Not done";
+                }
+                
+               
+            }
+             else
+            {
+                echo "<b>Please Select Atleast One Option.</b>";
             }
         }
-        
+
+        // $sr=0; 
+        //     if($k=='HomePage')
+        //     {
+        //         $sr=3;
+        //     }
+        //     // echo "in load submit"; 
+        //     $this->load->model('WorkM');
+        //     // $data= $this->WorkM->Gets($k);
+        //    print_r($sr);
+        //    for($i =0; $i < $sr; $i++)
+        //     if(isset($_POST['checkbox']))
+        //     {
+        //         $data['active'] = $this->input->post('checkbox[]');
+
+        //         if(null!==($this->input->post('checkbox[$i]'))) {
+        //                 $data['active'] = '1';
+        //                 echo "active=1";
+        //         } else {
+        //                $data['active'] = '0';
+        //                echo "active=0";
+        //         }
+        //     }
+
         // $this->WorkM->InsertK($k,$data);
-    
-       
+
+
         // 
         // print_r($data[1]->active);
         // print_r($data[2]->active);
         // print_r($sr);
-    
-}
-    public function Add($k)
-    {   
 
-     
-        if(isset($_POST['Name']))
-        {
+
+
+        //             if(isset($_POST['submit']))
+        //             {
+        //                         if(!empty($_POST['check_list']))
+        //                          { 
+        //                 // Counting number of checked checkboxes.
+        //                     // $checked_count = count($_POST['check_list']);
+        //                     //         echo "You have selected following ".$checked_count." option(s): <br/>";
+        //                 // Loop to store and display values of individual checked checkbox.
+        //                 // for($i=0; $i < 3; $i++){
+        //                                 $data="";
+        //                                 foreach( $this->input->post('check_list ') as $selected)
+        //                                 {
+        //                                         $data .= " ".$selected ;
+        //                                 }
+        //                                 // $data[]=$this->input->post('check_list[]');
+
+        //                     //     {
+        //                     //     echo "<p>".$selected ."</p>"; }
+        //                     //     else
+        //                     //     {
+        //                     //         echo"OFF";
+        //                     //     }
+        //                     //     echo "<p>".$_POST['check_list'][]."</p>"; 
+
+        //                     // }  
+        //                 // }
+        //                     print_r($data[0]);
+        //                     // print_r($data[1]);
+        //                     // print_r($data[2]);   }  
+        //                     // // if($selected=='on'){
+        //                     // $data['active']=1;
+        //                     // print_r($data['active']);}
+        //                     // else{
+        //                     //     $data['active']=0;
+        //                     //     print_r($data['active']);
+
+
+        // // echo "<br/><b>Note :</b> <span>Similarily, You Can Also Perform CRUD Operations using These Selected Values.</span>";
+        // }
+        // else{
+        // echo "<b>Please Select Atleast One Option.</b>";
+        // }
+        // }
+
+
+    }
+
+
+    public function Add($k)
+    {
+
+
+        if (isset($_POST['Name'])) {
             $data['name'] = $this->input->post('Name');
         }
-        if(isset($_POST['Checkbox']))
-        {
-            $data['active'] = $this->input->post('Checkbox');
-            
-            if(null!==($this->input->post('Checkbox'))) {
-                    $data['active'] = '1';
-            } else {
-                   $data['active'] = '0';
-            }
+        // if (isset($_POST['Checkbox'])) {
+        //     $data['active'] = $this->input->post('Checkbox');
+
+        //     if (null !== ($this->input->post('Checkbox'))) {
+        //         $data['active'] = '1';
+        //     } else {
+        //         $data['active'] = '0';
+        //     }
+        // }
+
+        if (isset($_POST['Descripition'])) {
+            $data['des'] = $this->input->post('Descripition');
         }
 
-       if(isset($_POST['Descripition']))
-        {    
-            $data['des'] = $this->input->post('Descripition');                
+        if (isset($_POST['Username'])) {
+            $data['username'] = $this->input->post('username');
         }
-        
-        if(isset($_POST['Username']))
-        {    
-            $data['username'] = $this->input->post('username');                
-        }  
 
-        if(isset($_POST['password']))
-        {    
-            $data['password'] = $this->input->post('password');                
-        }  
+        if (isset($_POST['password'])) {
+            $data['password'] = $this->input->post('password');
+        }
 
 
-        if(isset($_FILES['userfile']))
-        {
+        if (isset($_FILES['userfile'])) {
             $img = $_FILES['userfile']['name'];
-            
-            if($img == ''){
-                $data['img']=''; 
-            }else{
-                $config['upload_path']          = './assets/images/'.$k ;
+
+            if ($img == '') {
+                $data['img'] = '';
+            } else {
+                $config['upload_path']          = './assets/images/' . $k;
                 $config['allowed_types']        = 'gif|jpg|png|jpeg';
                 // $config['max_size']             = 10000;
                 // $config['max_width']            = 1024;
                 // $config['max_height']           = 768;
 
                 $this->load->library('upload', $config);
-                if ( ! $this->upload->do_upload('userfile'))
-                {
+                if (!$this->upload->do_upload('userfile')) {
                     $this->session->set_flashdata('error', 'Inalid DATA');
                     $this->Add($k);      // $this->load->view('upload_form', $error);
-                }
-                else
-                {
-                    $data['img'] = $k."/".$this->upload->data('file_name');
+                } else {
+                    $data['img'] = $k . "/" . $this->upload->data('file_name');
                 }
             }
         }
-           
+
         // $this->load->view('upload_success', $data);
 
         $this->load->model('WorkM');
-
-        if(null!=($this->input->post('Checkbox')))
-        {
-            
-             // print_r("checkbox===1");
-                        // $this->WorkM->ConfirmK($k);
-
-            
-            if($this->WorkM->ConfirmK($k))
-            {
-                $this->session->set_flashdata('error', 'Inalid DATA');
-                $this->LoadAdd($k);
-
-            }
-            else
-            {
-                if($this->WorkM->InsertK($k,$data)){
-                    return $this->View($k);
-                    // echo "done";
-                    }else{
-                    $this->session->set_flashdata('error', 'Inalid DATA');
-                    $this->LoadAdd($k);
-                    }
-            }
-
+        if ($this->WorkM->InsertK($k, $data)) {
+            return $this->Change($k);
+            // echo "done";
+        } else {
+            $this->session->set_flashdata('error', 'Inalid DATA');
+            $this->LoadAdd($k);
         }
-        else
-        {
-            if($this->WorkM->InsertK($k,$data)){
-                return $this->View($k);
-                // echo "done";
-                }else{
-                $this->session->set_flashdata('error', 'Inalid DATA');
-                $this->LoadAdd($k);
-                }
-        
-        }
+
+        // if (null != ($this->input->post('Checkbox'))) {
+
+            // print_r("checkbox===1");
+            // $this->WorkM->ConfirmK($k);
+        //     if ($this->WorkM->ConfirmK($k)) {
+        //         $this->session->set_flashdata('error', 'Inalid DATA');
+        //         $this->LoadAdd($k);
+        //     } else {
+        //         if ($this->WorkM->InsertK($k, $data)) {
+        //             return $this->View($k);
+        //             // echo "done";
+        //         } else {
+        //             $this->session->set_flashdata('error', 'Inalid DATA');
+        //             $this->LoadAdd($k);
+        //         }
+        //     }
+        // } else {
+          
+        // }
 
         // if($this->WorkM->InsertK($k,$data)){
         // return $this->View($k);
@@ -226,96 +310,73 @@ class UserC extends CI_Controller{
 
 
 
-    public function Edit($k,$id)
+    public function Edit($k, $id)
     {
-        $this->load->model('WorkM');   
-       
-        if(isset($_POST['Name']))
-        {
+        $this->load->model('WorkM');
+
+        if (isset($_POST['Name'])) {
             $data['name'] = $this->input->post('Name');
         }
 
-        if(isset($_POST['Checkbox']))
-        {
-            $data['active'] = $this->input->post('Checkbox');
+        // if (isset($_POST['Checkbox'])) {
+        //     $data['active'] = $this->input->post('Checkbox');
+        // }
+
+
+        if (isset($_POST['Descripition'])) {
+            $data['des'] = $this->input->post('Descripition');
         }
 
-
-        if(isset($_POST['Descripition']))
-        {    
-            $data['des'] = $this->input->post('Descripition');                
-        }
-        
-        if(isset($_POST['Username']))
-        {    
-            $data['username'] = $this->input->post('username');                
-        }  
-
-        if(isset($_POST['password']))
-        {    
-            $data['password'] = $this->input->post('password');                
-        }  
-
-        if(null!==($this->input->post('Checkbox'))) 
-        {
-            $data['active'] = '1';
-            
-        } else 
-        {
-            $data['active'] = '0';
+        if (isset($_POST['Username'])) {
+            $data['username'] = $this->input->post('username');
         }
 
+        if (isset($_POST['password'])) {
+            $data['password'] = $this->input->post('password');
+        }
 
-        if(isset($_FILES['userfile']))
-        {    
-            $i = $this->WorkM->GetRow($k,$id);
+        // if (null !== ($this->input->post('Checkbox'))) {
+        //     $data['active'] = '1';
+        // } else {
+        //     $data['active'] = '0';
+        // }
+
+
+        if (isset($_FILES['userfile'])) {
+            $i = $this->WorkM->GetRow($k, $id);
             $tempImg = $i[0]->img;
-            
+
             $img = $_FILES['userfile']['name'];
-            
-            if($img == '' or $img == $tempImg){
-                $data['img']=$tempImg; 
+
+            if ($img == '' or $img == $tempImg) {
+                $data['img'] = $tempImg;
+            } else {
+                $data['img'] = $k . "/" . $this->UpdateImg('./assets/images/' . $k . "/", $tempImg, $k, $id);
             }
-            else{
-            $data['img']=$k."/".$this->UpdateImg('./assets/images/'.$k."/",$tempImg,$k,$id);
-            } 
+            }
+
+        if ($this->WorkM->UpdateK($k, $id, $data)) {
+            return $this->View($k);
+        } else {
+            $this->session->set_flashdata('error', 'Inalid DATA');
+            print("select only 3....");
+            $this->Add($k);
         }
 
-
-
-        if($data['active'] == '1')
-        {
-            if($this->WorkM->ConfirmK($k))
-            {
-                    print_r("can't select more");
-            }
-            else
-            {
-                if($this->WorkM->UpdateK($k,$id,$data))
-                {
-                    return $this->View($k);
-                }else
-                {
-                    $this->session->set_flashdata('error', 'Inalid DATA');
-                    print("select only 3....");
-                    $this->Add($k);
-                }
-            }
-    
-        }
-        else
-        {
-            if($this->WorkM->UpdateK($k,$id,$data))
-                {
-                    return $this->View($k);
-                }else
-                {   
-                    $this->session->set_flashdata('error', 'Inalid DATA');
-                    print("select only 3....");
-                    $this->Add($k);
-                }
-        }
-        
+        // if ($data['active'] == '1') {
+        //     if ($this->WorkM->ConfirmK($k)) {
+        //         print_r("can't select more");
+        //     } else {
+        //         if ($this->WorkM->UpdateK($k, $id, $data)) {
+        //             return $this->View($k);
+        //         } else {
+        //             $this->session->set_flashdata('error', 'Inalid DATA');
+        //             print("select only 3....");
+        //             $this->Add($k);
+        //         }
+        //     }
+        // } else {
+        // }
         // if($data[active]==1)
         // {
         //     $res=$this->WorkM->ConfirmK($k);
@@ -334,73 +395,64 @@ class UserC extends CI_Controller{
         //         $this->Add($k);
         //     }
         // }
-    
-
-            
-        
-    }
-    
-    public function Remove($k,$id)
-    {
-        
-            $this->load->model('WorkM');
-            $tempImg = ' ';
-            $i = $this->WorkM->getRow($k,$id);
-            if(isset($i[0]->img)){
-                $tempImg = $i[0]->img;
-                $this->delImg('./assets/images/'.$k."/".$tempImg);
-            }
-           
-            if($this->WorkM->Deletek($k,$id)){
-                 // Delete image data 
-                $this->View($k);
-            }else{
-                return false;
-            }
-           
-            
-        
     }
 
-    
-public function UpdateImg($path,$tempImg,$k,$id){
-    $config['upload_path']          = $path;
-    $config['allowed_types']        = 'gif|jpg|png';
-    $config['max_size']             = 100000000;
-    // $config['max_width']            = 1024;
-    // $config['max_height']           = 768;
-    $this->load->library('upload', $config);
-    if ( ! $this->upload->do_upload('userfile'))
+    public function Remove($k, $id)
     {
-        $this->session->set_flashdata('error', $this->upload->display_errors());
-        $this->loadEdit($k,$id);      // $this->load->view('upload_form', $error);
+
+        $this->load->model('WorkM');
+        $tempImg = ' ';
+        $i = $this->WorkM->getRow($k, $id);
+        if (isset($i[0]->img)) {
+            $tempImg = $i[0]->img;
+            $this->delImg('./assets/images/' . $k . "/" . $tempImg);
+        }
+
+        if ($this->WorkM->Deletek($k, $id)) {
+            // Delete image data 
+            $this->View($k);
+        } else {
+            return false;
+        }
     }
-    else
+
+
+    public function UpdateImg($path, $tempImg, $k, $id)
     {
-        $this->delImg($path.$tempImg);
-        $im = $this->upload->data('file_name');
-        return $im;
-                            
+        $config['upload_path']          = $path;
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['max_size']             = 100000000;
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+        $this->load->library('upload', $config);
+        if (!$this->upload->do_upload('userfile')) {
+            $this->session->set_flashdata('error', $this->upload->display_errors());
+            $this->loadEdit($k, $id);      // $this->load->view('upload_form', $error);
+        } else {
+            $this->delImg($path . $tempImg);
+            $im = $this->upload->data('file_name');
+            return $im;
+
             // $this->load->view('upload_success', $data);
+        }
     }
-}
 
-public function DelImg($tempImg){
-if( file_exists($tempImg) )
-        { 
-            unlink($tempImg); 
-        } 
-}
+    public function DelImg($tempImg)
+    {
+        if (file_exists($tempImg)) {
+            unlink($tempImg);
+        }
+    }
 
-public function logout()
-{
-$this->session->unset_userdata('username');
-redirect('MainC');
-// $this->session->unset_userdata('id');
-}
+    public function logout()
+    {
+        $this->session->unset_userdata('username');
+        redirect('MainC');
+        // $this->session->unset_userdata('id');
+    }
 
 
-    
+
 
     public function map()
     {
@@ -415,9 +467,9 @@ redirect('MainC');
         $this->load->view('private/tables.php');
     }
 
-// Menu - end   
+    // Menu - end   
 
-//users - start
+    //users - start
 
 
     // public function loadAddUsers()
@@ -439,7 +491,7 @@ redirect('MainC');
     // {
     //     $un = $this->input->post('username');
     //     $pw = $this->input->post('password');
-        
+
     //     $data = array(
     //         'username' => $un,
     //         'password' => $pw
@@ -482,11 +534,11 @@ redirect('MainC');
     //         return false;
     //     }
     // }
-    
 
 
 
-// other - functions
+
+    // other - functions
 
 }
 

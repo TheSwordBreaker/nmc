@@ -28,7 +28,7 @@
 
             <li class="nav-item dropdown">
                 <div class="dropdown-menu dropdown-menu-right border" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/HomePage') ?>">HomePage</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/homepage') ?>">HomePage</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/Homesec2') ?>">HomeSec2</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/Homesec3') ?>">HomeSec3</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/HomePage') ?>">HomeSec4</a>

@@ -80,6 +80,8 @@
         <script>
         var url = "<?php echo base_url();?>";
         var k = "<?= $k ?>";
+        var sec_no = <?= $sec_no['homepage'] ?>;
+        
 
         function ConfirmDel(id) {
             var r = confirm("Do you want to delete this?")
@@ -103,6 +105,18 @@
             $(this).addClass("active");
         });
         </script>
+        <script>
+    $(document).ready(function(){
+        $('input[type="checkbox"]').click(function(){
+            if($(this).prop("checked") == true){
+                alert("Checkbox is checked.");
+            }
+            else if($(this).prop("checked") == false){
+                alert("Checkbox is unchecked.");
+            }
+        });
+    });
+</script>
     </body>
 
 </html>

@@ -9,6 +9,28 @@ class WorkM extends CI_Model
         return $result;
     }
 
+
+    public function Change($tablename,$id){
+        if($this->db->set('active', 0)->update($tablename))
+        {
+            if($this->db->set('active', 1)->where_in('id', $id)->update($tablename))
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+            
+        }
+        else
+        {
+            return false;
+        }
+        
+        
+    }
+
+
     public function col_exist($field_name, $table_name)
     {
         if ($this->db->field_exists($field_name, $table_name))
