@@ -1,32 +1,30 @@
-<!-- <?php foreach($data as $d):?>
-<?php for ($i=0; $i < 3;  $i++): ?>
+<div class="col-lg-12 m-4 pt-5">
+    <h4 class="widget-title display-2">All </h4>
+   
+    <div class="row">
+        <?php foreach($data as $row): ?>
+        <div class="col-md-4 ">
+            <div class="recent-game-item main-panel m-2 my-5">
+                <div class="rgi-thumb set-bg" style="background-image: url(<?= base_url('assets/images/').$row->img?>">
 
-<?= $d->name ?>
+                </div>
+                <div class="rgi-content">
+                    <h5><?= $row->name ?></h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
+                    <a href="<?= base_url('MainC/Places/'.$row->name)?>" class="comment">View</a>
 
-<?php endfor ?> 
-<?php endforeach ?>  -->
+                </div>
+            </div>
+        </div>
+        <?php endforeach; ?>
 
 
 
-<?php  for($i=0; $i < 3; $i++ ):?>
+    </div>
+</div>
 
-				<div class="col-md-4 agile-news-left">
-					<img src="<?= base_url('assets/images/').$data[$i]->img ?>" alt="">
-					<div class="agile-news-right">
-						<div class="date-grid">
-							<div class="time">
-								<p><i class="fa fa-calendar" aria-hidden="true"></i> August 13,2019</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="w3-agile-news-info">
-							<a href="#" data-toggle="modal" data-target="#myModal1"><?= $data[$i]->name ?></a>
-							<p><?= $data[$i]->des ?></p>
-						</div>
-						<div class="button">
-							<a href="Destination.html">More</a>
-						</div>
-					</div>
-				</div>
+<ul class="pagination pagination-info">
+    <?= $this->pagination->create_links() ?>
+</ul>
 
-				<?php endfor ?>
+</div>

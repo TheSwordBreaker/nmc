@@ -1,15 +1,4 @@
 
-<?php include('header.php') ?>
-
-
-
-      <!-- End Navbar -->
-      <!-- <div class="panel-header panel-header-lg">
-
-  <canvas id="bigDashboardChart"></canvas>
-
-
-</div> -->
      
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="card card-stats">
@@ -220,4 +209,3 @@
           </div>
        
 
-<?php include('Footer.php') ?>

@@ -1,254 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('/assets/images/apple-icon.png')?>">
-  <link rel="icon" type="image/png" href="<?= base_url('/assets/icons/plane.png') ?>">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    Nashik Tourism &mdash; Culture
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  <!-- CSS Files -->
-  <link href="<?= base_url('/assets/css/login.css') ?> " rel="stylesheet" />
-</head>
-
-<body class="index-page sidebar-collapse">
-  <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
-    
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="<?= base_url('MainC/')?>">
-          <i class="fa fa-plane"> </i>
-           NASHIK TOURISM  </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-          <!-- <li class="dropdown nav-item" style="letter-spacing: 1px; font-family: verdana;">
-            <a href="index.html" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                <i class="material-icons">home</i><b> Home </b>
-            </a>
-             <div class="dropdown-menu dropdown-with-icons">
-              <a href="./index.html" class="dropdown-item">
-                <i class="material-icons">layers</i> All Components
-              </a>
-            </div> 
-          </li> -->
-          <li class="nav-item" style="letter-spacing: 1px; font-family: verdana;" >
-            <a class="nav-link" href="<?= base_url('MainC/')?>">
-              <b> Home </b>
-            </a>
-          </li>
-          <li class="nav-item" style="letter-spacing: 1px; font-family: verdana;" >
-            <a class="nav-link" href="<?= base_url('MainC/Dest')?>">
-              <b> Destination </b>
-            </a>
-          </li>
-          <li class="nav-item" style="letter-spacing: 1px; font-family: verdana;">
-            <a class="nav-link" href="<?= base_url('WorkC/')?>">
-              <b> Login </b>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Follow us on Twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Like us on Facebook">
-              <i class="fa fa-facebook-square"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank" data-original-title="Follow us on Instagram">
-              <i class="fa fa-instagram"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="page-header header-filter " data-parallax="true" style="background-image: url(<?= base_url('assets/images/j6.jpg') ?>);">
-    <div class="container">
-      <div class="row">
+<div class="section text-center">
+    <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
-          <div class="brand">
-            <!-- <h2><b> Never Stop Exploring </b></h2> -->
-          </div>
+            <h2 class="title">Foods !!!</h2>
+            <h5 class="description">Nashik has a personality of its own, due to its mythological, historical, social and
+                cultural importance. The city is situated on the banks of the Godavari River, making it one of the
+                holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it
+                that Lord Rama.</h5>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="main main-raised">
-    <div class="site-section">
-      
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center">
-            <h2 class="font-weight-light text-black">Culture and Food!!!</h2>
-            <p class="color-black-opacity-5" style="font-family: verdana;">Nashik has a personality of its own, due to its mythological, historical, social and cultural importance. The city is situated on the banks of the Godavari River, making it one of the holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it that Lord Rama.</p>
-          </div>
-        </div>
 
 
-
-<div class="card-deck">
-        <div>
-        <h2>Example heading <span class="badge badge-secondary">New</span></h2>
-        </div>
-        <div class="row">
+    <hr>
 
 
+    <div class="col-md-12 bg-light w-100">
+        <div class="px-auto ">
+            <div class="row padding">
+                <?php  for($i=0; $i < 3; $i++ ):?>
+                <div class="col-md-4 ">
+                    <div class="card bg-dark text-white">
+                        <div class="text-center">
+                            <img class="card-img img-fluid img-responsive w-100 "  style="height:25rem;"
+                                src="<?= base_url('/assets/images/').$sec1[$i]->img ?>" alt="Card image">
+                            <div class="card-img-overlay  d-flex flex-column justify-content-end">
+                                <h1 class="card-title display-3 "><span class="border-secondary"><?= $sec1[$i]->name ?></span></h1>
 
-
-<div class="col-md-4 ml-3">
-  <div class="card bg-dark text-white">
-      <div class="text-center">
-  <img class="card-img" src="https://www.australia.com/content/australia/en_in/things-to-do/food-and-drinks/australias-trendiest-food-and-wine-experiences/_jcr_content/imagePortrait.adapt.740.medium.jpg" alt="Card image">
-  <div class="card-img-overlay">
-    <h1 class="card-title" style="position: absolute;
-    bottom: 2rem;">Card title</h1>
-         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endfor ?>
             </div>
-      </div>
-</div>
-</div>
-
-
-
-  <div class="col-md-4 ml-3">
-    <div class="card">
-        
-        <img class="card-img-top " src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
-        <div class="card-body">
-        <!-- <div class="card-header card-header-success">
-            <h4 class="card-title">Full header coloured</h4>
-            <p class="category">Category subtitle</p>
-        </div> -->
-        <h4 class="card-title">Here is the Icon</h4>
-              The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona...
         </div>
-        <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
     </div>
+
+    <hr class="w-75 ">
+
+
+    <div class="features">
+        <div class="row">
+            <div class="m-auto">
+                <h2 class="title">Nashik's Trendiest Food </h2>
+            </div>
+            <div class="container-fluid mx-auto">
+                <div class="row padding">
+
+                    <?php  for($i=0; $i < 2; $i++ ):?>
+                    <div class="col-md-6">
+                        <div class="card" style="height:35rem">
+                            <img class="card-img-top " src="<?= base_url('/assets/images/').$sec2[$i]->img;  ?>"
+                                style="height:100%" alt="Card image cap">
+                            <div class="card-body">
+                                <div class="card-header card-header-success">
+                                    <h3 class="card-title"><?= $sec2[$i]->name ?></h3>
+                                    <!-- <p class="category">Category subtitle</p> -->
+                                </div>
+                                <h4 class="card-title">Here is the Icon</h4>
+                                <?= $sec2[$i]->des ?>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endfor ?>
+
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-
-
-
-  
 
 
 
 
 
 
-      </div>
+    <!--  carousel  -->
+    <div class="section" id="carousel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mr-auto ml-auto">
+                    <!-- Carousel Card -->
+                    <div class="card card-raised card-carousel">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
+                            data-interval="3000">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <?php  for($i=0; $i < 3; $i++ ):?>
+                                <div class="carousel-item <?php  if($i==0){echo "active";}?>">
+                                    <img class="d-block w-100 h-100" style="height:fit-content"
+                                        src="<?= base_url('assets/images/').$sec3[$i]->img ?>" alt="First slide">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h4>
+                                            <i class="material-icons">location_on</i> <?= $sec3[$i]->des ?>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <?php endfor ?>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                data-slide="prev">
+                                <i class="material-icons">keyboard_arrow_left</i>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                data-slide="next">
+                                <i class="material-icons">keyboard_arrow_right</i>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Carousel Card -->
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<div class="card-deck">
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <!--         end carousel -->
+
+
+
+
+    <div class="section text-center">
+        <h2 class="title">Great Misal Points</h2>
+        <div class="team pt-3">
+            <div class="row">
+
+            <?php  for($i=0; $i < 3; $i++ ):?>
+            
+
+                <div class="col-md-4">
+                    <div class="team-player">
+
+
+                        <div class="card card-plain px-3">
+                            <img src="<?= base_url('assets/images/').$sec4[$i]->img ?>" alt="Thumbnail Image"
+                                class="img-resized">
+                            <h4 class="card-title"><?= $sec3[$i]->name ?>
+                               
+                               
+                            </h4>
+                            <div class="card-body">
+                                <p class="card-description text-justify"><?= $sec4[$i]->des ?></p>
+                                <p><a href="#" class="btn btn-info m-auto">Learn More</a></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <?php endfor ?>
+                
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
-</div>
-
-
-</div>
-
-    
-  
-  <footer class="footer" data-background-color="black">
-    <div class="container">
-      <nav class="float-left">
-        <ul>
-          <li>
-            <a href="<?= base_url('MainC/')?>">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="<?= base_url('MainC/Dest')?>">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="<?= base_url('MainC/Dest')?>">
-             Destination
-            </a>
-          </li>
-          <li>
-            <a href="<?= base_url('WorkC/')?>">
-              Login
-            </a>
-          </li>
-        </ul>
-      </nav>
-       <div class="copyright float-right" style="font-family: verdana; font-size: 15px;">
-        © 2019 Nashik Tourism. All rights reserved | Design by GPN Students
-      </div>
-    </div>
-  </footer>
-  <!--   Core JS Files   -->
-  <script src="<?= base_url('/assets/js/core/jquery.min.js') ?>" type="text/javascript"></script>
-  <script src="<?= base_url('/assets/js/core/popper.min.js') ?>" type="text/javascript"></script>
-  <script src="<?= base_url('/assets/js/core/bootstrap-material-design.min.js')?>" type="text/javascript"></script>
-  <!--  Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-  <script src="./assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-  <script src="<?= base_url('/assets/js/plugins/moment.min.js') ?>" type="text/javascript"></script>
-  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="<?= base_url('/assets/js/plugins/nouislider.min.js') ?>" type="text/javascript"></script>
-  <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
-  <script src="<?= base_url('/assets/js/login.js') ?>" type="text/javascript"></script>
-  <script>
-    $(document).ready(function() {
-      //init DateTimePickers
-      materialKit.initFormExtendedDatetimepickers();
-
-      // Sliders Init
-      materialKit.initSliders();
-    });
-
-
-    function scrollToDownload() {
-      if ($('.section-download').length != 0) {
-        $("html, body").animate({
-          scrollTop: $('.section-download').offset().top
-        }, 1000);
-      }
-    }
-
-  </script>
-</body>
-
-</html>

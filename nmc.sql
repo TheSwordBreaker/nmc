@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2019 at 11:55 AM
+-- Generation Time: Nov 23, 2019 at 03:40 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -25,6 +25,101 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `culsec1`
+--
+
+CREATE TABLE `culsec1` (
+  `id` int(100) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `img` varchar(5000) NOT NULL,
+  `des` varchar(5000) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culsec2`
+--
+
+CREATE TABLE `culsec2` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `des` varchar(5000) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culsec3`
+--
+
+CREATE TABLE `culsec3` (
+  `id` int(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `img` varchar(5000) NOT NULL,
+  `des` varchar(5000) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culsec4`
+--
+
+CREATE TABLE `culsec4` (
+  `id` int(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `img` varchar(5000) NOT NULL,
+  `des` varchar(5000) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culsec5`
+--
+
+CREATE TABLE `culsec5` (
+  `id` int(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `img` varchar(5000) NOT NULL,
+  `des` varchar(5000) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culsec6`
+--
+
+CREATE TABLE `culsec6` (
+  `id` int(50) NOT NULL,
+  `des` varchar(500) NOT NULL,
+  `active` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `culture`
+--
+
+CREATE TABLE `culture` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `des` varchar(1000) NOT NULL,
+  `img` varchar(100) NOT NULL,
+  `active` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `culturepage`
 --
 
@@ -40,18 +135,32 @@ CREATE TABLE `culturepage` (
 --
 
 INSERT INTO `culturepage` (`id`, `name`, `img`, `active`) VALUES
-(1, 'Pande Mithai', 'pande_mithai.jpg', 1),
-(2, 'Samarath Juice Centre', 'samartha_juice.jpg', 1),
-(3, 'Dairy Don', 'j3.jpeg', 1),
-(4, 'Rock n Rolls', 'wraproti.jpg', 1),
-(5, 'Sadhna misal', 'sadhna_misal.jpg', 1),
-(6, 'Kokni Darbar', 'j6.jpg', 1),
-(7, 'Akbar Soda', 'soda.png', 1),
-(8, 'Budha Halwai', 'gulabjamun.jpg', 1),
-(9, 'Kondaji Chivda', 'Kondaji_Chivda.jpg', 1),
-(10, 'Sayantara', 'sayantara.jpg', 1),
-(11, 'Coffee', 'coffee.jpg', 1),
-(12, 'Chienese', 'chiness.jpg', 1);
+(1, 'Pande Mithai', 'culturepage/pande_mithai.jpg', 1),
+(2, 'Samarath Juice Centre', 'culturepage/samartha_juice.jpg', 1),
+(3, 'Dairy Don', 'culturepage/j3.jpeg', 1),
+(4, 'Rock n Rolls', 'culturepage/wraproti.jpg', 1),
+(5, 'Sadhna misal', 'culturepage/sadhna_misal.jpg', 1),
+(6, 'Kokni Darbar', 'culturepage/j6.jpg', 1),
+(7, 'Akbar Soda', 'culturepage/soda.png', 1),
+(8, 'Budha Halwai', 'culturepage/gulabjamun.jpg', 1),
+(9, 'Kondaji Chivda', 'culturepage/Kondaji_Chivda.jpg', 1),
+(10, 'Sayantara', 'culturepage/sayantara.jpg', 1),
+(11, 'Coffee', 'culturepage/coffee.jpg', 1),
+(12, 'Chienese', 'culturepage/chiness.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `destination`
+--
+
+CREATE TABLE `destination` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `des` varchar(1000) NOT NULL,
+  `img` varchar(100) NOT NULL,
+  `active` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -72,9 +181,9 @@ CREATE TABLE `destpage` (
 --
 
 INSERT INTO `destpage` (`id`, `name`, `des`, `img`, `active`) VALUES
-(1, 'TRAMBAKESHWAR', 'Counted as the holiest temple of India, the Trimbakeshwar Temple houses one of the most important twelve Jyotirlingas, a form of Lord Shiva.', 'trambak1.jpg', 1),
-(2, 'PANCHVATI', 'Nothing short of holy for the ardent belivers of Ramayana, this site gets a lots of visitors in the form of pilgrims and religious travellers.', '1.jpg', 1),
-(3, 'SAPTSHRUNGI GAD', 'Situated on a hill range, consisting of seven hills, Saptashrungi is a site of religious significance for Hindus. The drive to the temple is quite scenic, especially during the monsoon season.', 'VANI1.jpg', 1);
+(1, 'TRAMBAKESHWAR', 'Counted as the holiest temple of India, the Trimbakeshwar Temple houses one of the most important twelve Jyotirlingas, a form of Lord Shiva.', 'destpage/trambak1.jpg', 1),
+(2, 'PANCHVATI', 'Nothing short of holy for the ardent belivers of Ramayana, this site gets a lots of visitors in the form of pilgrims and religious travellers.', 'destpage/1.jpg', 1),
+(3, 'SAPTSHRUNGI GAD', 'Situated on a hill range, consisting of seven hills, Saptashrungi is a site of religious significance for Hindus. The drive to the temple is quite scenic, especially during the monsoon season.', 'destpage/VANI1.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -94,12 +203,116 @@ CREATE TABLE `destsec2` (
 --
 
 INSERT INTO `destsec2` (`id`, `name`, `img`, `active`) VALUES
-(2, 'Phalake Smarak', 'PRIMG3.jpg', b'1'),
-(3, 'Panchwati', '1.jpg', b'1'),
-(4, 'Panduv Leni', 'pandavlene.jpg', b'1'),
-(5, 'Kala-Ram Mandir', 'kalaram.jpg', b'1'),
-(6, 'Anjeneri', 'PRIMG5.jpg', b'1'),
-(8, 'Trambkeshwar', 'trambak1.jpg', b'1');
+(2, 'Phalake Smarak', 'destsec2/PRIMG3.jpg', b'1'),
+(3, 'Panchwati', 'destsec2/1.jpg', b'1'),
+(4, 'Panduv Leni', 'destsec2/pandavlene.jpg', b'1'),
+(5, 'Kala-Ram Mandir', 'destsec2/kalaram.jpg', b'1'),
+(6, 'Anjeneri', 'destsec2/PRIMG5.jpg', b'1'),
+(8, 'Trambkeshwar', 'destsec2/trambak1.jpg', b'1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foodsec1`
+--
+
+CREATE TABLE `foodsec1` (
+  `id` int(11) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `img` varchar(50000) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `foodsec1`
+--
+
+INSERT INTO `foodsec1` (`id`, `name`, `img`, `active`) VALUES
+(1, 'Nashik\'s Best Spicy Food', 'FoodSec1/Amazingly-Bhel-Puri-768x768_2.jpg', 1),
+(2, 'Cool Nashik', 'FoodSec1/j5.jpeg', 1),
+(3, 'Delisious Desserts', 'FoodSec1/bagga_sweets1.png', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foodsec2`
+--
+
+CREATE TABLE `foodsec2` (
+  `id` int(11) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `img` varchar(50000) NOT NULL,
+  `des` mediumtext NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `foodsec2`
+--
+
+INSERT INTO `foodsec2` (`id`, `name`, `img`, `des`, `active`) VALUES
+(1, 'Vada Pav', 'FoodSec2/krishna_vadapav.jpg', 'The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to \"Naviglio\" where you can enjoy the main night life in Barcelona...', 0),
+(2, 'Rock And Roll', 'FoodSec2/rock_N_roll.png', 'The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to \"Naviglio\" where you can enjoy the main night life in Barcelona...', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foodsec3`
+--
+
+CREATE TABLE `foodsec3` (
+  `id` int(11) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `img` varchar(50000) NOT NULL,
+  `des` mediumtext NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `foodsec3`
+--
+
+INSERT INTO `foodsec3` (`id`, `name`, `img`, `des`, `active`) VALUES
+(1, '', 'FoodSec3/momos21.png', 'Oh ... you want to add description related to your content....', 0),
+(2, '', 'FoodSec3/shuakin11.jpg', 'Oh ... you want to add description related to your content....', 0),
+(3, '', 'FoodSec3/shwarama11.png', 'Oh ... you want to add description related to your content....', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foodsec4`
+--
+
+CREATE TABLE `foodsec4` (
+  `id` int(20) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `des` varchar(5000) NOT NULL,
+  `img` varchar(2000) NOT NULL,
+  `active` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `foodsec4`
+--
+
+INSERT INTO `foodsec4` (`id`, `name`, `des`, `img`, `active`) VALUES
+(1, 'Sadhana Misal:', 'A stronghold with cheery ambiance where the radiant aroma of sizzling flavors is in the air. Designed with a village-setting, the hotel showcases hybrid birds and animals including Emu, Turkey, camels for visitors. The hotel is well-known in Nashik as ‘Chulivarchi Misal’.', 'FoodSec4/sathna-misal11.png', 0),
+(2, 'Shamsundar Misal', 'Even though this hotel is situated near industrial area, their Misal pav is high on demand. Shamsundar Misal was one of the popular Misal point years ago. Down to increasing competition, the hotel must have lost its name but is striving hard to gain its name and fame by delivering a first class Misal.', 'FoodSec4/sham-sundar11.jpg', 0),
+(3, 'Mamachya Mala', 'Mamachya Mala perfect for its delicious Misal, is moreover famous for Jalebis. Based on a village-setting, this is a real good place to be visited in weekends with family. The hotel situated in Makhmalabad-Mahsrul link road, will most of all, let', 'FoodSec4/sham-sundar2.jpg', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `foodstuff`
+--
+
+CREATE TABLE `foodstuff` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `des` varchar(1000) NOT NULL,
+  `img` varchar(100) NOT NULL,
+  `active` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -120,9 +333,9 @@ CREATE TABLE `homepage` (
 --
 
 INSERT INTO `homepage` (`id`, `name`, `des`, `img`, `active`) VALUES
-(1, 'TRAMBAKESHWAR,nashik', 'It is an ancient Hindu temple in the town of Trimbak, in the Trimbakeshwar tehsil in the Nashik District of Maharashtra, India, 28 km from the city of Nashik and 40 km from nashik road. It is dedicated to the god Shiv and is one of the twelve Jyotirlingas, where the Hindu genealogy registers at Trimbakeshwar, Maharashtra are kept. The origin of the sacred Godavari river is near Trimbak. Kusavarta, a kunda (sacred pond) in the temple premises is the source of the Godavari River. The current temple was built by Peshwa Balaji Baji Rao.', 'trambak1.jpg', 1),
-(2, 'PANCHVATI, NASHIK', 'Holy land for the believers of Ramayana, Panchvati attracts a lot of pilgrims. A serene town located near Nasik, the site offers small sightings having a lot of significance in the epic of Ramayana. Given the legend of Panchvati, the place holds a lot oreligious significance even in the present day. Sites sucas the Kalaram Temple and the Sita Gufaa are on everpilgrims list. The Kumbh Mela takes place on the river banks of Godavari, and has a surplus of pilgrims from every corner of world during the occasion.', '1.jpg', 1),
-(3, 'SAPTASHRUNGI GADH, Vani', 'This hill range situated 60 km from Nashik and forms a part of the Sahyadri range. It is a blend of the Sanskrit words \'sapta\' which means seven and \'shrung\' which means peak.which greatly add to the beauty of the hills. Not only are the hills incredible to look at, but the forests on the hills are loaded with medicinal herbs. In fact, as per the Hindu tradition, when Laxman was lying unconscious and could only be awakened by the \'sanjeevani\' herb, Lord Hanuman flew to these hills in search of the herb', 'VANI1.jpg', 1);
+(1, 'TRAMBAKESHWAR,nashik', 'It is an ancient Hindu temple in the town of Trimbak, in the Trimbakeshwar tehsil in the Nashik District of Maharashtra, India, 28 km from the city of Nashik and 40 km from nashik road. It is dedicated to the god Shiv and is one of the twelve Jyotirlingas, where the Hindu genealogy registers at Trimbakeshwar, Maharashtra are kept. The origin of the sacred Godavari river is near Trimbak. Kusavarta, a kunda (sacred pond) in the temple premises is the source of the Godavari River. The current temple was built by Peshwa Balaji Baji Rao.', 'homepage/trambak1.jpg', 1),
+(2, 'PANCHVATI, NASHIK', 'Holy land for the believers of Ramayana, Panchvati attracts a lot of pilgrims. A serene town located near Nasik, the site offers small sightings having a lot of significance in the epic of Ramayana. Given the legend of Panchvati, the place holds a lot oreligious significance even in the present day. Sites sucas the Kalaram Temple and the Sita Gufaa are on everpilgrims list. The Kumbh Mela takes place on the river banks of Godavari, and has a surplus of pilgrims from every corner of world during the occasion.', 'homepage/1.jpg', 1),
+(3, 'SAPTASHRUNGI GADH, Vani', 'This hill range situated 60 km from Nashik and forms a part of the Sahyadri range. It is a blend of the Sanskrit words \'sapta\' which means seven and \'shrung\' which means peak.which greatly add to the beauty of the hills. Not only are the hills incredible to look at, but the forests on the hills are loaded with medicinal herbs. In fact, as per the Hindu tradition, when Laxman was lying unconscious and could only be awakened by the \'sanjeevani\' herb, Lord Hanuman flew to these hills in search of the herb', 'homepage/VANI1.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -142,15 +355,15 @@ CREATE TABLE `homesec2` (
 --
 
 INSERT INTO `homesec2` (`id`, `name`, `des`, `img`) VALUES
-(1, 'Nashik', 'Nashik has a personality of its own, due to its mythological, historical, social and cultural importance. The city is situated on the banks of the Godavari River, making it one of the holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it that Lord Rama, the King of Ayodhya, made Nashik his adobe during his 14 years in exile. At the same place Lord Laxman, by the wish of Lord Rama, cut the nose of “Shurpnakha” and thus this city was named as “Nashik”.In Kritayuga, Nashik was ‘Trikantak’, ‘Janasthana’ in Dwaparyuga and later in Kuliyuga it became ‘Navashikh’ or ‘Nashik’. Renowed poets like Valmiki, Kalidas and Bhavabhooti have paid rich tributes here. Nashik in 150 BC.was beleived to be the country’s largets market place. From 1487 A.D, this province came under the rule of Mughals and was known as ‘Gulchanabad’. It was also home of emperor Akbar and he has written at lenght about Nashik in ‘Ein-e-Akbari’. It was also known as the ‘Land o', 'dham.jpg');
+(1, 'Nashik', 'Nashik has a personality of its own, due to its mythological, historical, social and cultural importance. The city is situated on the banks of the Godavari River, making it one of the holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it that Lord Rama, the King of Ayodhya, made Nashik his adobe during his 14 years in exile. At the same place Lord Laxman, by the wish of Lord Rama, cut the nose of “Shurpnakha” and thus this city was named as “Nashik”.In Kritayuga, Nashik was ‘Trikantak’, ‘Janasthana’ in Dwaparyuga and later in Kuliyuga it became ‘Navashikh’ or ‘Nashik’. Renowed poets like Valmiki, Kalidas and Bhavabhooti have paid rich tributes here. Nashik in 150 BC.was beleived to be the country’s largets market place. From 1487 A.D, this province came under the rule of Mughals and was known as ‘Gulchanabad’. It was also home of emperor Akbar and he has written at lenght about Nashik in ‘Ein-e-Akbari’. It was also known as the ‘Land o', 'homesec2/dham.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `homesec3`
+-- Table structure for table `homesec10`
 --
 
-CREATE TABLE `homesec3` (
+CREATE TABLE `homesec10` (
   `id` int(200) NOT NULL,
   `img` varchar(400) NOT NULL,
   `des` varchar(500) NOT NULL,
@@ -158,10 +371,10 @@ CREATE TABLE `homesec3` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `homesec3`
+-- Dumping data for table `homesec10`
 --
 
-INSERT INTO `homesec3` (`id`, `img`, `des`, `active`) VALUES
+INSERT INTO `homesec10` (`id`, `img`, `des`, `active`) VALUES
 (1, 'PRIMG3.jpg', 'Dada Saheb Phalke Smarak in Nashik : Is situated right down of Pandav pandav leni.  \r\n					This is a memorial of great visionary, Dadasaheb Phalke who was always committed towards edifying, devout and rational development.', 1),
 (2, 'KumbhMela1.jpg', 'Kumbh Mela or Kumbha Mela : It is a major pilgrimage and festival in Hinduism. It is celebrated in a cycle of approximately 12 years at four river-bank the Prayag (Ganges-Yamuna-mythical Saraswati rivers confluence), Haridwar (Ganges), Nashik (Godavari), and Ujjain (Shipra).', 1),
 (3, 'PRIMG5.jpg', 'Anjaneri Hills Nashik : Anjaneri Parvat is quite significant amongst the devotees as locals say that the cave on the top of the hill was the place where Goddess Anjana gave birth to Lord Hanuman. And that\'s how the mountain got its name.', 1),
@@ -190,10 +403,11 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`id`, `name`, `title`, `img`) VALUES
-(1, 'home', 'NASHIK TOURISM', '1.mp4'),
-(2, 'Destination', 'Nashik Tourism &mdash; Destination', 'dham.jpg'),
-(3, 'Culture', 'Nashik Tourism &mdash; Culture', 'j6.jpg'),
-(4, 'About Us', 'Nashik Tourism &mdash; About Us', 'PRIMG3.jpg');
+(1, 'home', 'NASHIK TOURISM', 'pages/1.mp4'),
+(2, 'Destination', 'Nashik Tourism &mdash; Destination', 'pages/dham.jpg'),
+(3, 'Culture', 'Nashik Tourism &mdash; Culture', 'pages/KumbhMela4.jpg'),
+(4, 'About Us', 'Nashik Tourism &mdash; About Us', 'pages/PRIMG3.jpg'),
+(5, 'Food Stuff', 'Nashik Tourism &mdash; FoodStuff', 'pages/j6.jpg');
 
 -- --------------------------------------------------------
 
@@ -220,9 +434,57 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
 --
 
 --
+-- Indexes for table `culsec1`
+--
+ALTER TABLE `culsec1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culsec2`
+--
+ALTER TABLE `culsec2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culsec3`
+--
+ALTER TABLE `culsec3`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culsec4`
+--
+ALTER TABLE `culsec4`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culsec5`
+--
+ALTER TABLE `culsec5`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culsec6`
+--
+ALTER TABLE `culsec6`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `culture`
+--
+ALTER TABLE `culture`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `culturepage`
 --
 ALTER TABLE `culturepage`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `destination`
+--
+ALTER TABLE `destination`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -238,6 +500,36 @@ ALTER TABLE `destsec2`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `foodsec1`
+--
+ALTER TABLE `foodsec1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `foodsec2`
+--
+ALTER TABLE `foodsec2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `foodsec3`
+--
+ALTER TABLE `foodsec3`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `foodsec4`
+--
+ALTER TABLE `foodsec4`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `foodstuff`
+--
+ALTER TABLE `foodstuff`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `homepage`
 --
 ALTER TABLE `homepage`
@@ -250,9 +542,9 @@ ALTER TABLE `homesec2`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `homesec3`
+-- Indexes for table `homesec10`
 --
-ALTER TABLE `homesec3`
+ALTER TABLE `homesec10`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -273,10 +565,58 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `culsec1`
+--
+ALTER TABLE `culsec1`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culsec2`
+--
+ALTER TABLE `culsec2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culsec3`
+--
+ALTER TABLE `culsec3`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culsec4`
+--
+ALTER TABLE `culsec4`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culsec5`
+--
+ALTER TABLE `culsec5`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culsec6`
+--
+ALTER TABLE `culsec6`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `culture`
+--
+ALTER TABLE `culture`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `culturepage`
 --
 ALTER TABLE `culturepage`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `destination`
+--
+ALTER TABLE `destination`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `destpage`
@@ -291,6 +631,36 @@ ALTER TABLE `destsec2`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT for table `foodsec1`
+--
+ALTER TABLE `foodsec1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `foodsec2`
+--
+ALTER TABLE `foodsec2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `foodsec3`
+--
+ALTER TABLE `foodsec3`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `foodsec4`
+--
+ALTER TABLE `foodsec4`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `foodstuff`
+--
+ALTER TABLE `foodstuff`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `homepage`
 --
 ALTER TABLE `homepage`
@@ -303,16 +673,16 @@ ALTER TABLE `homesec2`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `homesec3`
+-- AUTO_INCREMENT for table `homesec10`
 --
-ALTER TABLE `homesec3`
+ALTER TABLE `homesec10`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`

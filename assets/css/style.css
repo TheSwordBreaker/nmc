@@ -1683,6 +1683,17 @@ p.para-agileits:nth-child(2) {
     border: solid 1px #f70255;
     color: #FFFFFF;
 }
+
+.btn {
+    border-radius: 0;
+}
+
+.btn-outline-primary {
+    color: #ef6c57;
+    background-color: transparent;
+    background-image: none;
+    border-color: #ef6c57;
+}
 .agile-news-right.newsw {
     margin: 0 0 2.2em;
 }
@@ -1781,7 +1792,6 @@ ul.social-icons li a{
 /*--team-ends--*/
 /*-- /counter-agile --*/
 .agileinfo_counter_section {
-    background: url(../images/dham.jpg)no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
