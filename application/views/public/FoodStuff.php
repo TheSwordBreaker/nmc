@@ -1,7 +1,7 @@
 <div class="section text-center">
     <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
-            <h2 class="title">Foods !!!</h2>
+            <h2 class="font-weight-light text-black text-center">Foods!!!</h2>
             <h5 class="description">Nashik has a personality of its own, due to its mythological, historical, social and
                 cultural importance. The city is situated on the banks of the Godavari River, making it one of the
                 holiest places for Hindus all over the world. Nashik has a rich historical past, as the mythology has it
@@ -13,18 +13,22 @@
     <hr>
 
 
-    <div class="col-md-12 bg-light w-100">
+
+    <!-- Food Stuff Section 1 -->
+
+    <div class="col-md-12 bg-light w-100 my-4">
         <div class="px-auto ">
             <div class="row padding">
                 <?php  for($i=0; $i < 3; $i++ ):?>
                 <div class="col-md-4 ">
-                    <div class="card bg-dark text-white">
+                    <div class="card bg-white" style="height:37rem">
                         <div class="text-center">
-                            <img class="card-img img-fluid img-responsive w-100 "  style="height:25rem;"
-                                src="<?= base_url('/assets/images/').$sec1[$i]->img ?>" alt="Card image">
-                            <div class="card-img-overlay  d-flex flex-column justify-content-end">
-                                <h1 class="card-title display-3 "><span class="border-secondary"><?= $sec1[$i]->name ?></span></h1>
+                            <img src="<?= base_url('/assets/images/').$sec1[$i]->img;  ?>" id="FoodSec1"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title display-4 title text-dark"><?= $sec1[$i]->name ?></h5>
 
+                                <p class="card-text"><small class="text-muted">Know More</small></p>
                             </div>
                         </div>
                     </div>
@@ -34,13 +38,21 @@
         </div>
     </div>
 
+    
+    <!-- End  Food Stuff Section 1 -->
+
+
+    <br>
     <hr class="w-75 ">
 
 
-    <div class="features">
+    
+    <!-- Food Stuff Section 2 -->
+
+    <div class="features my-5">
         <div class="row">
             <div class="m-auto">
-                <h2 class="title">Nashik's Trendiest Food </h2>
+                <h2 class="font-weight-light text-black text-center">Nashik's Trendiest Food!!! </h2>
             </div>
             <div class="container-fluid mx-auto">
                 <div class="row padding">
@@ -48,8 +60,9 @@
                     <?php  for($i=0; $i < 2; $i++ ):?>
                     <div class="col-md-6">
                         <div class="card" style="height:35rem">
-                            <img class="card-img-top " src="<?= base_url('/assets/images/').$sec2[$i]->img;  ?>"
-                                style="height:100%" alt="Card image cap">
+                            <img class="card-img-top " style="height:20rem"
+                                src="<?= base_url('/assets/images/').$sec2[$i]->img;  ?>" style="height:100%"
+                                alt="Card image cap">
                             <div class="card-body">
                                 <div class="card-header card-header-success">
                                     <h3 class="card-title"><?= $sec2[$i]->name ?></h3>
@@ -70,13 +83,20 @@
         </div>
     </div>
 
+    <!-- End  Food Stuff Section 2 -->
+
+    <br>
+    <hr class="w-75 ">
 
 
 
-
-
+<!--  Food Stuff Section 3 -->
     <!--  carousel  -->
     <div class="section" id="carousel">
+
+        <div class="m-auto pb-3">
+            <h2 class="font-weight-light text-black text-center">Nashik's Trendiest Food </h2>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mr-auto ml-auto">
@@ -121,16 +141,18 @@
     </div>
     <!--         end carousel -->
 
+    <!-- End  Food Stuff Section 3 -->
 
 
+    <!-- Food Stuff Section 4 -->
 
-    <div class="section text-center">
+    <div class="section text-center m-0">
         <h2 class="title">Great Misal Points</h2>
-        <div class="team pt-3">
+        <div class="team ">
             <div class="row">
 
-            <?php  for($i=0; $i < 3; $i++ ):?>
-            
+                <?php  for($i=0; $i < 3; $i++ ):?>
+
 
                 <div class="col-md-4">
                     <div class="team-player">
@@ -138,13 +160,13 @@
 
                         <div class="card card-plain px-3">
                             <img src="<?= base_url('assets/images/').$sec4[$i]->img ?>" alt="Thumbnail Image"
-                                class="img-resized">
+                                class="img-resized ">
                             <h4 class="card-title"><?= $sec3[$i]->name ?>
-                               
-                               
+
+
                             </h4>
                             <div class="card-body">
-                                <p class="card-description text-justify"><?= $sec4[$i]->des ?></p>
+                                <p class="card-description "><?= $sec4[$i]->des ?></p>
                                 <p><a href="#" class="btn btn-info m-auto">Learn More</a></p>
                             </div>
 
@@ -155,7 +177,10 @@
 
 
                 <?php endfor ?>
-                
+
             </div>
         </div>
     </div>
+
+    <!--  End  Food Stuff Section 4 -->
+</div>
