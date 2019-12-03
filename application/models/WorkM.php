@@ -103,9 +103,7 @@ class WorkM extends CI_Model
     
     return $query->result();
        
-    // echo "<pre>";
-    // echo $offset;
-    // echo "</pre>";
+   
     }
 
 
