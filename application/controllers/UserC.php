@@ -114,8 +114,6 @@ class UserC extends CI_Controller
 
     public function Add($k)
     {
-
-
         if (isset($_POST['Name'])) {
             $data['name'] = $this->input->post('Name');
         }
@@ -131,7 +129,6 @@ class UserC extends CI_Controller
             $data['password'] = $this->input->post('password') ;
             // $data['password'] = password_hash($this->input->post('password'),PASSWORD_BCRYPT) ;
         }
-
 
         if (isset($_FILES['userfile'])) {
             $img = $_FILES['userfile']['name'];
