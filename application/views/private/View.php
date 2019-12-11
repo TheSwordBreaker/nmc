@@ -1,5 +1,5 @@
+<!--    View Page - Start -->
 <?php if (!$C) : ?>
-
 
 
     <div class="col-md-12">
@@ -7,7 +7,7 @@
             <div class="card-header ">
                 <div class="card-title ">
                     <h4> <span class="text-capitalize"><?= $k ?> </span> Table
-                        <a role="button" class="btn btn-sm btn-success btn-round float-right" href="<?= base_url('UserC/Change/') . $k ?>">
+                        <a role="button" class="btn btn-sm btn-success btn-round float-right" href="<?= base_url('UserC/loadChange/') . $k ?>">
                             <small class="">Change</small>
                         </a>
                     </h4>
@@ -55,13 +55,10 @@
 
                         <tbody>
                             <?php foreach ($UserData as $d) : ?>
-
+                            <?php if ($this->db->field_exists('active', $k)) : ?>
                                 <?php if ($d->active) : ?>
                                     <tr>
-
-
                                         <td scope="row" width="5%"> <?= $d->id ?></td>
-
 
                                         <?php if ($this->db->field_exists("name", $k)) : ?>
                                             <td width="10%"> <?= $d->name ?> </td>
@@ -82,12 +79,36 @@
 
                                         <?php if ($this->db->field_exists("id", $k)) : ?>
                                             <td class="flex" width="20%"><button class="btn btn-info btn-round m-2" onclick="ConfirmUpdate(<?= $d->id ?>)">Edit</a>
-
-                                                <?php endif ?>
-
+                                        <?php endif ?>
                                     </tr>
-
                                 <?php endif ?>
+                            <?php else: ?>
+
+                                <tr>
+                                        <td scope="row" width="5%"> <?= $d->id ?></td>
+
+                                        <?php if ($this->db->field_exists("name", $k)) : ?>
+                                            <td width="10%"> <?= $d->name ?> </td>
+                                        <?php endif ?>
+
+                                        <?php if ($this->db->field_exists("des", $k)) : ?>
+                                            <td width="50%"> <?= $d->des ?> </td>
+                                        <?php endif ?>
+
+                                        <?php if ($this->db->field_exists('username', $k)) : ?>
+                                            <td width="10%"> <?= $d->username ?> </td>
+                                        <?php endif ?>
+
+                                        <?php if ($this->db->field_exists("img", $k)) : ?>
+                                            <td width="30%"> <img src="<?= base_url('/assets/images/') . $d->img ?>" style="width:250px">
+                                            </td>
+                                        <?php endif ?>
+
+                                        <?php if ($this->db->field_exists("id", $k)) : ?>
+                                            <td class="flex" width="20%"><button class="btn btn-info btn-round m-2" onclick="ConfirmUpdate(<?= $d->id ?>)">Edit</a>
+                                        <?php endif ?>
+                                    </tr>
+                            <?php endif ?>
                             <?php endforeach ?>
                         </tbody>
                     </table>
@@ -100,8 +121,10 @@
     </div>
 
 
-<?php else : ?>
 
+    <!--  View Page - End -->
+<?php else : ?>
+    <!--  Change Page - Start -->
 
 
 
@@ -112,7 +135,7 @@
         <div class="card ">
             <div class="card-header ">
                 <div class="card-title ">
-                    <?php echo form_open('UserC/FinalChange/' . $k,array('id'=>'form_change')); ?>
+                    <?php echo form_open('UserC/FinalChange/'.$k, array('id' => 'form_change')); ?>
                     <div class="text-center">
                         <h2> <span class="text-capitalize"><?= $k ?> </span> Table
                         </h2>
@@ -120,10 +143,13 @@
 
                     <div class="bg-light ">
 
-                        <button type="submit" class="btn btn-md btn-primary float-left " name="submit">Confirm
+                        <button type="submit" class="btn btn-md btn-primary float-right " name="submit">Confirm
                             Changes</button>
-                        <a role="button" class="btn btn-md btn-success float-right" href="<?= base_url('UserC/LoadAdd/') . $k ?>">
+                        <a role="button" class="btn btn-md btn-success float-right" href="<?= base_url('UserC/loadAdd/') . $k ?>">
                             Add context
+                        </a>
+                        <a role="button" class="btn btn-md btn-danger float-left" href="<?= base_url('UserC/rollBack/') . $k ?>">
+                            RollBack
                         </a>
                     </div>
 
@@ -132,7 +158,7 @@
 
             <div class="container col-7" id="error" style="display: none;">
 
-                <div class="alert alert-warning alert-with-icon" >
+                <div class="alert alert-warning alert-with-icon">
                     <button type="button" aria-hidden="true" class="close">
                         <i class="nc-icon nc-simple-remove"></i>
                     </button>
@@ -174,13 +200,10 @@
                                 <?php endif ?>
 
                                 <?php if ($this->db->field_exists('username', $k)) : ?>
-
                                     <th>
                                         Username
                                     </th>
-
                                 <?php endif ?>
-
                             </tr>
                         </thead>
 
@@ -237,5 +260,5 @@
 
     <div>
     </div>
-
+    <!--  Change Page - End -->
 <?php endif ?>

@@ -105,6 +105,11 @@
 
             });
 
+            $(".close").on("click",function(){
+                
+                $('#error').hide();
+            })
+
             $(".btn-danger").on("click", function() {
             var $checkbox = $(this).closest('tr').find(":checkbox");
             var rowCount = $('#change tbody tr').length;
@@ -129,18 +134,6 @@
         });
 
         });
-
-
-
-        // $(":checkbox").on("click", function() {
-
-        //     $btn = $(this).closest('tr').find('button');
-        //     if ($(this).is(":checked")) {
-        //         $btn.attr("disabled", true);
-        //     } else {
-        //         $btn.attr("disabled", false);
-        //     }
-        // });
 
         
 

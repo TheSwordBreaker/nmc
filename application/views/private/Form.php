@@ -44,7 +44,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>UserName:</label>
-                  <input type="text" class="form-control" placeholder="Enter a Name" name="Name" id="Name">
+                  <input type="text" class="form-control" placeholder="Enter a Name" name="username" id="Name">
                 </div>
               </div>
             </div>
@@ -53,7 +53,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>Password</label>
-                  <input type="password" class="form-control" placeholder="Enter a Name" name="Name" id="Name">
+                  <input type="password" class="form-control" placeholder="Enter a Name" name="password" id="Name">
                 </div>
               </div>
             </div>
@@ -116,7 +116,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>UserName:</label>
-                  <input type="text"  value="hh" class="form-control"  name="Name" id="Name">
+                  <input type="text"  value="<?= $UserData[0]->username ?>" class="form-control"  name="username" id="Name">
                 </div>
               </div>
             </div>
@@ -125,7 +125,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>Password</label>
-                  <input type="password" value="<?= $Userdata[0]->password ?>" class="form-control" id="Name">
+                  <input type="password" value="<?= $UserData[0]->password ?>" class="form-control" id="password">
                 </div>
               </div>
             </div>

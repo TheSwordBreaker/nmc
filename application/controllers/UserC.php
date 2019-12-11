@@ -34,7 +34,6 @@ class UserC extends CI_Controller
         $this->load->view('private/Base', compact('Page'));
     }
 
-
     public function Change($k)
     {
         $this->load->model('WorkM');
@@ -45,8 +44,7 @@ class UserC extends CI_Controller
         $this->load->view('private/Base', compact('Page'));
     }
 
-
-    public function LoadAdd($k)
+    public function loadAdd($k)
     {
         $up = 0;
         $this->load->model('WorkM');
@@ -68,8 +66,21 @@ class UserC extends CI_Controller
     }
 
 
+    public function loadChange($k)
+    {
+        $this->load->model('WorkM');
+        $this->WorkM->start_tra();
+        redirect('UserC/Change/'.$k);
+    }
 
-    public function FinalChange($k)
+    public function rollBack($k)
+    {
+        $this->load->model('WorkM');
+        $this->WorkM->rollback_tra();
+        redirect('UserC/View/'.$k);
+    }
+
+    public function finalChange($k)
     {
         $this->load->model('WorkM');
 
@@ -77,16 +88,11 @@ class UserC extends CI_Controller
 
             if (!empty($_POST['check_list'])) 
             {
-                
-                // $checked_count = count($_POST['check_list']);
-                // echo "You have selected following " . $checked_count . " option(s): <br/>";
-               
-                // foreach ($_POST['check_list'] as $selected) {
-                //     echo "<p>" . $selected . "</p>";
-                // }
+
                 $id = $_POST['check_list'];
                 if($this->WorkM->Change($k,$id))
                 {
+                    $this->WorkM->commit_tra();
                     redirect('UserC/View/'.$k);
                 }else
                 {
@@ -115,15 +121,15 @@ class UserC extends CI_Controller
         }
         
         if (isset($_POST['Descripition'])) {
-            $data['des'] = $this->input->post('Descripition');
+            $des = $this->input->post('Descripition');
+            $des = html_escape($des);
+            $data['des'] = $this->security->xss_clean($des);
         }
 
-        if (isset($_POST['Username'])) {
+        if (isset($_POST['username'])) {
             $data['username'] = $this->input->post('username');
-        }
-
-        if (isset($_POST['password'])) {
-            $data['password'] = $this->input->post('password');
+            $data['password'] = $this->input->post('password') ;
+            // $data['password'] = password_hash($this->input->post('password'),PASSWORD_BCRYPT) ;
         }
 
 
@@ -157,7 +163,7 @@ class UserC extends CI_Controller
             // echo "done";
         } else {
             $this->session->set_flashdata('error', 'Inalid DATA');
-            $this->LoadAdd($k);
+            redirect('UserC/loadAdd/'.$k);
         }
 
     }
@@ -176,12 +182,13 @@ class UserC extends CI_Controller
             $data['des'] = $this->input->post('Descripition');
         }
 
-        if (isset($_POST['Username'])) {
+        if (isset($_POST['username'])) {
             $data['username'] = $this->input->post('username');
+            // $data['password'] =password_hash($this->input->post('password'),PASSWORD_BCRYPT);
         }
-
-        if (isset($_POST['password'])) {
-            $data['password'] = $this->input->post('password');
+        
+        if (isset($_POST['username'])) {
+            $data['password'] =$this->input->post('password');
         }
 
         if (isset($_FILES['userfile'])) {
@@ -201,8 +208,8 @@ class UserC extends CI_Controller
             return redirect('UserC/View/'.$k);
         } else {
             $this->session->set_flashdata('error', 'Inalid DATA');
-            print("select only 3....");
-            $this->Add($k);
+            
+            redirect('UserC/loadEdit/'.$k);
         }
     }
 
@@ -263,25 +270,14 @@ class UserC extends CI_Controller
 
 
 
-    public function map()
-    {
-        $this->load->view('private/map.php');
-    }
-    public function user()
-    {
-        $this->load->view('private/user.php');
-    }
-    public function tables()
-    {
-        $this->load->view('private/tables.php');
-    }
+    
 
     // Menu - end   
 
     //users - start
 
 
-    // public function loadAddUsers()
+    // public function Users()
     // {   
     //     $up=0; 
     //     $this->load->view('private/AddUsers',compact('up'));
