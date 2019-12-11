@@ -813,7 +813,9 @@ template {
         min-width: 992px !important;
     }
     .container {
-        min-width: 900px !important;
+        <<<<<<< HEAD min-width: 900px !important;
+        =======min-width: 992px !important;
+        >>>>>>>new
     }
     .navbar {
         display: none;
@@ -6403,7 +6405,9 @@ button.close {
     transition: transform 0.6s ease;
     backface-visibility: hidden;
     perspective: 1000px;
-    height: 80vh;
+    <<<<<<< HEAD height: 80vh;
+    =======height: 67vh;
+    >>>>>>>new
 }
 
 .carousel-item.active,
@@ -7561,6 +7565,7 @@ button.bg-dark:focus {
     .float-xl-none {
         float: none !important;
     }
+    <<<<<<< HEAD
 }
 
 .position {
@@ -7583,6 +7588,7 @@ button.bg-dark:focus {
     background: #f2994a;
     padding: 13px 30px;
     border-radius: 35px;
+    =======>>>>>>>new
 }
 
 .position-static {
@@ -7984,7 +7990,9 @@ button.bg-dark:focus {
 
 .pb-5,
 .py-5 {
-    padding-bottom: 2rem !important;
+    <<<<<<< HEAD padding-bottom: 2rem !important;
+    =======padding-bottom: 3rem !important;
+    >>>>>>>new
 }
 
 .pl-5,
@@ -10300,7 +10308,7 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
 }
 
 .btn.btn-outline-primary {
-    color: #ef6c57;
+    <<<<<<< HEAD color: #ef6c57;
     background-color: transparent;
     border-color: #ef6c57;
 }
@@ -10309,14 +10317,25 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
     color: #fff;
     background-color: rgba(153, 153, 153, 0.2);
     border-color: #ef6c57;
+    =======color: #9c27b0;
+    background-color: transparent;
+    border-color: #9c27b0;
+}
+
+.btn.btn-outline-primary:hover {
+    color: #9c27b0;
+    background-color: rgba(153, 153, 153, 0.2);
+    border-color: #9c27b0;
+    >>>>>>>new
 }
 
 .btn.btn-outline-primary:focus,
 .btn.btn-outline-primary.focus,
 .btn.btn-outline-primary:hover {
     color: #9c27b0;
-    background-color: #ef6c57;
-    border-color: #9c27b0;
+    <<<<<<< HEAD background-color: #ef6c57;
+    =======background-color: rgba(153, 153, 153, 0.2);
+    >>>>>>>new border-color: #9c27b0;
 }
 
 .btn.btn-outline-primary:active,
@@ -11376,7 +11395,9 @@ legend {
 }
 
 a {
-    color: #fff;
+    <<<<<<< HEAD color: #fff;
+    =======color: #9c27b0;
+    >>>>>>>new
 }
 
 a:hover,
@@ -15449,7 +15470,9 @@ h2.title {
 .description,
 .card-description,
 .footer-big p {
-    color: #3C4858;
+    <<<<<<< HEAD color: #3C4858;
+    =======color: #999;
+    >>>>>>>new
 }
 
 .text-warning {

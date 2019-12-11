@@ -84,6 +84,7 @@ class UserC extends CI_Controller
     {
         $this->load->model('WorkM');
 
+<<<<<<< HEAD
         if (isset($_POST['submit'])) {
 
             if (!empty($_POST['check_list'])) 
@@ -105,6 +106,23 @@ class UserC extends CI_Controller
                 echo "<b>Please Select Atleast One Option.</b>";
             }
         }
+=======
+     
+        if(isset($_POST['Name']))
+        {
+            $data['name'] = $this->input->post('Name');
+        }
+        // if(isset($_POST['Checkbox']))
+        // {
+        //     $data['active'] = $this->input->post('Checkbox');
+            
+        //     if(null!==($this->input->post('Checkbox'))) {
+        //             $data['active'] = '1';
+        //     } else {
+        //            $data['active'] = '0';
+        //     }
+        // }
+>>>>>>> new
 
 
         
@@ -166,6 +184,46 @@ class UserC extends CI_Controller
             redirect('UserC/loadAdd/'.$k);
         }
 
+
+        if($this->WorkM->InsertK($k,$data)){
+            return $this->View($k);
+            // echo "done";
+            }else{
+            $this->session->set_flashdata('error', 'Inalid DATA');
+            $this->LoadAdd($k);
+            }
+
+        // if(null!=($this->input->post('Checkbox')))
+        // {
+            
+        //      // print_r("checkbox===1");
+        //                 // $this->WorkM->ConfirmK($k);
+
+            
+        //     if($this->WorkM->ConfirmK($k))
+        //     {
+        //         $this->session->set_flashdata('error', 'Inalid DATA');
+        //         $this->LoadAdd($k);
+
+        //     }
+        //     else
+        //     {
+        //         if($this->WorkM->InsertK($k,$data)){
+        //             return $this->View($k);
+        //             // echo "done";
+        //             }else{
+        //             $this->session->set_flashdata('error', 'Inalid DATA');
+        //             $this->LoadAdd($k);
+        //             }
+        //     }
+
+        // }
+        // else
+        // {
+            
+        
+        // }
+
     }
 
 
@@ -177,23 +235,52 @@ class UserC extends CI_Controller
             $data['name'] = $this->input->post('Name');
         }
 
+<<<<<<< HEAD
        
         if (isset($_POST['Descripition'])) {
             $data['des'] = $this->input->post('Descripition');
         }
+=======
+        // if(isset($_POST['Checkbox']))
+        // {
+        //     $data['active'] = $this->input->post('Checkbox');
+        // }
+>>>>>>> new
 
         if (isset($_POST['username'])) {
             $data['username'] = $this->input->post('username');
             // $data['password'] =password_hash($this->input->post('password'),PASSWORD_BCRYPT);
         }
         
+<<<<<<< HEAD
         if (isset($_POST['username'])) {
             $data['password'] =$this->input->post('password');
         }
+=======
+        if(isset($_POST['Username']))
+        {    
+            $data['username'] = $this->input->post('username');                
+        }  
+
+        if(isset($_POST['password']))
+        {    
+            $data['password'] = $this->input->post('password');                
+        }  
+
+        // if(null!==($this->input->post('Checkbox'))) 
+        // {
+        //     $data['active'] = '1';
+            
+        // } else 
+        // {
+        //     $data['active'] = '0';
+        // }
+>>>>>>> new
 
         if (isset($_FILES['userfile'])) {
             $i = $this->WorkM->GetRow($k, $id);
             $tempImg = $i[0]->img;
+<<<<<<< HEAD
 
             $img = $_FILES['userfile']['name'];
 
@@ -223,6 +310,76 @@ class UserC extends CI_Controller
             $tempImg = $i[0]->img;
             $this->delImg('./assets/images/' . $k . "/" . $tempImg);
         }
+=======
+            
+            $img = $_FILES['userfile']['name'];
+            
+            if($img == '' or ($k."/".$img) == $tempImg){
+                $data['img']=$tempImg; 
+            }
+            else{
+            $data['img']=$k."/".$this->UpdateImg($tempImg,$k,$id);
+            } 
+        }
+
+        if($this->WorkM->UpdateK($k,$id,$data))
+                {
+                    // return $this->View($k);
+                    redirect('UserC/View/'.$k);
+                }else
+                {   
+                    $this->session->set_flashdata('error', 'Inalid DATA');
+                    print("select only 3....");
+                    $this->Add($k);
+                }
+
+
+
+        // if($data['active'] == '1')
+        // {
+        //     if($this->WorkM->ConfirmK($k))
+        //     {
+        //             print_r("can't select more");
+        //     }
+        //     else
+        //     {
+        //         if($this->WorkM->UpdateK($k,$id,$data))
+        //         {
+        //             redirect('UserC/View/'.$k);
+        //         }else
+        //         {
+        //             $this->session->set_flashdata('error', 'Inalid DATA');
+        //             print("select only 3....");
+        //             $this->Add($k);
+        //         }
+        //     }
+    
+        // }
+        // else
+        // {
+            
+        // }
+        
+        // if($data[active]==1)
+        // {
+        //     $res=$this->WorkM->ConfirmK($k);
+        //     if($res==3)
+        //     {
+        //         print_r("only 3 fields should be selected!!!...");
+        //     }
+        // }
+        // else
+        // {
+        //     if($this->WorkM->UpdateK($k,$id,$data)){
+        //         return $this->View($k);
+        //     }else{
+        //         $this->session->set_flashdata('error', 'Inalid DATA');
+        //         // print("select only 3....");
+        //         $this->Add($k);
+        //     }
+        // }
+    
+>>>>>>> new
 
         if ($this->WorkM->Deletek($k, $id)) {
             // Delete image data 
@@ -235,6 +392,7 @@ class UserC extends CI_Controller
 
     public function UpdateImg($path, $tempImg, $k, $id)
     {
+<<<<<<< HEAD
         $config['upload_path']          = $path;
         $config['allowed_types']        = 'gif|jpg|png';
         $config['max_size']             = 100000000;
@@ -254,6 +412,37 @@ class UserC extends CI_Controller
     }
 
     public function DelImg($tempImg)
+=======
+        
+            $this->load->model('WorkM');
+            $tempImg = ' ';
+            $i = $this->WorkM->getRow($k,$id);
+            if(isset($i[0]->img)){
+                $tempImg = $i[0]->img;
+                $this->delImg($k."/".$tempImg);
+            }
+           
+            if($this->WorkM->Deletek($k,$id)){
+                 // Delete image data 
+                $this->View($k);
+            }else{
+                return false;
+            }
+           
+            
+        
+    }
+
+    
+public function UpdateImg($tempImg,$k,$id){
+    $config['upload_path']          = './assets/images/'.$k."/";
+    $config['allowed_types']        = 'gif|jpg|png';
+    $config['max_size']             = 100000000;
+    // $config['max_width']            = 1024;
+    // $config['max_height']           = 768;
+    $this->load->library('upload', $config);
+    if ( ! $this->upload->do_upload('userfile'))
+>>>>>>> new
     {
         if (file_exists($tempImg)) {
             unlink($tempImg);
@@ -262,11 +451,31 @@ class UserC extends CI_Controller
 
     public function logout()
     {
+<<<<<<< HEAD
         $this->session->unset_userdata('username');
         redirect('MainC');
         // $this->session->unset_userdata('id');
+=======
+        $this->delImg($tempImg);
+        $im = $this->upload->data('file_name');
+        return $im;
+                            
+            // $this->load->view('upload_success', $data);
+>>>>>>> new
     }
 
+<<<<<<< HEAD
+=======
+public function DelImg($tempImg){
+if( file_exists('./assets/images/'.$tempImg) )
+        {  
+            unlink('./assets/images/'.$tempImg); 
+        } 
+        else{
+            
+        }
+}
+>>>>>>> new
 
 
 
