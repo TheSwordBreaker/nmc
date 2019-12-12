@@ -37,6 +37,18 @@
             </div>
             <?php endif ?>
 
+            <?php if($this->db->field_exists('link',$k)): ?>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>link:</label>
+                  <input type="text" class="form-control" placeholder="Enter a link" name="link" id="link" >
+                </div>
+              </div>
+            </div>
+
+            <?php endif ?>
+
 
             <?php if($this->db->field_exists("username",$k)): ?>
 
@@ -91,6 +103,18 @@
                 <div class="form-group">
                   <label>Name:</label>
                   <input type="text" class="form-control" placeholder="Enter a Name" name="Name" id="Name" value="<?=  $UserData[0]->name?>">
+                </div>
+              </div>
+            </div>
+
+            <?php endif ?>
+
+            <?php if($this->db->field_exists('link',$k)): ?>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>link:</label>
+                  <input type="text" class="form-control" placeholder="Enter a link" name="link" id="link" value="<?=  $UserData[0]->link?>">
                 </div>
               </div>
             </div>

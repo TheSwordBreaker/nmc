@@ -35,6 +35,13 @@
 
                                 <?php endif ?>
 
+                                <?php if ($this->db->field_exists("link", $k)) : ?>
+                                    <th>
+                                       link
+                                    </th>
+
+                                <?php endif ?>
+
                                 <?php if ($this->db->field_exists("img", $k)) : ?>
                                     <th style="width:fit-content;">
                                         Img
@@ -63,9 +70,13 @@
                                         <?php if ($this->db->field_exists("name", $k)) : ?>
                                             <td width="10%"> <?= $d->name ?> </td>
                                         <?php endif ?>
-
+                                        
                                         <?php if ($this->db->field_exists("des", $k)) : ?>
                                             <td width="50%"> <?= $d->des ?> </td>
+                                        <?php endif ?>
+                                            
+                                        <?php if ($this->db->field_exists("link", $k)) : ?>
+                                            <td width="10%"> <?= $d->link ?> </td>
                                         <?php endif ?>
 
                                         <?php if ($this->db->field_exists('username', $k)) : ?>

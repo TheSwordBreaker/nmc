@@ -108,6 +108,12 @@
                     <p>User Profile</p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="<?= base_url('UserC/View/Navbar') ?>">
+                    <i class="nc-icon nc-single-02"></i>
+                    <p>Nav bar</p>
+                </a>
+            </li>
 
             <li class="nav-item dropdown">
             <div class="dropdown-menu dropdown-menu-right border" aria-labelledby="navbarDropdownMenuLink">
