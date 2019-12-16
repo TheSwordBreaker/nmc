@@ -41,10 +41,13 @@ class MainC extends CI_Controller{
         $sec3 = $this->WorkM->Gets('foodsec3');
         $sec4 = $this->WorkM->Gets('foodsec4');
         $Page = $this->WorkM->GetRow('pages',5);
+        
 
         $Page['data'] = $this->load->view('public/FoodStuff',compact('sec1','sec2','sec3','sec4'),True);
+        $Page['navbar'] = $this->WorkM->Gets('navbar');
 
-        $this->load->view('public/Base',compact('Page'));
+
+        $this->load->view('public/template/Base',compact('Page'));
     }
     
     public function Dest()
@@ -54,7 +57,8 @@ class MainC extends CI_Controller{
             $data = $this->WorkM->GetS('destpage');
             $Page = $this->WorkM->GetRow('pages',2);
             $Page['data'] = $this->load->view('public/Dest',compact('data'),True);
-            $this->load->view('public/Base',compact('Page'));
+            $Page['navbar'] = $this->WorkM->Gets('navbar');
+            $this->load->view('public/template/Base',compact('Page'));
     }
 
     public function Places($Name=NULL)
@@ -67,7 +71,9 @@ class MainC extends CI_Controller{
 
             $Page = $this->WorkM->GetRow('pages',2);
             $Page['data'] = $this->load->view('public/Blog',compact('data'),True);
-            $this->load->view('public/Base',compact('Page'));
+            $Page['navbar'] = $this->WorkM->Gets('navbar');
+
+            $this->load->view('public/template/Base',compact('Page'));
     }
     
 
@@ -90,7 +96,9 @@ public function Cul()
         $data = $this->WorkM->Gets('culturepage');
         $Page = $this->WorkM->GetRow('pages',3);
         $Page['data'] = $this->load->view('public/FoodStuff',compact('data','sec2'),True);
-        $this->load->view('public/Base',compact('Page'));
+        $Page['navbar'] = $this->WorkM->Gets('navbar');
+
+        $this->load->view('public/template/Base',compact('Page'));
     }
 
        public function AboutUs()
@@ -98,7 +106,9 @@ public function Cul()
         $this->load->model('WorkM');
         $Page = $this->WorkM->GetRow('pages',4);
         $Page['data'] = $this->load->view('public/AboutUs',"" ,True);
-        $this->load->view('public/Base',compact('Page'));
+        $Page['navbar'] = $this->WorkM->Gets('navbar');
+
+        $this->load->view('public/template/Base',compact('Page'));
       
 
     }
@@ -142,9 +152,11 @@ public function Cul()
 
         $result = $this->WorkM->fetch_limit($query,$config['per_page'],$offset);
         
-        $Page = $this->WorkM->GetRow('pages',5);
+        $Page = $this->WorkM->GetRow('pages',6);
         $Page['data'] =  $this->load->view('public/Search',compact('result'),True);
-        $this->load->view('public/Base',compact('Page'));
+        $Page['navbar'] = $this->WorkM->Gets('navbar');
+
+        $this->load->view('public/template/Base',compact('Page'));
     }
 
     public function All($table)
@@ -186,7 +198,9 @@ public function Cul()
 
         $Page = $this->WorkM->GetRow('pages',5);
         $Page['data'] = $this->load->view('public/ex',compact('data'),True);
-        $this->load->view('public/Base',compact('Page'));
+        $Page['navbar'] = $this->WorkM->Gets('navbar');
+
+        $this->load->view('public/template/Base',compact('Page'));
     }
 
   

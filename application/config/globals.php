@@ -12,4 +12,27 @@ $config['sec_no']= array(
     'Navbar'=>5,
 );
 
+// culsec1
+// culsec2
+// culsec3
+// culsec4
+// culsec5
+// culsec6
+// culture
+// culturepage
+// destination
+// destpage
+// destsec2
+// foodsec1
+// foodsec2
+// foodsec3
+// foodsec4
+// foodstuff
+// homepage
+// homesec10
+// homesec2
+// navbar
+// pages
+// users
+
 ?>

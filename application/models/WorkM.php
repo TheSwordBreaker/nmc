@@ -84,7 +84,7 @@ class WorkM extends CI_Model
     public function fetch_row($query)
     {
         if ($query != '') {
-            $query = $this->db->query("SELECT id,name,img from destpage UNION SELECT id,name,img from culturepage WHERE `name` LIKE '%" . $query . "%' ESCAPE '!' ");
+            $query = $this->db->query("SELECT id,name,des,img from destination UNION SELECT id,name,des,img from foodstuff WHERE `name` LIKE '%" . $query . "%' ESCAPE '!' ");
 
             // print_r($result);
             // return false;
@@ -103,7 +103,7 @@ class WorkM extends CI_Model
 
 
         if ($search != '') {
-            $query = $this->db->query("SELECT id,name,img from destpage UNION SELECT id,name,img from culturepage WHERE `name` LIKE '%" . $search . "%' ESCAPE '!' LIMIT " . $offset . "," . $limit);
+            $query = $this->db->query("SELECT id,name,des,img from destination UNION SELECT id,name,des,img from foodstuff WHERE `name` LIKE '%" . $query . "%' ESCAPE '!' ");
         }
 
         return $query->result();
