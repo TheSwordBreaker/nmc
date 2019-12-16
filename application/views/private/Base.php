@@ -28,8 +28,9 @@
                 <!-- Navbar -->
 
                 <?php include('Navbar.php') ?>
+
                 <?php include('error.php') ?>
-               
+
 
 
 
@@ -80,14 +81,60 @@
         <script>
         var url = "<?php echo base_url();?>";
         var k = "<?= $k ?>";
+        var sec_no = 3;
+        sec_no = "<?= $sec_no[$k] ?>";
 
-        function ConfirmDel(id) {
-            var r = confirm("Do you want to delete this?")
-            if (r == true)
-                window.location = url + "UserC/Remove/" + k + "/" + id;
-            else
-                return false;
+        function set_error(msg) {
+            $("#error").find("#message").text(msg);
+            $("#error").show();
         }
+
+        $(document).ready(function() {
+
+            $('#form_change').submit(function(e) {
+
+                $("#error").hide();
+                var checkCount = $(":checked").length;
+
+                if (checkCount == 0) {
+                    set_error("No CheckBox are selected");
+                    e.preventDefault();
+                } else if (!(checkCount == sec_no)) {
+                    set_error("Only " + sec_no + " checkbox can be submmited")
+                    e.preventDefault();
+                }
+
+            });
+
+            $(".close").on("click", function() {
+
+                $('#error').hide();
+            })
+
+            $(".btn-danger").on("click", function() {
+                var $checkbox = $(this).closest('tr').find(":checkbox");
+                var rowCount = $('#change tbody tr').length;
+                console.log(rowCount);
+                if (rowCount <= sec_no) {
+
+                    set_error("minmium " + sec_no + "row must be needed " + rowCount);
+                    // $(this).attr("disabled", true);
+                } else if ($checkbox.is(":checked")) {
+
+                    set_error("Checked rows can't be deleted");
+                    // $(this).attr("disabled", true);
+                } else {
+                    var id = $checkbox.attr('value');
+                    var r = confirm("Do you want to Delete this?")
+                    if (r == true)
+                        window.location = url + "UserC/Remove/" + k + "/" + id;
+                    else
+                        return false;
+
+                }
+            });
+
+        });
 
         function ConfirmUpdate(id) {
             var r = confirm("Do you want to Update this?")
@@ -97,12 +144,12 @@
                 return false;
         }
 
-
         $("ul.nav li").on("click", function() {
             $("ul.nav li").removeClass("active");
             $(this).addClass("active");
         });
         </script>
+
     </body>
 
 </html>

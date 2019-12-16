@@ -23,14 +23,21 @@ class WorkC extends CI_Controller{
     public function AuthUser() 
     {
         $un = $this->input->post('username');
+        // $pw = $this->input->post('password');
+        
         $pw = $this->input->post('password');
+        echo $pw."<br>";
+        // $pw = password_hash($this->input->post('password'),1);
+        echo $pw."<br>";;
 
         $this->load->model('WorkM');
 
         if($this->WorkM->CheckUserName($un,$pw)){
             redirect('UserC');
+            echo "Done";
         }else {
             redirect('WorkC');
+            // echo " not Done";
         }
     }
 

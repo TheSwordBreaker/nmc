@@ -92,7 +92,7 @@ margin-bottom:30px
 								<li><a href="<?= base_url('MainC/AboutUs')?>" data-hover="About Us">About Us</a></li>
 								<li><a href="<?= base_url('MainC/Dest')?>" data-hover="destination">Destination</a></li>
 								<li><a href="<?= base_url('MainC/Foodstuff')?>" data-hover="Food Stuff">Food Stuff</a></li>
-								<li><a href="<?= base_url('MainC/Cul')?>" data-hover="Culture">Culture</a></li>
+								<li><a href="<?= base_url('MainC/Culture')?>" data-hover="Culture">Culture</a></li>
 
 								<!-- <li><a href="" data-hover="Culture" class="scroll">Culture</a></li> -->
 								<li><a href="<?= base_url('WorkC/')?>" data-hover="login">Login</a></li>
@@ -179,7 +179,7 @@ margin-bottom:30px
 									<a href="#" data-toggle="modal" data-target="#myModal1"><?= $data[$i]->name ?></a>
 									<p><?= $data[$i]->des ?></p>
 								</div><br>
-								<div class="w3l-button" style="text-align: justify;"
+								<div class="w3l-button" style="text-align: justify;">
 										<a href="<?= base_url('MainC/Dest')?>" data-toggle="modal" data-target="#myModal3">More</a>
 								</div>
 							</div>

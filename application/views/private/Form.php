@@ -37,6 +37,18 @@
             </div>
             <?php endif ?>
 
+            <?php if($this->db->field_exists('link',$k)): ?>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>link:</label>
+                  <input type="text" class="form-control" placeholder="Enter a link" name="link" id="link" >
+                </div>
+              </div>
+            </div>
+
+            <?php endif ?>
+
 
             <?php if($this->db->field_exists("username",$k)): ?>
 
@@ -44,7 +56,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>UserName:</label>
-                  <input type="text" class="form-control" placeholder="Enter a Name" name="Name" id="Name">
+                  <input type="text" class="form-control" placeholder="Enter a Name" name="username" id="Name">
                 </div>
               </div>
             </div>
@@ -53,7 +65,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>Password</label>
-                  <input type="password" class="form-control" placeholder="Enter a Name" name="Name" id="Name">
+                  <input type="password" class="form-control" placeholder="Enter a Name" name="password" id="Name">
                 </div>
               </div>
             </div>
@@ -71,14 +83,7 @@
             <?php endif ?>
 
 
-            <?php if($this->db->field_exists("active","homepage")): ?>
-            <div class="col-md-12">
-                    <div class="form-group">
-                      <label>Want to display this:  </label>
-                      <input type="checkbox"  name="Checkbox" id="Checkbox">
-                    </div>
-                  </div>
-            <?php endif ?>
+          
 
             
 
@@ -104,6 +109,18 @@
 
             <?php endif ?>
 
+            <?php if($this->db->field_exists('link',$k)): ?>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>link:</label>
+                  <input type="text" class="form-control" placeholder="Enter a link" name="link" id="link" value="<?=  $UserData[0]->link?>">
+                </div>
+              </div>
+            </div>
+
+            <?php endif ?>
+
 <?php if($this->db->field_exists('des',$k)): ?>
 
             <div class="row">
@@ -123,7 +140,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>UserName:</label>
-                  <input type="text"  value="hh" class="form-control"  name="Name" id="Name">
+                  <input type="text"  value="<?= $UserData[0]->username ?>" class="form-control"  name="username" id="Name">
                 </div>
               </div>
             </div>
@@ -132,7 +149,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>Password</label>
-                  <input type="password" value="<?= $Userdata[0]->password ?>" class="form-control" id="Name">
+                  <input type="password" value="<?= $UserData[0]->password ?>" class="form-control" id="password">
                 </div>
               </div>
             </div>
@@ -155,15 +172,7 @@
             
             <?php endif ?>
 
-            <?php if($this->db->field_exists("active","homepage")): ?>
-            <div class="col-md-12">
-                    <div class="form-group">
-                      <label>Want to display this:  </label>
-
-                      <input type="checkbox"  name="Checkbox" id="Checkbox" checked>
-                    </div>
-                  </div>
-            <?php endif ?>
+            
 
 
             </div>
