@@ -18,7 +18,7 @@
 
 
 	 "kun": {
-		
+		"scope": ,
 			"prefix": "uds",
 			"body": ["<?php if('$'UserData[0]->$1): ?>",
                 "      <th>",

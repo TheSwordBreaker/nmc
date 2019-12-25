@@ -15,19 +15,19 @@ class WorkM extends CI_Model
     public function rollback_tra()
     {
         $this->db->trans_rollback();
-        $this->db->trans_off();
+        
         
     }
 
     public function start_tra()
     {
-        $this->db->trans_begin();
+        $this->db->trans_start();
     }
 
     public function commit_tra()
     {
         $this->db->trans_complete();
-        $this->db->trans_off();
+        
     }
 
 
@@ -41,9 +41,11 @@ class WorkM extends CI_Model
             if ($this->db->set('active', 1)->where_in('id', $id)->update($tablename)) {
                 return true;
             } else {
+                $this->session->set_flashdata('error', 'something went wrong');
                 return false;
             }
         } else {
+            $this->session->set_flashdata('error', 'something went wrong');
             return false;
         }
     }
@@ -68,11 +70,23 @@ class WorkM extends CI_Model
     {
         $query = $this->db->like('name', $Name);
 
-        $result = $query->get('destpage')->result();
-        $result += $query->like('name', $Name)->get('Culturepage')->result();
-
+        $result = $query->get('destsec1')->result();
+        $result += $query->like('name', $Name)->get('foodstuff')->result();
         return $result;
     }
+
+    public function related($Name)
+    {
+        $query = $this->db->like('name', $Name);
+
+        $result = $query->get('destpage')->result();
+        $result += $query->like('name', $Name)->get('Culturepage')->result();
+        
+        $result[0]->id;
+        return $result;
+    }
+
+    
 
     public function Gets($tablename)
     {
@@ -84,7 +98,7 @@ class WorkM extends CI_Model
     public function fetch_row($query)
     {
         if ($query != '') {
-            $query = $this->db->query("SELECT id,name,des,img from destination UNION SELECT id,name,des,img from foodstuff WHERE `name` LIKE '%" . $query . "%' ESCAPE '!' ");
+            $query = $this->db->query("SELECT id,name,des,img from destination union all SELECT id,name,des,img from foodstuff  WHERE `name` LIKE '%" . $query . "%' ESCAPE '!' ");
 
             // print_r($result);
             // return false;
@@ -103,7 +117,7 @@ class WorkM extends CI_Model
 
 
         if ($search != '') {
-            $query = $this->db->query("SELECT id,name,des,img from destination UNION SELECT id,name,des,img from foodstuff WHERE `name` LIKE '%" . $query . "%' ESCAPE '!' ");
+            $query = $this->db->query("SELECT id,name,des,img from destination UNION  SELECT id,name,des,img from foodstuff  WHERE `name` LIKE '%" . $query . "%' ESCAPE '!' ");
         }
 
         return $query->result();
@@ -161,6 +175,14 @@ class WorkM extends CI_Model
         $d = $query->result();
         if ($query->num_rows()) {
             echo $d[0]->password;
+           
+            // if( password_verify($pw, $d[0]->password)) {
+            //     $this->session->set_userdata('username', $d[0]->username, 'id', $d[0]->id);
+            //     return true;
+            // } else {
+            //     $this->session->set_flashdata('error', 'Inalid password');
+            //     return false;
+            // }
             if ($pw == $d[0]->password) {
                 $this->session->set_userdata('username', $d[0]->username, 'id', $d[0]->id);
                 return true;

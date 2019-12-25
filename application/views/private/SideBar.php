@@ -28,10 +28,10 @@
 
             <li class="nav-item dropdown">
                 <div class="dropdown-menu dropdown-menu-right border" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/homepage') ?>">HomePage</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/homesec1') ?>">HomePage 1</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/Homesec2') ?>">HomeSec2</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/Homesec3') ?>">HomeSec3</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/HomePage') ?>">HomeSec4</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Homesec4') ?>">HomeSec4</a>
                 </div>
                 <a data-toggle="dropdown" class="nav-link"href="#" aria-haspopup="true" aria-expanded="false">
                     <i class="nc-icon nc-layout-11"></i>
@@ -42,9 +42,13 @@
             <li class="nav-item dropdown">
                 <div class="dropdown-menu dropdown-menu-right border" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="<?= base_url('UserC/View/Destpage') ?>">Destination Page</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destsec1') ?>">Destination Sec1</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/Destsec2') ?>">Destination Sec2</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destpage') ?>">Destination Sec1</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destpage') ?>">Destination Sec1</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destsec3') ?>">Destination Sec3</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destsec4') ?>">Destination Sec4</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destsec5') ?>">Destination Sec5</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destsec6') ?>">Destination Sec6</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Destsec7') ?>">Destination Sec7</a>
                 </div>
                 <a data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
                     <i class="nc-icon nc-istanbul"></i>
@@ -56,8 +60,9 @@
             <li class="nav-item dropdown">
                 <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">Culture Page</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/Culsec1') ?>">Culture Sec1</a>
-                    <a class="dropdown-item" href="<?= base_url('UserC/View/Culsec2') ?>">Culture Sec 1</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Culsec1') ?>">Culture Sec 1</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Culsec2') ?>">Culture Sec 2</a>
+                    <a class="dropdown-item" href="<?= base_url('UserC/View/Culsec3') ?>">Culture Sec 3</a>
                     <a class="dropdown-item" href="<?= base_url('UserC/View/CulturePage') ?>">Culture</a>
 
                 </div>
@@ -110,6 +115,20 @@
             </li>
             <li class="nav-item">
                 <a href="<?= base_url('UserC/View/Navbar') ?>">
+                    <i class="nc-icon nc-single-02"></i>
+                    <p>Nav bar</p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?= base_url('UserC/View/Contact') ?>">
+                    <i class="nc-icon nc-single-02"></i>
+                    <p>Nav bar</p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?= base_url('UserC/View/Feedback') ?>">
                     <i class="nc-icon nc-single-02"></i>
                     <p>Nav bar</p>
                 </a>

@@ -36,6 +36,7 @@ class WorkC extends CI_Controller{
             redirect('UserC');
             echo "Done";
         }else {
+            
             redirect('WorkC');
             // echo " not Done";
         }

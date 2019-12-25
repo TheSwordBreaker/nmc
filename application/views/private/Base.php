@@ -81,13 +81,15 @@
         <script>
         var url = "<?php echo base_url();?>";
         var k = "<?= $k ?>";
-        var sec_no = 3;
-        sec_no = "<?= $sec_no[$k] ?>";
-
-        function set_error(msg) {
-            $("#error").find("#message").text(msg);
-            $("#error").show();
-        }
+        var sec_no = 0; 
+        <?php if (isset($sec_no[$k])): ?>
+            sec_no = "<?= $sec_no[$k] ?>"; 
+            
+        <?php endif ?>
+            function set_error(msg) {
+                $("#error").find("#message").text(msg);
+                $("#error").show();
+            }
 
         $(document).ready(function() {
 
@@ -111,7 +113,7 @@
                 $('#error').hide();
             })
 
-            $(".btn-danger").on("click", function() {
+            $(".del").on("click", function() {
                 var $checkbox = $(this).closest('tr').find(":checkbox");
                 var rowCount = $('#change tbody tr').length;
                 console.log(rowCount);
@@ -123,6 +125,15 @@
 
                     set_error("Checked rows can't be deleted");
                     // $(this).attr("disabled", true);
+                } else if (sec_no == 0) {
+
+                    var id = $checkbox.attr('value');
+                    var r = confirm("Do you want to Delete this?")
+                    if (r == true)
+                        window.location = url + "UserC/Remove/" + k + "/" + id;
+                    else
+                        return false;
+                    
                 } else {
                     var id = $checkbox.attr('value');
                     var r = confirm("Do you want to Delete this?")

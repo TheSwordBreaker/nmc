@@ -2,31 +2,6 @@
 
 
 /*----------------------
-   Food-Stuff
-------------------------*/
-
-#FoodSec1 {
-    height: 27rem;
-}
-
-#FoodSec2 {
-    height: 40rem;
-}
-
-#FoodSec2-img {
-    height: 40px;
-}
-
-#FoodSec3 {
-    height: 27rem;
-}
-
-#FoodSec4 {
-    height: 27rem;
-}
-
-
-/*----------------------
   Recent Game Section
 ------------------------*/
 
@@ -103,6 +78,34 @@
     color: #fff;
     background-color: #ef6c57;
     border-color: #ef6c57;
+}
+
+
+/*     brand Colors              */
+
+
+/*----------------------
+   Food-Stuff
+------------------------*/
+
+#FoodSec1 {
+    height: 27rem;
+}
+
+#FoodSec2 {
+    height: 40rem;
+}
+
+#FoodSec2-img {
+    height: 40px;
+}
+
+#FoodSec3 {
+    height: 27rem;
+}
+
+#FoodSec4 {
+    height: 27rem;
 }
 
 .feature-item {
@@ -813,9 +816,7 @@ template {
         min-width: 992px !important;
     }
     .container {
-        <<<<<<< HEAD min-width: 900px !important;
-        =======min-width: 992px !important;
-        >>>>>>>new
+        min-width: 900px !important;
     }
     .navbar {
         display: none;
@@ -4567,6 +4568,1050 @@ tbody.collapse.show {
     text-align: center;
 }
 
+
+/*--banner--*/
+
+.center-container {
+    background: rgba(0, 0, 0, 0.21);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.logo h1 {
+    font-size: 4em;
+    display: inline-block;
+    line-height: 1em;
+}
+
+.logo h1 a {
+    color: #E3535D;
+    text-decoration: none;
+}
+
+.logo h1 a:hover {
+    color: #E3535D;
+}
+
+.banner-text-info {
+    margin: 16em 0 19em;
+    text-align: center;
+}
+
+.banner-text h3.bnr-title {
+    color: #fff;
+    font-size: 6em;
+    letter-spacing: 6px;
+    font-family: 'verdana', sans-serif;
+}
+
+.banner-text p {
+    font-size: 1em;
+    color: #e6e6e6;
+    margin-top: 3em;
+    letter-spacing: 4px;
+    line-height: 2em;
+    position: relative;
+}
+
+.banner-text p:before {
+    content: " ";
+    position: absolute;
+    background: #fff;
+    width: 4%;
+    height: 1px;
+    top: 50%;
+    left: 31%;
+}
+
+.banner-text p:after {
+    content: " ";
+    position: absolute;
+    background: #fff;
+    width: 4%;
+    height: 1px;
+    top: 50%;
+    right: 31%;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner-bottom {
+    padding-top: 3em;
+}
+
+@media(max-width: 1440px) {
+    .banner-text-info {
+        margin: 16em 0 18em;
+    }
+    .service-1 {
+        padding: 3em 2em 3em 12.9em;
+    }
+    .hi-icon-effect-6 {
+        width: 19%;
+    }
+}
+
+@media(max-width: 1366px) {
+    .banner-text h3.bnr-title {
+        font-size: 5em;
+    }
+    .banner-text-info {
+        margin: 16em 0 16.8em;
+    }
+    .we-po-head {
+        top: 4%;
+    }
+    .service-2 a {
+        font-size: 1.3em;
+    }
+    .service-1 p {
+        margin-bottom: 1.8em;
+    }
+    .service {
+        padding: 2em;
+    }
+    .service-box:nth-child(2) {
+        margin: 2.35em 0;
+    }
+    h2.wthree_title_agile,
+    h3.wthree_title_agile {
+        font-size: 3vw;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+    .thim-click-to-bottom {
+        bottom: 15%;
+        right: 3%;
+    }
+}
+
+@media(max-width: 1280px) {
+    .social {
+        margin-top: 1.3em;
+    }
+    .social-icons-agileits ul li a {
+        font-size: 1em;
+    }
+    .logo-agileinfo h1 a {
+        font-size: 1.5vw;
+    }
+    .nav>li>a {
+        padding: 1.3em 1.3em;
+    }
+    .banner-text-info {
+        margin: 15em 0 15em;
+    }
+    .we-po-head {
+        top: 12%;
+    }
+    .we-po-head img {
+        width: 86%;
+    }
+    .about_section,
+    .sect-main-con,
+    .gallery,
+    .team,
+    .contact {
+        padding: 4em 0;
+    }
+    .poi {
+        top: 76.4%;
+    }
+    .poi img {
+        width: 80%;
+    }
+    .service-1 h4,
+    .service-2 h4,
+    .service h4 {
+        font-size: 2em;
+    }
+    .service-2 a {
+        font-size: 1.2em;
+    }
+    .service-1 {
+        padding: 3em 2em 3em 5em;
+    }
+    a.view.rew3 {
+        margin: 2em 0 .2em;
+    }
+    .service-1 p {
+        margin-bottom: 1.5em;
+    }
+    .service-2 a {
+        margin: 1.23em 0 0;
+    }
+    .service-box:nth-child(2) {
+        margin: 2.05em 0;
+    }
+    .agile-copy {
+        padding-right: 3em;
+    }
+}
+
+@media(max-width: 1080px) {
+    .banner-text h3.bnr-title {
+        font-size: 4em;
+    }
+    .banner-text p {
+        font-size: .9em;
+        margin-top: 2em;
+        letter-spacing: 3px;
+    }
+    .banner-text p:before {
+        left: 28%;
+    }
+    .banner-text p:after {
+        right: 28%;
+    }
+    .banner-text-info {
+        margin: 12em 0 14.5em;
+    }
+    .we-po-head img {
+        width: 73%;
+    }
+    .service-2 {
+        padding: 3em 1em;
+    }
+    .service-2 a {
+        font-size: 1.1em;
+    }
+    .service-1 p {
+        font-size: .9em;
+    }
+    .service-1 p {
+        margin-bottom: 1.65em;
+    }
+    .hi-icon:before {
+        font-size: 17px;
+        line-height: 63px;
+    }
+    .hi-icon {
+        width: 65px;
+        height: 65px;
+    }
+    .hi-text p {
+        font-size: .9em;
+    }
+    .hi-icon-effect-6 {
+        width: 22%;
+    }
+    .service-box:nth-child(2) {
+        margin: 2em 0;
+    }
+    .service-box:nth-child(4) {
+        margin-top: 1.7em;
+    }
+    .hover .view-caption h5 {
+        font-size: 1.5em;
+    }
+    .hover .view-caption {
+        padding: 5em 0;
+    }
+}
+
+@media(max-width: 1050px) {
+    .banner-text-info {
+        margin: 12em 0 13em;
+    }
+    .we-po-head {
+        top: 8%;
+    }
+    .poi img {
+        width: 70%;
+    }
+    .poi {
+        top: 79.8%;
+    }
+    .service-1 h4,
+    .service-2 h4,
+    .service h4 {
+        font-size: 1.8em;
+    }
+    .service-1 p {
+        margin-bottom: 2.1em;
+    }
+}
+
+@media(max-width: 1024px) {
+    .banner-text-info {
+        margin: 12em 0 12em;
+    }
+    .we-po-head {
+        top: 5%;
+    }
+    .service-1 p {
+        margin-bottom: 1em;
+    }
+    a.view.rew3 {
+        margin: 2em 0 0em;
+    }
+    .agile-copy {
+        padding-right: 4em;
+    }
+}
+
+@media(max-width: 991px) {
+    .social .link {
+        width: 35px;
+        height: 35px;
+        margin-right: 6px;
+        font-size: 14px;
+    }
+    .social-icons-agileits {
+        padding-top: .5em;
+    }
+    .banner-text-info {
+        margin: 11em 0 12em;
+    }
+    .we-po-head {
+        top: 12.5%;
+    }
+    .we-po-head img {
+        width: 65%;
+    }
+    .banner-text p {
+        letter-spacing: 2px;
+    }
+    .col-md-2.team-grid {
+        float: left;
+        width: 30%;
+    }
+    .col-md-5.team-grid {
+        width: 35%;
+        float: left;
+    }
+    .img img {
+        width: 100%;
+    }
+    .info h3,
+    .info h4 {
+        font-size: 3.2em;
+    }
+    .info {
+        padding-top: 1em;
+    }
+    .arrow-container {
+        top: 29%;
+    }
+    .poi {
+        top: 78.8%;
+    }
+    .service-1 {
+        padding: 3em 5em 3em 19em;
+    }
+    .service-2 a {
+        font-size: 1.2em;
+        width: 30%;
+        margin: 1.3em auto 0;
+    }
+    .service-2 h4 {
+        text-align: center;
+    }
+    .service {
+        padding: 3em 5em;
+    }
+    .hi-icon-effect-6 {
+        width: 12%;
+    }
+    .service-box:nth-child(2) {
+        margin: 2.5em 0;
+    }
+    .service-box:nth-child(4) {
+        margin-top: 2.5em;
+    }
+    .service-1 h4,
+    .service-2 h4,
+    .service h4 {
+        font-size: 2.2em;
+    }
+    .agile-news-left {
+        float: left;
+        width: 33%;
+    }
+    .w3-agile-news-info a {
+        font-size: 1.2em;
+        text-transform: uppercase;
+    }
+    hover .view-caption h5 {
+        font-size: 1.2em;
+    }
+    .hover .view-caption span {
+        padding: 9px;
+    }
+    .hover .view-caption {
+        padding: 4em 0;
+    }
+    h2.wthree_title_agile,
+    h3.wthree_title_agile {
+        font-size: 3vw;
+        text-transform: uppercase;
+    }
+    .agile_team_grid1 h3 {
+        font-size: 1.3em;
+        letter-spacing: 0px;
+    }
+    .agileinfo_counter_section h3 {
+        font-size: 3.5em;
+    }
+    .agileinfo_counter_section {
+        padding: 5em 0;
+    }
+    .agileinfo_counter_section p {
+        font-size: .8em;
+    }
+    .form-bg- {
+        width: 92%;
+    }
+    .agile-copy {
+        padding-right: 0em;
+    }
+    .thim-click-to-bottom {
+        bottom: 17%;
+        right: 5%;
+    }
+}
+
+@media(max-width: 900px) {
+    .banner-text-info {
+        margin: 10em 0 10.5em;
+    }
+    .we-po-head {
+        top: 12%;
+    }
+    .nav>li>a {
+        padding: 1.3em .8em;
+    }
+    .poi img {
+        width: 60%;
+    }
+    .poi {
+        top: 82.4%;
+    }
+}
+
+@media(max-width: 800px) {
+    .banner-text h3.bnr-title {
+        font-size: 3em;
+        letter-spacing: 2px;
+    }
+    .banner-text p {
+        font-size: .8em;
+    }
+    .banner-text p:before {
+        left: 25%;
+    }
+    .banner-text p:after {
+        right: 25%;
+    }
+    .banner-text-info {
+        margin: 9em 0 10em;
+    }
+    .we-po-head img {
+        width: 50%;
+    }
+    .we-po-head {
+        top: 19%;
+    }
+    .poi img {
+        width: 45%;
+    }
+    .poi {
+        top: 87.6%;
+    }
+    .service-1 {
+        padding: 3em 5em 3em 15em;
+    }
+    .service-2 a {
+        width: 40%;
+    }
+    .hi-icon-effect-6 {
+        width: 14%;
+    }
+    .footer p {
+        letter-spacing: 1px;
+    }
+    .agile-copy {
+        padding-right: 5em;
+    }
+}
+
+@media(max-width: 768px) {
+    .nav>li>a {
+        font-size: 1em;
+    }
+    .poi {
+        top: 87.4%;
+    }
+    .banner-text-info {
+        margin: 9em 0 9em;
+    }
+    .we-po-head {
+        top: 15%;
+    }
+}
+
+@media(max-width: 736px) {
+    .logo-agileinfo h1 a {
+        font-size: 1.5vw;
+        letter-spacing: 0.4vw;
+    }
+    .navbar-toggle {
+        margin: .5em;
+    }
+    .banner-text-info {
+        margin: 8em 0 8.8em;
+    }
+    .we-po-head {
+        top: 12%;
+    }
+    .about_section,
+    .sect-main-con,
+    .gallery,
+    .team,
+    .contact {
+        padding: 3.5em 0;
+    }
+    .poi img {
+        width: 40%;
+    }
+    .poi {
+        top: 88.8%;
+    }
+    .hover .view-caption {
+        padding: 6em 0;
+    }
+    .hover .view-caption h5 {
+        letter-spacing: 1px;
+    }
+    .agileinfo_counter_section h3 {
+        font-size: 3em;
+    }
+    .footer p {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 667px) {
+    .banner-text h3.bnr-title {
+        font-size: 2.8em;
+    }
+    .cd-header-buttons {
+        right: -39px;
+        top: -50px;
+    }
+    .social-icons-agileits ul li {
+        font-size: .9em;
+    }
+    .banner-text-info {
+        margin: 7em 0 8em;
+    }
+    .we-po-head {
+        top: 22%;
+    }
+    .we-po-head img {
+        width: 40%;
+    }
+    h2.wthree_title_agile,
+    h3.wthree_title_agile {
+        font-size: 3vw;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    .info h3,
+    .info h4 {
+        font-size: 2.8em;
+    }
+    .info {
+        padding-top: .5em;
+    }
+    .info h3 {
+        padding-bottom: 2.5em;
+    }
+    .arrow-container {
+        top: 26%;
+    }
+    .banner-bottom {
+        padding-top: 3em;
+        padding-bottom: 2em;
+    }
+    .service-1 {
+        padding: 3em 5em 3em 9em;
+    }
+    .hi-icon-effect-6 {
+        width: 18%;
+    }
+    .agile-news-left {
+        float: none;
+        width: 100%;
+    }
+    .agile-news-left:nth-child(2) {
+        margin: 3em 0;
+    }
+    .hover .view-caption {
+        padding: 5em 0;
+    }
+    .agile-logo {
+        float: none;
+        text-align: center;
+    }
+    .thim-click-to-bottom {
+        bottom: 31%;
+    }
+}
+
+@media(max-width: 640px) {
+    .banner-text-info {
+        margin: 7em 0 7em;
+    }
+}
+
+@media(max-width: 600px) {
+    .banner-text-info {
+        margin: 6em 0 6.8em;
+    }
+    .service-2 a {
+        width: 50%;
+    }
+}
+
+@media(max-width: 568px) {
+    .banner-text h3.bnr-title {
+        font-size: 2.5em;
+    }
+    .navbar-toggle {
+        margin: .8em;
+        padding: 7px 7px;
+    }
+    .logo-agileinfo h1 a {
+        font-size: 4vw;
+        letter-spacing: 1vw;
+    }
+    .banner-text p {
+        margin-top: 1.2em;
+    }
+    .banner-text-info {
+        margin: 6em 0 6.5em;
+    }
+    .we-po-head {
+        top: 18%;
+    }
+    .we-po-head img {
+        width: 35%;
+    }
+    .team-grid p {
+        font-size: .8em;
+    }
+    .about_section,
+    .sect-main-con,
+    .gallery,
+    .team,
+    .contact {
+        padding: 3em 0;
+    }
+    .info {
+        padding-top: 0;
+    }
+    .banner-bottom {
+        padding-bottom: 3em;
+    }
+    .poi {
+        top: 88.5%;
+    }
+    .service-1 h4,
+    .service-2 h4,
+    .service h4 {
+        font-size: 1.8em;
+    }
+    .service-1 {
+        padding: 3em 2em 3em 5em;
+    }
+    .service-2 a {
+        width: 60%;
+    }
+    .service {
+        padding: 3em 3em;
+    }
+    .hi-icon-effect-6 {
+        width: 20%;
+    }
+    .hover .view-caption {
+        padding: 4em 0;
+    }
+    .team-left-agile {
+        width: 49%;
+    }
+    .team-left-agile:nth-child(3),
+    .team-left-agile:nth-child(4) {
+        margin: 3em 0 0;
+    }
+    .form-bg {
+        width: 100%;
+    }
+    .footer p {
+        font-size: 14px;
+        line-height: 2.5;
+        letter-spacing: 2px;
+    }
+    .thim-click-to-bottom {
+        bottom: 32%;
+        right: 7%;
+    }
+}
+
+@media(max-width: 480px) {
+    .social-icons-agileits ul li a {
+        padding: 3px;
+    }
+    .header-top-agile {
+        padding: 1em 1em 0;
+    }
+    .social .link {
+        width: 30px;
+        height: 30px;
+        margin-right: 0px;
+    }
+    .header-bottom-agile {
+        padding: 0 2em;
+    }
+    .banner-text-info {
+        margin: 4.5em 0 5em;
+    }
+    .cd-header-buttons {
+        right: -28px;
+        top: -50px;
+    }
+    .banner-text p {
+        letter-spacing: 1px;
+    }
+    .we-po-head {
+        top: 16%;
+    }
+    .we-po-head img {
+        width: 30%;
+    }
+    h2.wthree_title_agile,
+    h3.wthree_title_agile {
+        font-size: 3vw;
+        letter-spacing: 5px;
+        margin-bottom: .8em;
+        text-transform: uppercase;
+    }
+    .col-md-5.team-grid {
+        width: 100%;
+        float: none;
+    }
+    .col-md-2.team-grid {
+        float: none;
+        width: 100%;
+        margin: 3em 0;
+    }
+    .poi {
+        top: 94.5%;
+    }
+    .service-1 {
+        padding: 3em 2em 3em 2em;
+    }
+    .service-2 a {
+        width: 70%;
+    }
+    .hi-icon-effect-6 {
+        width: 24%;
+    }
+    .modal-header h4 {
+        font-size: 1.8em;
+    }
+    .modal-header span {
+        font-size: .9em;
+        line-height: 28px;
+        padding-bottom: 7px;
+    }
+    .hover .view-caption h5 {
+        font-size: .9em;
+    }
+    .hover .view-caption span {
+        padding: 8px;
+        font-size: .8em;
+    }
+    .hover .view-caption {
+        padding: 3.2em 0;
+    }
+    .agileinfo_counter_section h3 {
+        font-size: 2.5em;
+    }
+    .agileinfo_counter_section p {
+        font-size: .7em;
+    }
+    .agileinfo_counter_section {
+        padding: 4em 0;
+    }
+    .form-bg h3 {
+        margin-bottom: .5em;
+    }
+    .footer p {
+        letter-spacing: 1px;
+    }
+    .img img {
+        width: 70%;
+    }
+}
+
+@media(max-width: 440px) {
+    .social-icons-agileits ul li {
+        letter-spacing: 0px;
+    }
+    .banner-text h3.bnr-title {
+        font-size: 2em;
+    }
+    .banner-text p {
+        margin-top: .8em;
+        font-size: .7em;
+    }
+    .we-po-head {
+        top: 10%;
+    }
+    .poi {
+        top: 93.5%;
+    }
+}
+
+@media(max-width: 414px) {
+    .banner-text-info {
+        margin: 4em 0 4.5em;
+        padding-left: 2em;
+    }
+    .about_section,
+    .sect-main-con,
+    .gallery,
+    .team,
+    .contact {
+        padding: 2em 0;
+    }
+    h2.wthree_title_agile,
+    h3.wthree_title_agile {
+        font-size: 3vw;
+        letter-spacing: 5px;
+        margin-bottom: .8em;
+        text-transform: uppercase;
+    }
+    .banner-bottom {
+        padding-bottom: 5em;
+        padding-top: 2em;
+    }
+    .poi img {
+        width: 38%;
+    }
+    .service-1 h4,
+    .service-2 h4,
+    .service h4 {
+        font-size: 1.7em;
+    }
+    .service-2 a {
+        width: 80%;
+    }
+    .hi-icon-effect-6 {
+        width: 25%;
+    }
+    .hover .view-caption {
+        padding: 2.5em 0;
+    }
+    .cd-search input {
+        font-size: 1em;
+    }
+    .resp-tab-content {
+        padding: 2em .5em 0;
+    }
+    .test-review img {
+        width: 100%;
+    }
+    .poi {
+        top: 93.3%;
+    }
+}
+
+@media(max-width: 384px) {
+    .banner-text-info {
+        margin: 3em 0 4.5em;
+        padding-left: 3em;
+    }
+    .service {
+        padding: 2em;
+    }
+    .gallery-grids {
+        width: 50%;
+    }
+    .hover .view-caption {
+        padding: 4em 0;
+    }
+    .footer p {
+        font-size: 13px;
+    }
+    .social-icons-agileits {
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .social {
+        margin-top: 3.2em;
+        float: none;
+    }
+    .poi {
+        top: 93.25%;
+    }
+}
+
+@media(max-width: 375px) {}
+
+@media(max-width: 320px) {
+    .logo-agileinfo h1 a {
+        font-size: 1.5vw;
+    }
+    .navbar-toggle .icon-bar {
+        width: 19px;
+    }
+    .header-bottom-agile {
+        padding: 0 2em 0 1em;
+    }
+    .banner-text h3.bnr-title {
+        font-size: 1.2em;
+    }
+    .banner-text p {
+        letter-spacing: 0px;
+    }
+    .banner-text-info {
+        margin: 3em 0 3.5em;
+    }
+    .we-po-head {
+        top: 6%;
+    }
+    .about_section,
+    .sect-main-con,
+    .gallery,
+    .team,
+    .contact {
+        padding: 1.5em 0;
+    }
+    h2.wthree_title_agile,
+    h3.wthree_title_agile {
+        font-size: 3vw;
+    }
+    .team-grid p {
+        padding: 1.2em 0;
+    }
+    .col-md-2.team-grid {
+        margin: 2em 0;
+    }
+    .arrow-container {
+        top: 23%;
+    }
+    .img img {
+        width: 90%;
+    }
+    .poi img {
+        width: 32%;
+    }
+    .poi {
+        top: 94.25%;
+    }
+    .service-1 h4,
+    .service-2 h4,
+    .service h4 {
+        font-size: 1.5em;
+    }
+    .service-1 p {
+        font-size: .8em;
+    }
+    .service-1 h6 {
+        font-size: 2.5em;
+        padding: .2em .4em 0;
+    }
+    .service-1 {
+        padding: 2em;
+    }
+    .modal-header h4 {
+        font-size: 1.5em;
+    }
+    .modal-header span {
+        font-size: .8em;
+        line-height: 23px;
+    }
+    .hi-icon {
+        width: 55px;
+        height: 55px;
+    }
+    .hi-icon:before {
+        font-size: 15px;
+        line-height: 54px;
+    }
+    .serve-grids-top h5 {
+        font-size: 1.3em;
+    }
+    .hi-text p {
+        font-size: .8em;
+    }
+    .service {
+        padding: 2em 1em;
+    }
+    .w3-agile-news-info p {
+        font-size: .8em;
+    }
+    .w3-agile-news-info a {
+        font-size: 1.1em;
+        text-transform: uppercase;
+    }
+    .hover .view-caption {
+        padding: 3em 0;
+    }
+    .team-left-agile {
+        width: 100%;
+    }
+    .team-left-agile:nth-child(2) {
+        margin-top: 3em;
+    }
+    .agileinfo_counter_section h3 {
+        font-size: 2em;
+    }
+    .agileinfo_counter_section p {
+        letter-spacing: 1px;
+    }
+    .agileinfo_counter_section {
+        padding: 3em 0;
+    }
+    .form-bg h3 {
+        font-size: 1.5em;
+        letter-spacing: 1px;
+    }
+    .form-bg {
+        padding: 2em 1.5em;
+    }
+    .form-bg input[type="text"],
+    .form-bg input[type="email"],
+    .form-control,
+    .form-bg textarea {
+        padding: 6px 10px!important;
+        font-size: .9em;
+    }
+    .form-bg input[type="submit"] {
+        font-size: 12px;
+        margin-top: 2em;
+        padding: 8px 29px;
+    }
+    .agile-copy {
+        padding-right: 0em;
+    }
+    .thim-click-to-bottom {
+        bottom: 57%;
+        right: 9%;
+    }
+}
+
 .tab-content>.tab-pane {
     display: none;
 }
@@ -6405,9 +7450,7 @@ button.close {
     transition: transform 0.6s ease;
     backface-visibility: hidden;
     perspective: 1000px;
-    <<<<<<< HEAD height: 80vh;
-    =======height: 67vh;
-    >>>>>>>new
+    height: 80vh;
 }
 
 .carousel-item.active,
@@ -7565,7 +8608,6 @@ button.bg-dark:focus {
     .float-xl-none {
         float: none !important;
     }
-    <<<<<<< HEAD
 }
 
 .position {
@@ -7588,7 +8630,6 @@ button.bg-dark:focus {
     background: #f2994a;
     padding: 13px 30px;
     border-radius: 35px;
-    =======>>>>>>>new
 }
 
 .position-static {
@@ -7990,9 +9031,7 @@ button.bg-dark:focus {
 
 .pb-5,
 .py-5 {
-    <<<<<<< HEAD padding-bottom: 2rem !important;
-    =======padding-bottom: 3rem !important;
-    >>>>>>>new
+    padding-bottom: 2rem !important;
 }
 
 .pl-5,
@@ -10308,7 +11347,7 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
 }
 
 .btn.btn-outline-primary {
-    <<<<<<< HEAD color: #ef6c57;
+    color: #ef6c57;
     background-color: transparent;
     border-color: #ef6c57;
 }
@@ -10317,25 +11356,14 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
     color: #fff;
     background-color: rgba(153, 153, 153, 0.2);
     border-color: #ef6c57;
-    =======color: #9c27b0;
-    background-color: transparent;
-    border-color: #9c27b0;
-}
-
-.btn.btn-outline-primary:hover {
-    color: #9c27b0;
-    background-color: rgba(153, 153, 153, 0.2);
-    border-color: #9c27b0;
-    >>>>>>>new
 }
 
 .btn.btn-outline-primary:focus,
 .btn.btn-outline-primary.focus,
 .btn.btn-outline-primary:hover {
     color: #9c27b0;
-    <<<<<<< HEAD background-color: #ef6c57;
-    =======background-color: rgba(153, 153, 153, 0.2);
-    >>>>>>>new border-color: #9c27b0;
+    background-color: #ef6c57;
+    border-color: #9c27b0;
 }
 
 .btn.btn-outline-primary:active,
@@ -11395,9 +12423,7 @@ legend {
 }
 
 a {
-    <<<<<<< HEAD color: #fff;
-    =======color: #9c27b0;
-    >>>>>>>new
+    color: #fff;
 }
 
 a:hover,
@@ -11419,7 +12445,7 @@ a .material-icons {
     background: #FFFFFF;
     position: relative;
     z-index: 3;
-    min-height: 130vh;
+    min-height: 200vh;
 }
 
 .form-check,
@@ -15470,9 +16496,7 @@ h2.title {
 .description,
 .card-description,
 .footer-big p {
-    <<<<<<< HEAD color: #3C4858;
-    =======color: #999;
-    >>>>>>>new
+    color: #3C4858;
 }
 
 .text-warning {

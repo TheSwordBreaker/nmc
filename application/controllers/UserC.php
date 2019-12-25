@@ -39,6 +39,7 @@ class UserC extends CI_Controller
         $this->load->model('WorkM');
         $data = $this->WorkM->Gets($k);
         $C = 1;
+        $this->WorkM->start_tra();
         $Page['title'] = $k;
         $Page['data'] = $this->load->view('private/View', compact('data', 'k', 'C'), True);
         $this->load->view('private/Base', compact('Page'));
@@ -55,7 +56,6 @@ class UserC extends CI_Controller
     }
 
     public function loadEdit($k, $id)
-
     {
         $this->load->model('WorkM');
         $up = 1;
@@ -122,7 +122,7 @@ class UserC extends CI_Controller
         if (isset($_POST['username'])) {
             $data['username'] = $this->input->post('username');
             $data['password'] = $this->input->post('password');
-            // $data['password'] = password_hash($this->input->post('password'),PASSWORD_BCRYPT) ;
+            // $data['password'] = password_hash($this->input->post('password'),PASSWORD_DEFAULT) ;
         }
 
         if (isset($_FILES['userfile'])) {
