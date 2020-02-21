@@ -15,6 +15,7 @@
 
 
     <!-- Food Stuff Section 1 -->
+    <div class="container">
     <div class=" bg-white ">
         <div class="col-md-12 bg-light w-100 ">
             <div class="m-auto ">
@@ -36,6 +37,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -63,8 +65,8 @@
                             <div class="carousel-inner">
                                 <?php for ($i = 0; $i < 3; $i++) : ?>
                                     <div class="carousel-item <?php if ($i == 0) {
-                                                                        echo "active";
-                                                                    } ?>">
+                                                                    echo "active";
+                                                                } ?>">
                                         <img class="d-block w-100 h-100" style="height:fit-content" src="<?= base_url('assets/images/') . $sec3[$i]->img ?>" alt="First slide">
                                         <div class="carousel-caption d-none d-md-block">
                                             <h4>
@@ -96,7 +98,7 @@
     <!-- End  Food Stuff Section 3 -->
 
     <!-- Food Stuff Section 2 -->
-
+    <div class="container">
     <div class="features my-2">
         <div class="row">
             <div class="m-auto">
@@ -133,6 +135,7 @@
 
     <br>
     <hr class="w-75 ">
+    </div>
 
 
 
@@ -140,7 +143,7 @@
 
 
     <!-- Food Stuff Section 4 -->
-
+    <div class="container">
     <div class=" text-center m-0 ">
         <h2 class="title">Great Misal Points</h2>
         <div class="team ">
@@ -175,60 +178,7 @@
             </div>
         </div>
     </div>
+    </div>
 
-    <!--  End  Food Stuff Section 4 -->
 
-
-    <!-- <div class="section section-download" id="downloadSection">
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-md-8 ml-auto mr-auto">
-                        <h2>Do you love this UI Kit?</h2>
-                        <h4>Cause if you do, it can be yours for FREE. Hit the buttons below to navigate to our website where you can find the kit. Our friends from
-                            <a href="https://themeisle.com/?utm_campaign=mkfree-hestia&amp;utm_source=creativetim&amp;utm_medium=website" target="_blank">ThemeIsle</a> created a Wordpress Theme which can be also downloaded for free. Start a new project
-                            or give an old Bootstrap project a new look!</h4>
-                    </div>
-                    <div class="col-sm-8 col-md-6 ml-auto mr-auto">
-                        <a href="https://www.creative-tim.com/product/material-kit" class="btn btn-primary btn-lg">
-                            <i class="fa fa-html5"></i> Free HTML Download
-                        </a>
-                        <a href="https://themeisle.com/themes/hestia/?utm_campaign=mkfree-hestia&amp;utm_source=creativetim&amp;utm_medium=website" target="_blank" class="btn btn-primary btn-lg">
-                            <i class="fa fa-wordpress"></i> Wordpress Theme
-                        </a>
-                    </div>
-                </div>
-                <br>
-                <br>
-                <div class="row text-center">
-                    <div class="col-md-8 ml-auto mr-auto">
-                        <h2>Want more?</h2>
-                        <h4>We've just launched
-                            <a href="https://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-mk-demos" target="_blank">Material Kit PRO</a>. It has a huge number of components, sections and example pages. Start Your Development With
-                            A Badass Bootstrap UI Kit inspired by Material Design.</h4>
-                    </div>
-                    <div class="col-sm-8 col-md-5 ml-auto mr-auto">
-                        <a href="https://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-mk-demos" class="btn btn-rose btn-upgrade btn-lg" target="_blank">
-                            <i class="material-icons">unarchive</i> Upgrade to PRO
-                        </a>
-                    </div>
-                </div> -->
-                <div class="sharing-area text-center">
-                    <div class="row justify-content-center">
-                        <h3>Thank you for supporting us!</h3>
-                    </div>
-                    <button id="twitter" class="btn btn-raised btn-twitter sharrre">
-            <i class="fa fa-twitter"></i> Tweet
-          </button>
-                    <button id="facebook" class="btn btn-raised btn-facebook sharrre">
-            <i class="fa fa-facebook-square"></i> Share
-          </button>
-                    <button id="googlePlus" class="btn btn-raised btn-google-plus sharrre">
-            <i class="fa fa-google-plus"></i> Share
-          </button>
-                    <a id="github" href="https://github.com/creativetimofficial/material-kit" target="_blank" class="btn btn-raised btn-github">
-                        <i class="fa fa-github"></i> Star
-                    </a>
-                </div>
-            </div>
-        <!-- </div> -->
-</!-->
+</div>

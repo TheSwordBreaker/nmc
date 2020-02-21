@@ -3,6 +3,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class WorkM extends CI_Model
 {
+
+    
+
+
+
     public function GetRow($tablename, $id)
     {
         $query = $this->db->where('id', $id)->get($tablename);
@@ -29,12 +34,6 @@ class WorkM extends CI_Model
         $this->db->trans_complete();
         
     }
-
-
-
-    
-
-
     public function Change($tablename, $id)
     {
         if ($this->db->set('active', 0)->update($tablename)) {
@@ -70,7 +69,7 @@ class WorkM extends CI_Model
     {
         $query = $this->db->like('name', $Name);
 
-        $result = $query->get('destsec1')->result();
+        $result = $query->get('destination')->result();
         $result += $query->like('name', $Name)->get('foodstuff')->result();
         return $result;
     }
@@ -87,8 +86,15 @@ class WorkM extends CI_Model
     }
 
     
+//Changes by Shaurya
 
-    public function Gets($tablename)
+    public function t_rows($tablename)
+    {
+        $no=$this->db->count_all($tablename);
+        return $no;
+    }
+
+     public function Gets($tablename)
     {
         $query = $this->db->get($tablename);
         $result = $query->result();
@@ -159,11 +165,11 @@ class WorkM extends CI_Model
         $query = $this->db->get();
         $res = $query->result();
         // print_r($res[0]->active);
-        if ($res[0]->active == 3) {
-            return true;
-        } else {
-            if ($res[0] < 3) { }
-        }
+        // if ($res[0]->active == 3) {
+        //     return true;
+        // } else {
+        //     if ($res[0] < 3) { }
+        // }
     }
 
 
@@ -183,12 +189,18 @@ class WorkM extends CI_Model
             //     $this->session->set_flashdata('error', 'Inalid password');
             //     return false;
             // }
-            if ($pw == $d[0]->password) {
+            if(password_verify($pw,$d[0]->password) ) {
                 $this->session->set_userdata('username', $d[0]->username, 'id', $d[0]->id);
                 return true;
             } else {
                 return false;
             }
+            // if ($pw == $d[0]->password) {
+            //     $this->session->set_userdata('username', $d[0]->username, 'id', $d[0]->id);
+            //     return true;
+            // } else {
+            //     return false;
+            // }
         } else {
             return false;
         }

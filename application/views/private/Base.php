@@ -16,6 +16,14 @@
         <!-- CSS Files -->
         <link href="<?= base_url('/assets/admin/css/bootstrap.min.css')?>" rel="stylesheet" />
         <link href="<?= base_url('/assets/admin/css/paper-dashboard.css')?>" rel="stylesheet" />
+        <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
+
 
     </head>
 
@@ -83,9 +91,17 @@
         var k = "<?= $k ?>";
         var sec_no = 0; 
         <?php if (isset($sec_no[$k])): ?>
-            sec_no = "<?= $sec_no[$k] ?>"; 
+            
+            
+            sec_no = "<?= trim($sec_no[$k]) ?>"; 
+           
+            
             
         <?php endif ?>
+        console.log(<?= $sec_no[$k] ?>)
+        console.log("<?= $k ?>")
+        console.log(sec_no);
+       
             function set_error(msg) {
                 $("#error").find("#message").text(msg);
                 $("#error").show();
@@ -127,7 +143,9 @@
                     // $(this).attr("disabled", true);
                 } else if (sec_no == 0) {
 
-                    var id = $checkbox.attr('value');
+                    var hide =  $(this).closest('tr').find(":hidden");
+                    var id = hide.attr("value");
+                    
                     var r = confirm("Do you want to Delete this?")
                     if (r == true)
                         window.location = url + "UserC/Remove/" + k + "/" + id;
@@ -135,7 +153,8 @@
                         return false;
                     
                 } else {
-                    var id = $checkbox.attr('value');
+                    var hide =  $(this).closest('tr').find(":checkbox");
+                    var id = hide.attr("value");
                     var r = confirm("Do you want to Delete this?")
                     if (r == true)
                         window.location = url + "UserC/Remove/" + k + "/" + id;

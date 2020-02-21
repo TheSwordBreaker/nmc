@@ -52,3 +52,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'MainC';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route[''] = 'MainC';
+
+$route['Destination'] = 'MainC/dest';
+$route['Culture'] = 'MainC/Culture';
+$route['Food'] = 'MainC/FoodStuff';
+$route['Aboutus'] = "MainC/AboutUs";
+$route["login"] = "WorkC";

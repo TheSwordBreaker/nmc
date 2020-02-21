@@ -18,7 +18,10 @@
 
             	<!-- sidebar -->
     <div class="col-lg-4 col-md-7 sidebar pt-3 ml-auto mr-auto pt-lg-0">
-					<!-- widget -->
+<div class="mt-5 h-100" >
+	<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d59968.548034088315!2d73.766057!3d20.049008!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1581007449965!5m2!1sen!2sin" width="100%" height="80%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+</div>
+		<!-- widget -->
 					<!-- <div class="widget-item">
 						<form class="search-widget">
 							<input type="text" placeholder="Search">

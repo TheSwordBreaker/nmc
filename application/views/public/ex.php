@@ -5,7 +5,7 @@
         <?php foreach($data as $row): ?>
         <div class="col-md-4 ">
             <div class="recent-game-item main-panel m-2 my-5">
-                <div class="rgi-thumb set-bg" style="background-image: url(<?= base_url('assets/images/').$row->img?>">
+                <div class="rgi-thumb set-bg" style="background-image: url(<?= base_url('assets/images/').$row->img ?>)">
 
                 </div>
                 <div class="rgi-content">

@@ -120,19 +120,18 @@
                       <th>
                       Name
                       </th>
-                      <th>
-                       Password
-                      </th>
+                    
                       <th class="text-right">
                        
                       </th>
                     </tr></thead>
                     <tbody>
-                    <?php foreach($UserData as $d):?>
+
+                    <?php  $count=0; foreach($UserData as $d): $count++;?>
                       <tr>
-                        <td> <?= $d->id ?></td>
+                        <td> <?= $count ?></td>
                         <td> <?= $d->username ?>  </td>
-                        <td> <?= $d->password ?>  </td>
+                        
          
                       </tr>
                       <?php endforeach ?> 

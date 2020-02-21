@@ -4,7 +4,7 @@
 $config['web_Address']= 'https://www.formget.com/blog';
 $config['title']= 'CodeIgniter Global Variable';
 $config['sec_no']= array(
-    'Homepage'=>3,
+    'homepage'=>3,
     'FoodSec1'=>3,
     'FoodSec2'=>2,
     'FoodSec3'=>3,
@@ -15,10 +15,10 @@ $config['sec_no']= array(
 'Culsec2' => 2,
 'Culsec3' =>6,
 
-'Homesec1' =>3,
-'Homesec2' =>1,
-'Homesec3' =>1,
-'Homesec4' =>3,
+'homesec1' =>3,
+'homesec2' =>1,
+'homesec3' =>1,
+'homesec4' =>3,
 
 
 
@@ -31,14 +31,14 @@ $config['sec_no']= array(
 'Destsec7' =>3,
 
 
-'Homepage' =>3, 
-'Homesec10' =>3,
+'homepage' =>3, 
+'homesec10' =>3,
 
 
 
 
-'pages'=>3,
-'users'=>3,
+
+
 
 'Culture'=>3,
 'Destination' =>3,
@@ -61,9 +61,9 @@ $config['sec_no']= array(
 // foodsec3
 // foodsec4
 // foodstuff
-// Homepage
-// Homesec10
-// Homesec2
+// homepage
+// homesec10
+// homesec2
 // navbar
 // pages
 // users

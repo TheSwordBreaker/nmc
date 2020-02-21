@@ -18,9 +18,10 @@ class UserC extends CI_Controller
     {
         // $this->load->view('private/example');
         $this->load->model('WorkM');
+        $k = 0;
         $UserData = $this->WorkM->Gets('users');
         $Page['title'] = "Admin Area | Dashboard";
-        $Page['data'] = $this->load->view('private/dashboard', compact('UserData'), True);
+        $Page['data'] = $this->load->view('private/dashboard', compact('UserData', 'k'), True);
         $this->load->view('private/Base', compact('Page'));
     }
 
@@ -105,8 +106,10 @@ class UserC extends CI_Controller
 
     public function Add($k)
     {
+        $this->load->model('WorkM');
         if (isset($_POST['Name'])) {
             $data['name'] = $this->input->post('Name');
+            $this->form_validation->set_rules('Name', 'Name', 'required|max_length[20]|min_length[1]');
         }
 
         if (isset($_POST['link'])) {
@@ -117,12 +120,15 @@ class UserC extends CI_Controller
             $des = $this->input->post('Descripition');
             $des = html_escape($des);
             $data['des'] = $this->security->xss_clean($des);
+            $this->form_validation->set_rules('Descripition', 'Description', 'required');
         }
 
         if (isset($_POST['username'])) {
             $data['username'] = $this->input->post('username');
-            $data['password'] = $this->input->post('password');
-            // $data['password'] = password_hash($this->input->post('password'),PASSWORD_DEFAULT) ;
+            $this->form_validation->set_rules('username','UserName','required');
+            // $data['password'] = $this->input->post('password');
+            $data['password'] = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+            $this->form_validation->set_rules('password','password','required');
         }
 
         if (isset($_FILES['userfile'])) {
@@ -139,26 +145,82 @@ class UserC extends CI_Controller
 
                 $this->load->library('upload', $config);
                 if (!$this->upload->do_upload('userfile')) {
-                    $this->session->set_flashdata('error', 'Inalid DATA');
-                    redirect('UserC/loadAdd/'.$k);      // $this->load->view('upload_form', $error);
+                    $this->session->set_flashdata('error', 'cant upload');
+                    redirect('UserC/loadAdd/' . $k);      // $this->load->view('upload_form', $error);
                 } else {
                     $data['img'] = $k . "/" . $this->upload->data('file_name');
                 }
             }
+            if (empty($_FILES['userfile']['name'])) {
+                $this->form_validation->set_rules('userfile', 'image', 'required');
+            }
+        }
+        
+         if ($this->form_validation->run()) {
+            if ($this->WorkM->InsertK($k, $data)) {
+                 redirect('UserC/Change/' . $k);
+                
+                
+            } else {
+                $this->session->set_flashdata('error', 'CAN\'T INSERT');
+                redirect('UserC/loadAdd/' . $k);
+            }
+        } else {
+            $this-> error_display1($k); 
+            
         }
 
-        // $this->load->view('upload_success', $data);
+    }
+    public function function_alert($msg,$k,$id){
 
-        $this->load->model('WorkM');
-        if ($this->WorkM->InsertK($k, $data)) {
-            redirect('UserC/Change/' . $k);
-            // echo "done";
-        } else {
-            $this->session->set_flashdata('error', 'Inalid DATA');
-            redirect('UserC/loadAdd/' . $k);
+        $this->session->set_flashdata('error', $msg);
+        redirect('UserC/loadEdit/' . $k .'/' .$id);
+        }
+    public function error_display($k,$id)
+    {  
+       
+       if(form_error('Name')!=NULL){
+
+        $this->function_alert(form_error('Name'),$k,$id);
+        }
+       elseif(form_error('Descripition')!=NULL){
+        $this->function_alert(form_error('Descripition'),$k,$id);
+        }
+        elseif(form_error('userfile')!=NULL){
+            $this->function_alert(form_error('userfile'),$k,$id);
+        }
+        elseif(form_error('username')!=NULL){
+            $this->function_alert(form_error('username'),$k,$id);
+        }
+        elseif(form_error('password')!=NULL){
+            $this->function_alert(form_error('password'),$k,$id);
         }
     }
+    public function function_alert1($msg,$k){
 
+        $this->session->set_flashdata('error', $msg);
+        redirect('UserC/loadAdd/' . $k);
+        }
+    public function error_display1($k)
+    {  
+       
+       if(form_error('Name')!=NULL){
+
+        $this->function_alert1(form_error('Name'),$k);
+        }
+       elseif(form_error('Descripition')!=NULL){
+        $this->function_alert1(form_error('Descripition'),$k);
+        }
+        elseif(form_error('userfile')!=NULL){
+            $this->function_alert1(form_error('userfile'),$k);
+        }
+        elseif(form_error('username')!=NULL){
+            $this->function_alert1(form_error('username'),$k);
+        }
+        elseif(form_error('password')!=NULL){
+            $this->function_alert1(form_error('password'),$k);
+        }
+    }
 
     public function Edit($k, $id)
     {
@@ -166,10 +228,12 @@ class UserC extends CI_Controller
 
         if (isset($_POST['Name'])) {
             $data['name'] = $this->input->post('Name');
+            $this->form_validation->set_rules('Name','Name','required|max_length[20]|min_length[1]');
         }
 
         if (isset($_POST['Descripition'])) {
             $data['des'] = $this->input->post('Descripition');
+            $this->form_validation->set_rules('Descripition','Description','required');
         }
 
         if (isset($_POST['link'])) {
@@ -178,10 +242,16 @@ class UserC extends CI_Controller
 
         if (isset($_POST['username'])) {
             $data['username'] = $this->input->post('username');
+            $data['password'] = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+            echo "<script>console.log(" + $data['password'] + ")<script>";
+            $this->form_validation->set_rules('username','user name','required');
         }
 
         if (isset($_POST['password'])) {
-            $data['password'] = $this->input->post('password');
+            // $data['password'] = $this->input->post('password');
+            $data['password'] = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+            echo "console.log(" + $data['password'] + ")";
+            $this->form_validation->set_rules('password','password','required');
         }
 
         if (isset($_FILES['userfile'])) {
@@ -195,19 +265,25 @@ class UserC extends CI_Controller
             } else {
                 $data['img'] = $k . "/" . $this->UpdateImg($tempImg, $k, $id);
             }
+            // if(empty($_FILES['userfile']['name']))
+            //     {
+            //   $this->form_validation->set_rules('userfile','image','required');
+            //     }
         }
-
+        if($this->form_validation->run())
+        {
         if ($this->WorkM->UpdateK($k, $id, $data)) {
-            // return $this->View($k);
             redirect('UserC/View/' . $k);
+              
         } else {
             $this->session->set_flashdata('error', 'Inalid DATA');
-            print("select only 3....");
             redirect('UserC/loadEdit/' . $k);
         }
-
+        }
+        else{
+            $this-> error_display($k, $id);            
+        }
     }
-
     public function Remove($k, $id)
     {
 
@@ -226,9 +302,7 @@ class UserC extends CI_Controller
             return false;
         }
     }
-
-
-    public function UpdateImg($tempImg, $k, $id)
+       public function UpdateImg($tempImg, $k, $id)
     {
         $config['upload_path']          = './assets/images/' . $k . "/";
         $config['allowed_types']        = 'gif|jpg|png';
@@ -250,7 +324,8 @@ class UserC extends CI_Controller
     {
         if (file_exists('./assets/images/' . $tempImg)) {
             unlink('./assets/images/' . $tempImg);
-        } else { }
+        } else {
+        }
     }
 
     public function logout()
@@ -259,4 +334,5 @@ class UserC extends CI_Controller
         redirect('MainC');
         // $this->session->unset_userdata('id');
     }
+
 }

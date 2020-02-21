@@ -87,17 +87,18 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
-     
-    </div>
   </nav>
-    <div class="section">
-      <div class="row">
-      <div class="col-md-10 ml-auto mr-auto ">
+  <div class="section">
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-12 col-lg-12">
+      <!-- <div class="row">
+      <div class="col-md-10 col-lg-10 mb-10 mb-lg-10"> -->
         <h2>About Nashik</h2><br>
         <p>
           Nashik is one of the most important cities of Northern Maharashtra. Nashik, in Maharashtra, is situated at a distance of 200 km from Mumbai (Bombay) as well as Pune. The city has become the center of attraction because of its beautiful surroundings and cool and pleasant climate. Nashik has a personality of its own due to its mythological, historical, social and cultural importance. The city, vibrant and active on the industrial, political, social and cultural fronts, has influenced the lives of many a great personalities. The river Godavari flows through the city. Temples and ghats on the banks of Godavari have made Nashik one of the holiest places for Hindus all over the World. Having many temples and pilgrimage sites, Nashik is known to be a holy city for Hindus in India. Nashik has always been the centre of commerce and trade in India since historical past. 
         </p><br>
-        <img src="<?= base_url('assets/images/p.jpg') ?>" alt="Image" class="img-fluid">
+        <img src="<?= base_url('assets/images/p.jpg') ?>" alt="" class="responsive">
         
         <p><br>
             Many historic events of the Indian freedom struggle too had been occurred in this place. Ramkund, Muktidham Temple, Coin Museum and Pandavleni Caves are some of the important tourist sites of Nashik.
@@ -106,7 +107,7 @@
             Reaching Nashik too is so easy as the Nashik railway station is one of the major stations of the Central Railway. Nashik is 220 km away from Pune. Nearest airport is Mumbai or Pune with a distance of 175 km.
         </p>
       </div>
-      <div class="col-md-10 ml-auto mr-auto ">
+      <div class="col-md-12 col-lg-12">
           <br>
         <h2>History of Nashik</h2><br>
         <p>
@@ -114,7 +115,7 @@
           By 1818, Nashik became an important town with two palaces, magnificent buildings and beautiful gardens and vineyards. Nashik surrendered to the British on April 19,1818. Nashik too was in great disturbance during the freedom struggle of 1857. But it retained its peace after the struggle ended in 1860.
         </p><br>
       </div>
-      <div class="col-md-10 ml-auto mr-auto ">
+      <div class="col-md-12 col-lg-12">
         <h2>Milestones in the History of Nashik</h2>
         <h3>Some of the major events in the history of Nashik are</h3>
         <br>
@@ -137,7 +138,7 @@
            <li>1927   :   Security Press formed at Nashik Road. </li>
            <li>1941   :   Artillery Center migrated to Nashik Road </li><br>
       </div>
-      <div class="col-md-10 ml-auto mr-auto ">
+      <div class="col-md-12 col-lg-12">
         <h2>Brief about Nashik</h2><br>
         <table class="table table-hover table-bordered font-small">
           <tbody style="font-size: 14px;">
@@ -187,9 +188,12 @@
             </tr>
           </tbody>
         </table><br>
-        <iframe src="https://www.google.com/maps/d/embed?mid=1f5HjAtiHG-tvu9ctnXuZ4HTd63hxo0fl" width="100%" height="450"></iframe>
+        <h2>Our City Map</h2><br>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1f5HjAtiHG-tvu9ctnXuZ4HTd63hxo0fl" width="100%" height="400"></iframe>
       </div>
-      <div class="col-md-10 ml-auto mr-auto ">
+      <br><br><br>
+      <div class="col-md-12 col-lg-12">
+        <br>
         <h2>Villages in Nashik</h2>
         <h3>Tahsil-wise list of census villages in Nashik district, Maharashtra, India</h3><br>
         <table class="table table-hover table-bordered font-small">
@@ -265,13 +269,13 @@
         </table>
         <br>
       </div>
-      <div class="col-md-10 ml-auto mr-auto ">
+      <div class="col-md-12 col-lg-12">
           <h2>Climate in Nashik</h2>
           <h3>Graph</h3><br>
           <img src="<?= base_url('assets/images/p.jpg') ?>" alt="Image" class="img-fluid">
           <br><br>
         </div>
-      <div class="col-md-10 ml-auto mr-auto ">
+      <div class="col-md-12 col-lg-12">
         <h2>Facts about Nashik</h2><br>
         <p>
             Nasik alias Nashik, situated in the northwestern region of Maharashtra on the banks of Godavari River at an altitude of 565 meter above the sea level, is a major Hindu pilgrimage center with rich culture and tradition. Well-known for its hundreds of temples and picturesque bathing ghats, the city is associated with stories from the Epic Ramayana and is referred to as 'Rambhumi'. According to the legend, it was at Nasik that Lord Rama along with Lakshmana and Sita spent 14 years of his exile. It was at the same place that Lakshmana, cut off the nose of Shurpnakha and thus this place was named as Nasik (derived from the Sanskrit word 'Nasika' which means nose). Nasik city has transformed from a small pilgrimage town to a modern mid-sized city in the last two decades and is the third most industrialized city in Maharashtra after Mumbai and Pune. The city is considered as a center of revolutionary activities and is famous for the Satyagraha organized by Dr. Ambedkar for the abolition of untouchability and a share of activities of non-cooperation movement founded by Mahatma Gandhi.
@@ -307,8 +311,9 @@
               </div>
             </div>
           </div>
-    </div>
+          </div>
   </div>
+
   <!--   Core JS Files   -->
   <script src="<?= base_url('/assets/js/core/jquery.min.js') ?>" type="text/javascript"></script>
   <script src="<?= base_url('/assets/js/core/popper.min.js') ?>" type="text/javascript"></script>

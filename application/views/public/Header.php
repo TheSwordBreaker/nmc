@@ -34,6 +34,8 @@ div.example {
 			window.scrollTo(0, 1);
 		}
 	</script>
+	<script src="https://maps.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+	</script>
 	<link rel="stylesheet" href=" <?= base_url('assets/css/bootstrap.css') ?>" type="text/css" media="all">
 	<link rel="stylesheet" href=" <?= base_url('assets/css/font-awesome.css') ?>" type="text/css" media="all">
 	<link rel="stylesheet" href=" <?= base_url('assets/css/lightbox.css') ?>" type="text/css" media="all">
@@ -66,6 +68,9 @@ padding-left:40px;
 font-size:16px;
 font-family:raleway;
 margin-bottom:30px
+}
+#map{
+    height:100%;
 }
 </style>
 </head>

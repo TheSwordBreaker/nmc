@@ -16,7 +16,12 @@ class MainC extends CI_Controller{
         $sec3 = $this->WorkM->Gets('homesec3');
         $sec4 = $this->WorkM->Gets('homesec4');
 
-        $this->load->view('public/Home',compact('data','sec2','sec3','sec4' ));
+        $Page = $this->WorkM->GetRow('pages',1);
+        $Page['data'] = $this->load->view('public/Home',compact('data','sec2','sec3','sec4'),True);
+        $Page['navbar'] = $this->WorkM->Gets('navbar');
+
+
+        $this->load->view('public/Base',compact('Page'));
     }
 
 
@@ -38,7 +43,7 @@ class MainC extends CI_Controller{
     }
     
     
-    public function Dest()
+   /* public function Dest()
     {
         $this->load->model('WorkM');    
             $sec1 = $this->WorkM->Gets('destsec1');
@@ -54,7 +59,35 @@ class MainC extends CI_Controller{
             $this->load->view('public/Base',compact('Page'));
         
 
+    }*/
+
+
+     public function Dest()
+    {
+        $this->load->model('WorkM');    
+            $sec1 = $this->WorkM->Gets('destsec1');
+            $no1=$this->WorkM->t_rows('destsec1');
+            $sec2 = $this->WorkM->Gets('destsec2');
+            $no2=$this->WorkM->t_rows('destsec2');
+            $sec3 = $this->WorkM->Gets('destsec3');
+            $no3=$this->WorkM->t_rows('destsec3');
+            $sec4 = $this->WorkM->Gets('destsec4');
+            $no4=$this->WorkM->t_rows('destsec4');
+            $sec5 = $this->WorkM->Gets('destsec5');
+            $no5=$this->WorkM->t_rows('destsec5');
+            $sec6 = $this->WorkM->Gets('destsec6');
+            $no6=$this->WorkM->t_rows('destsec6');
+            $sec7 = $this->WorkM->Gets('destsec7');
+            $no7=$this->WorkM->t_rows('destsec7');
+            $Page = $this->WorkM->GetRow('pages',2);
+            $Page['data'] = $this->load->view('public/Dest',compact('sec1','no1','sec2','no2','sec3','no3','sec4','no4','sec5','no5','sec6','no6','sec7','no7' ),True);
+            $Page['navbar'] = $this->WorkM->Gets('navbar');
+            $this->load->view('public/Base',compact('Page'));
+        
+
     }
+
+
     public function Culture()
     {
         $this->load->model('WorkM');
@@ -66,15 +99,26 @@ class MainC extends CI_Controller{
         $Page['navbar'] = $this->WorkM->Gets('navbar');
         $this->load->view('public/Base',compact('Page'));     
     }
-
     
-
+    public function info(){
+        $this->load->model('WorkM');
+        $sec1=$this->WorkM->Gets('infosec1');
+        $no1=$this->WorkM->t_rows('infosec1');
+        $sec2 = $this->WorkM->Gets('infosec2');
+        $no2=$this->WorkM->t_rows('infosec2');
+        $Page = $this->WorkM->GetRow('pages',5);
+        $Page['data'] = $this->load->view('public/info',compact('sec1','no1','sec2','no2'), True);
+        $Page['navbar'] = $this->WorkM->Gets('navbar');
+    
+        $this->load->view('public/Base',compact('Page'));
+    }
+    
 
     public function AboutUs()
     {
         $this->load->model('WorkM');
         $Page = $this->WorkM->GetRow('pages',4);
-        $Page['data'] = $this->load->view('public/AboutUs',"" ,True);
+        $Page['data'] = $this->load->view('public/AboutUs',"",True);
         $Page['navbar'] = $this->WorkM->Gets('navbar');
         $this->load->view('public/Base',compact('Page'));
       
@@ -85,10 +129,7 @@ class MainC extends CI_Controller{
     {
         $this->load->model('WorkM');
         $N = explode("%20",$Name);
-        
             $data = $this->WorkM->GetName($N[0]);
-
-
             $Page = $this->WorkM->GetRow('pages',2);
             $Page['data'] = $this->load->view('public/Places',compact('data'),True);
             $Page['navbar'] = $this->WorkM->Gets('navbar');
@@ -102,6 +143,7 @@ class MainC extends CI_Controller{
         if($this->input->post('query'))
         {
             $query = $this->input->post('query');
+            $query = $this->security->xss_clean($query);
             $S = explode(" ",$query);
             $S = $S[0];
         }
@@ -156,15 +198,17 @@ class MainC extends CI_Controller{
     {
         // echo "in contact";
         if (isset($_POST['name'])) {
-            $data['name'] = $this->input->post('name');
+            
+            $data['name']  = $this->security->xss_clean($this->input->post('name'));
         }
 
         if (isset($_POST['email'])) {
-            $data['email'] = $this->input->post('email');
+            $data['email'] = $this->security->xss_clean($this->input->post('email'));
+            
         }
 
         if (isset($_POST['msg'])) {
-            $data['msg'] = $this->input->post('msg');
+            $data['msg'] = $this->security->xss_clean($this->input->post('msg'));
         }
 
         $k='contact';
@@ -178,20 +222,18 @@ class MainC extends CI_Controller{
         }
 
     }
-  
-
-
-    public function Feedback()
+    
+     public function Feedback()
     {
         // echo "in contact";
         if (isset($_POST['name'])) {
-            $data['name'] = $this->input->post('name');
+            $data['name'] = $this->security->xss_clean($this->input->post('name'));
         }
 
         
 
         if (isset($_POST['msg'])) {
-            $data['msg'] = $this->input->post('msg');
+            $data['msg'] = $this->security->xss_clean($this->input->post('msg'));
         }
 
         $k='feedback';

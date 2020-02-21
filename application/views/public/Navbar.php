@@ -1,76 +1,64 @@
-<nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
-    id="sectionsNav">
+	<!--navigation-->
+    <div class="header-w3">
+			<div class="header-top-agile">
+				<div class="social-icons-agileits">
+					<ul>
+						<li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:info@example.com">nsktourism@gmail.com</a></li>
+						<li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> +918329007426</li>
+					</ul>
+				</div>
+				<div class="social">
+					<ul>
+						<li><a href="<?= base_url('MainC/?lang=en')?>"><?php echo $lang['lang_en'] ?></a></li>
+						<li><a href="<?= base_url('MainC/?lang=bs')?>"><?php echo $lang['lang_bs'] ?></a></li>
+						<li><a href="https://www.facebook.com/" class="link facebook" target="_parent"><span class="fa fa-facebook-square"></span></a></li>
+						<li><a href="https://www.twitter.com/" class="link twitter" target="_parent"><span class="fa fa-twitter"></span></a></li>
+						<li><a href="https://www.instagram.com/" class="link google-plus" target="_parent"><span class="fa fa-instagram"></span></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="header-bottom-agile">
+				<div class=navigation>
+					<nav class="navbar navbar-default cl-effect-16" id="cl-effect-16">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+						<div class="logo-agileinfo">
+							<h1><a href="<?= base_url('MainC/')?>"><i class="fa fa-plane" aria-hidden="true"></i><?php echo $lang['title'] ?></a></h1>
+						</div>
 
-    <div class="navbar-translate">
-        <a class="navbar-brand" href="<?= base_url('MainC/')?>">
-            <i class="fa fa-plane"> </i>
-            NASHIK TOURISM </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-            <!-- <li class="dropdown nav-item" style="letter-spacing: 1px; font-family: verdana;">
-        <a href="index.html" class="dropdown-toggle nav-link" data-toggle="dropdown">
-            <i class="material-icons">home</i><b> Home </b>
-        </a>
-          <div class="dropdown-menu dropdown-with-icons">
-          <a href="/index.html" class="dropdown-item">
-            <i class="material-icons">layers</i> All Components
-          </a>
-        </div> 
-      </li> -->
+						<div id="navbar" class="navbar-collapse navbar-right collapse hover-effect">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="<?= base_url('MainC/')?>" data-hover="Home"><?php echo $lang['home'] ?></a></li>
+								<li><a href="<?= base_url('MainC/AboutUs')?>" data-hover="About Us"><?php echo $lang['about us'] ?></a></li>
+								<li><a href="<?= base_url('MainC/Dest')?>" data-hover="destination"><?php echo $lang['destination'] ?></a></li>
+								<li><a href="<?= base_url('MainC/FoodStuff')?>" data-hover="Food Stuff"><?php echo $lang['food stuff'] ?></a></li>
+								<li><a href="<?= base_url('MainC/Culture')?>" data-hover="Culture"><?php echo $lang['culture'] ?></a></li>
 
-        <?php foreach($Page['navbar'] as $nav): ?>
-        <?php if($nav->active): ?>
-        <li class="nav-item" style="letter-spacing: 1px; font-family: verdana;">
-                <a class="nav-link" href="<?= base_url($nav->link)?>">
-                <b> <?= $nav->name ?> </b>
-            </a>
-        </li>
-        
-        <?php endif ?>
-        <?php endforeach ?>
-        
-        <!-- <li class="nav-item" style="letter-spacing: 1px; font-family: verdana;">
-                <a class="nav-link" href="<?= base_url('WorkC/')?>">
-                    <b> Login </b>
-                </a>
-            </li> -->
-            <form action="<?= base_url('MainC/Search')?>" method="post" class="form-inline ml-auto" >
-                <button type="submit" class="btn btn-white btn-raised btn-fab btn-round">
-                  <i class="material-icons">search</i>
-                </button>
-                <div class="form-group ">
-                    <input name="query" type="search" class="form-control" placeholder=" Search.." >
-                  </div>
-              </form>
-            <li class="nav-item">
-                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank"
-                    data-original-title="Follow us on Twitter">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank"
-                    data-original-title="Like us on Facebook">
-                    <i class="fa fa-facebook-square"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="#" target="_blank"
-                    data-original-title="Follow us on Instagram">
-                    <i class="fa fa-instagram"></i>
-                </a>
-            </li>
+								<!-- <li><a href="" data-hover="Culture" class="scroll">Culture</a></li> -->
+								<li><a href="<?= base_url('WorkC/')?>" data-hover="login"><?php echo $lang['login'] ?></a></li>
+							</ul>
 
-            
-        </ul>
-    </div>
-    </div>
-</nav>
+						</div>
+					</nav>
+				</div>
+				<div class="search">
+					<div class="cd-main-header">
+						<ul class="cd-header-buttons">
+							<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+						</ul>
+					</div>
+					<div id="cd-search" class="cd-search">
+						<form action="<?= base_url('MainC/Search')?>" method="post">
+							<input name="Search" type="search" placeholder="Search..." required="">
+						</form>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!--//navigation-->

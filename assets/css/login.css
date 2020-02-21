@@ -1,64 +1,6 @@
 /*     brand Colors              */
 
 
-/*----------------------
-  Recent Game Section
-------------------------*/
-
-.recent-game-section {
-    background-color: #eef2f6;
-    border-top: 1px solid #d6dee7;
-    border-bottom: 1px solid #d6dee7;
-}
-
-.recent-game-item .rgi-thumb {
-    height: 204px;
-    padding: 25px 28px;
-}
-
-.recent-game-item .rgi-content {
-    padding: 34px 22px 20px;
-    background: #fff;
-    border: 1px solid #d6dee7;
-    border-top: none;
-    position: relative;
-}
-
-.recent-game-item .rgi-content h5 {
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-.recent-game-item .rgi-content .comment {
-    font-size: 12px;
-    color: #737373;
-}
-
-.recent-game-item .rgi-extra {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 70px;
-}
-
-.recent-game-item .rgi-extra .rgi-star,
-.recent-game-item .rgi-extra .rgi-heart {
-    height: 35px;
-    width: 35px;
-    float: left;
-    display: block;
-    padding: 6px 8px 0;
-}
-
-.recent-game-item .rgi-extra .rgi-star {
-    background: #ffb320;
-}
-
-.recent-game-item .rgi-extra .rgi-heart {
-    background: #ff205f;
-}
-
-
 /*------------------
   Feature Section
 ---------------------*/
@@ -85,8 +27,8 @@
 
 
 /*----------------------
-   Food-Stuff
-------------------------*/
+     Food-Stuff
+  ------------------------*/
 
 #FoodSec1 {
     height: 27rem;
@@ -151,8 +93,8 @@
 
 
 /*----------------------
-  Review Section
-------------------------*/
+    Review Section
+  ------------------------*/
 
 .review-section {
     background-position: right top;
@@ -749,7 +691,7 @@ progress {
     -webkit-appearance: none;
 }
 
-::-webkit-file-upload-button {
+ ::-webkit-file-upload-button {
     font: inherit;
     -webkit-appearance: button;
 }
@@ -1153,7 +1095,7 @@ progress {
     -webkit-appearance: none;
 }
 
-::-webkit-file-upload-button {
+ ::-webkit-file-upload-button {
     font: inherit;
     -webkit-appearance: button;
 }
@@ -2568,7 +2510,7 @@ pre code {
     font-size: 1rem;
     line-height: 1.5;
     color: #495057;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(219, 27, 27, 0);
     background-clip: padding-box;
     border: 1px solid #d2d2d2;
     border-radius: 0;
@@ -2583,7 +2525,7 @@ pre code {
 
 .form-control:focus {
     color: #495057;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(216, 25, 25, 0);
     border-color: #9acffa;
     outline: 0;
     box-shadow: none, 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
@@ -2606,7 +2548,7 @@ select.form-control:not([size]):not([multiple]) {
 
 select.form-control:focus::-ms-value {
     color: #495057;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(219, 29, 29, 0);
 }
 
 .form-control-file,
@@ -4958,6 +4900,27 @@ tbody.collapse.show {
         font-size: 1.3em;
         letter-spacing: 0px;
     }
+    .agileinfo_counter_section {
+        background: url(<?= base_url('assets/images/dham.jpg')?> no-repeat 0px 0px);
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-attachment: fixed;
+        padding: 6em 0;
+    }
+    .agileinfo_counter_section h3 {
+        font-family: 'verdana', sans-serif;
+        color: #fff;
+        font-size: 3em;
+        letter-spacing: 4px;
+    }
+    .agileinfo_counter_section p {
+        padding: 1em 0;
+        color: #eaeaea;
+        font-size: 1em;
+        letter-spacing: 2px;
+    }
     .agileinfo_counter_section h3 {
         font-size: 3.5em;
     }
@@ -5436,6 +5399,11 @@ tbody.collapse.show {
     }
 }
 
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
 @media(max-width: 384px) {
     .banner-text-info {
         margin: 3em 0 4.5em;
@@ -5645,7 +5613,7 @@ tbody.collapse.show {
     font-size: 2.25rem;
     line-height: inherit;
     white-space: nowrap;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     font-family: verdana;
 }
 
@@ -12855,7 +12823,7 @@ label {
 }
 
 .sharing-area {
-    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .sharing-area .btn {
@@ -13618,6 +13586,7 @@ form {
 .bmd-form-group.is-focused .form-control {
     background-size: 100% 100%, 100% 100%;
     transition-duration: 0.3s;
+    color: black;
     box-shadow: none;
 }
 
@@ -15499,6 +15468,9 @@ textarea {
 .nav-link {
     text-transform: uppercase;
 }
+.nav-link-activex{
+    color:red;
+}
 
 .navbar-nav .nav-link {
     padding: 0.5321rem;
@@ -15569,7 +15541,8 @@ textarea {
     color: inherit;
     padding: 0.9375rem;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
+    font-family: verdana;
     text-transform: uppercase;
     border-radius: 3px;
     line-height: 20px;
@@ -15665,11 +15638,12 @@ textarea {
     position: relative;
     color: inherit;
     height: 50px;
-    font-size: 20px;
-    /* NASHIK TOURISM font size*/
+    /* font-size: 20px; NASHIK TOURISM font size */
+    font-size: 1.125rem;
     line-height: 30px;
-    padding-left: 40px;
-    padding-right: 30px;
+    padding: 0.625rem 0;
+    padding-left: 10px;
+    padding-right: 20px;
 }
 
 .navbar.bg-primary {
@@ -17173,49 +17147,49 @@ h2.title {
     margin-bottom: 0;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-l>.bmd-layout-header {
+ :not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-l>.bmd-layout-header {
     width: calc(100% - 240px);
     margin-left: 240px;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-l>.bmd-layout-drawer {
+ :not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-l>.bmd-layout-drawer {
     transform: translateX(0);
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-l>.bmd-layout-content {
+ :not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-l>.bmd-layout-content {
     margin-left: 240px;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-r>.bmd-layout-header {
+ :not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-r>.bmd-layout-header {
     width: calc(100% - 240px);
     margin-right: 240px;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-r>.bmd-layout-drawer {
+ :not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-r>.bmd-layout-drawer {
     transform: translateX(0);
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-r>.bmd-layout-content {
+ :not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-r>.bmd-layout-content {
     margin-right: 240px;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-t>.bmd-layout-header {
+ :not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-t>.bmd-layout-header {
     margin-top: 100px;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-t>.bmd-layout-drawer {
+ :not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-t>.bmd-layout-drawer {
     transform: translateY(0);
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-b>.bmd-layout-drawer {
+ :not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-b>.bmd-layout-drawer {
     transform: translateY(0);
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-b>.bmd-layout-content {
+ :not(.bmd-drawer-out) .bmd-drawer-in .bmd-drawer-f-b>.bmd-layout-content {
     margin-bottom: 100px;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay>.bmd-layout-backdrop .in {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay>.bmd-layout-backdrop .in {
     visibility: visible;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -17227,19 +17201,19 @@ h2.title {
     }
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-l>.bmd-layout-header,
-:not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-l>.bmd-layout-content {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-l>.bmd-layout-header,
+ :not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-l>.bmd-layout-content {
     width: 100%;
     margin-left: 0;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-r>.bmd-layout-header,
-:not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-r>.bmd-layout-content {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-r>.bmd-layout-header,
+ :not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-r>.bmd-layout-content {
     width: 100%;
     margin-right: 0;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay>.bmd-layout-backdrop .in {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay>.bmd-layout-backdrop .in {
     visibility: visible;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -17251,11 +17225,11 @@ h2.title {
     }
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-t>.bmd-layout-header {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-t>.bmd-layout-header {
     margin-top: 0;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-b>.bmd-layout-content {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay.bmd-drawer-overlay .bmd-drawer-f-b>.bmd-layout-content {
     margin-bottom: 0;
 }
 
@@ -17537,7 +17511,7 @@ h2.title {
     }
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down>.bmd-layout-backdrop .in {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down>.bmd-layout-backdrop .in {
     visibility: visible;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -17549,19 +17523,19 @@ h2.title {
     }
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-l>.bmd-layout-header,
-:not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-l>.bmd-layout-content {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-l>.bmd-layout-header,
+ :not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-l>.bmd-layout-content {
     width: 100%;
     margin-left: 0;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-r>.bmd-layout-header,
-:not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-r>.bmd-layout-content {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-r>.bmd-layout-header,
+ :not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-r>.bmd-layout-content {
     width: 100%;
     margin-right: 0;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down>.bmd-layout-backdrop .in {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down>.bmd-layout-backdrop .in {
     visibility: visible;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -17573,11 +17547,11 @@ h2.title {
     }
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-t>.bmd-layout-header {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-t>.bmd-layout-header {
     margin-top: 0;
 }
 
-:not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-b>.bmd-layout-content {
+ :not(.bmd-drawer-out) .bmd-drawer-overlay-xl-down .bmd-drawer-f-b>.bmd-layout-content {
     margin-bottom: 0;
 }
 
@@ -18359,10 +18333,10 @@ footer .pull-center {
 
 
 /*!
- * Datetimepicker for Bootstrap 3
- * ! version : 4.17.37
- * https://github.com/Eonasdan/bootstrap-datetimepicker/
- */
+   * Datetimepicker for Bootstrap 3
+   * ! version : 4.17.37
+   * https://github.com/Eonasdan/bootstrap-datetimepicker/
+   */
 
 .sr-only,
 .bootstrap-datetimepicker-widget .btn[data-action="incrementHours"]::after,
@@ -18765,9 +18739,9 @@ footer .pull-center {
 
 
 /* Functional styling;
- * These styles are required for noUiSlider to function.
- * You don't need to change these rules to apply your design.
- */
+   * These styles are required for noUiSlider to function.
+   * You don't need to change these rules to apply your design.
+   */
 
 .noUi-target,
 .noUi-target * {
@@ -18839,8 +18813,8 @@ footer .pull-center {
 
 
 /* Painting and performance;
- * Browsers can paint handles in their own layer.
- */
+   * Browsers can paint handles in their own layer.
+   */
 
 .noUi-base,
 .noUi-handle {
@@ -18850,7 +18824,7 @@ footer .pull-center {
 
 
 /* Slider size and handle placement;
- */
+   */
 
 .noUi-horizontal {
     height: 2px;
@@ -18893,7 +18867,7 @@ footer .pull-center {
 
 
 /* Styling;
- */
+   */
 
 .noUi-target {
     background: #c8c8c8;
@@ -18908,7 +18882,7 @@ footer .pull-center {
 
 
 /* Handles and cursors;
- */
+   */
 
 .noUi-draggable {
     cursor: w-resize;
@@ -18950,7 +18924,7 @@ footer .pull-center {
 
 
 /* Disabled state;
- */
+   */
 
 [disabled] .noUi-connect {
     background: #B8B8B8;
@@ -19048,7 +19022,7 @@ footer .pull-center {
 }
 
 .section {
-    padding: 70px 0;
+    padding: 20px 0;
 }
 
 .profile-page .page-header {
@@ -19304,8 +19278,8 @@ footer .pull-center {
         -o-transition: transform 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
         -ms-transition: transform 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
         transition: transform 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-        padding-right: 22px;
-        padding-left: 22px;
+        /* padding-right: 22px;
+      padding-left: 22px; */
     }
     .navbar .dropdown.show .dropdown-menu {
         display: block;
@@ -19766,6 +19740,12 @@ footer .pull-center {
         -ms-transform: translate3d(-25px, 0, 0);
         transform: translate3d(-25px, 0, 0);
         width: 245px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #carino1 {
+        padding-bottom: 60%;
     }
 }
 

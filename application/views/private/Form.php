@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <div class="col-md-8">
       <div class="card card-user">
         <div class="card-header">
@@ -21,6 +15,7 @@
                   <label>Name:</label>
                   <input type="text" class="form-control" placeholder="Enter a Name" name="Name" id="Name">
                 </div>
+                <?php echo form_error('Name');?>
               </div>
             </div>
             <?php endif ?>
@@ -33,11 +28,24 @@
                 <label>Descripition:</label>
                 <textarea class="form-control textarea"  name="Descripition" id="Descripition">Oh ... you want to add description related to your content....</textarea>
                 </div>
+                <?php echo form_error('Descripition','<div class="p-2 bg-danger text-white">', '</div>');?>
               </div>
             </div>
             <?php endif ?>
 
             <?php if($this->db->field_exists('link',$k)): ?>
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>link:</label>
+                  <input type="text" class="form-control" placeholder="Enter a link" name="link" id="link" >
+                </div>
+              </div>
+            </div>
+
+            <?php endif ?>
+
+            <?php if($this->db->field_exists('map',$k)): ?>
             <div class="row">
               <div class="col-md-6 pr-1">
                 <div class="form-group">
@@ -56,7 +64,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>UserName:</label>
-                  <input type="text" class="form-control" placeholder="Enter a Name" name="username" id="Name">
+                  <input type="text" class="form-control" placeholder="Enter a Name" name="username" id="username">
                 </div>
               </div>
             </div>
@@ -65,7 +73,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>Password</label>
-                  <input type="password" class="form-control" placeholder="Enter a Name" name="password" id="Name">
+                  <input type="password" class="form-control" placeholder="Enter a Name" name="password" id="password">
                 </div>
               </div>
             </div>
@@ -104,6 +112,7 @@
                   <label>Name:</label>
                   <input type="text" class="form-control" placeholder="Enter a Name" name="Name" id="Name" value="<?=  $UserData[0]->name?>">
                 </div>
+                <?php echo form_error('Name');?>
               </div>
             </div>
 
@@ -140,7 +149,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>UserName:</label>
-                  <input type="text"  value="<?= $UserData[0]->username ?>" class="form-control"  name="username" id="Name">
+                  <input type="text"  value="<?= $UserData[0]->username ?>" class="form-control"  name="username" id="username">
                 </div>
               </div>
             </div>
@@ -149,7 +158,7 @@
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>Password</label>
-                  <input type="password" value="<?= $UserData[0]->password ?>" class="form-control" id="password">
+                  <input type="password" class="form-control" id="password">
                 </div>
               </div>
             </div>

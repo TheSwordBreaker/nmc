@@ -61,11 +61,11 @@
 
 
                     <tbody>
-                        <?php foreach ($UserData as $d) : ?>
+                        <?php $count=0; foreach ($UserData as $d) : $count++; ?>
                         <?php if ($this->db->field_exists('active', $k)) : ?>
                             <?php if ($d->active) : ?>
                                 <tr>
-                                    <td scope="row" width="5%"> <?= $d->id ?></td>
+                                    <td scope="row" width="5%"> <?= $count ?></td>
 
                                     <?php if ($this->db->field_exists("name", $k)) : ?>
                                         <td width="10%"> <?= $d->name ?> </td>
@@ -96,7 +96,7 @@
                         <?php else: ?>
 
                             <tr>
-                                    <td scope="row" width="5%"> <?= $d->id ?></td>
+                                    <td scope="row" width="5%" > <?= $count ?></td>
 
                                     <?php if ($this->db->field_exists("name", $k)) : ?>
                                         <td width="10%"> <?= $d->name ?> </td>
@@ -220,14 +220,13 @@
 
 
                     <tbody>
-                        <?php foreach ($data as $d) : ?>
+                        <?php $count=0 ; foreach ($data as $d) :  $count++;?>
 
                             <tr>
                                 <?php if ($this->db->field_exists("active", $k)) : ?> <th>
 
                                     <td scope="row" class="text-center">
                                         <?php if ($d->active) : ?>
-
                                             <input type="checkbox" name="check_list[]" value="<?= $d->id ?>" style="text-align:center;" checked>
 
                                         <?php else : ?>
@@ -239,13 +238,19 @@
 
 
                                     </td>
+                                <?php else: ?>
+                                        <input type="hidden"  name="check_list[]" value="<?= $d->id ?>" >
                                 <?php endif ?>
 
-                                <td scope="row"> <?= $d->id ?></td>
+                                <td scope="row"> <?= $count ?></td>
 
                                 <?php if ($this->db->field_exists("name", $k)) : ?>
                                     <td> <?= $d->name ?> </td>
                                 <?php endif ?>
+
+                                <?php if ($this->db->field_exists('username', $k)) : ?>
+                                        <td width="10%"> <?= $d->username ?> </td>
+                                    <?php endif ?>
 
                                 <?php if ($this->db->field_exists("img", $k)) : ?>
                                     <td> <img src="<?= base_url('/assets/images/') . $d->img ?>" style="width:150px; height:70px">
@@ -256,7 +261,7 @@
 
                                 <?php if ($this->db->field_exists("id", $k)) : ?>
                                     <td class="flex">
-                                        <button type="button" class="del btn btn-danger btn-md " id="">Delete</td>
+                                        <button type="button" class="del btn btn-danger btn-md " >Delete</td>
                                 <?php endif ?>
 
                             </tr>
